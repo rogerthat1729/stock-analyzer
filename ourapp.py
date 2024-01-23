@@ -1,6 +1,6 @@
 from flask import Flask,redirect, url_for, request, render_template
 from plot import create_plot
-
+from markets import get_stock_data
 app = Flask(__name__)
 
 @app.route("/")  # Going to the default domain automatically sends us here
@@ -21,12 +21,8 @@ def admin1():
 
 @app.route("/market")
 def market():
-    items = [
-        {"id": 1, "name": "Phone", "barcode": "893212299897", "price": 500},
-        {"id": 2, "name": "Laptop", "barcode": "123985473165", "price": 900},
-        {"id": 3, "name": "Keyboard", "barcode": "231985128446", "price": 150}
-    ]
-    return render_template("market.html", items=items)
+    stock_data = get_stock_data()
+    return render_template("market.html", stocks= stock_data)
 
 @app.route("/login")
 def login():
