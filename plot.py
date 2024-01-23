@@ -10,7 +10,7 @@ from jugaad_data.nse import stock_df
 from io import BytesIO
 import base64
 
-def plot(symbol, startdate, enddate):
+def create_plot(symbol, startdate, enddate):
     startdate = datetime.strptime(startdate, '%Y-%m-%d').date()
     enddate = datetime.strptime(enddate, '%Y-%m-%d').date()
     df = stock_df(symbol=symbol, from_date=startdate, 

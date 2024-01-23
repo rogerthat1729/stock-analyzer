@@ -1,4 +1,5 @@
 from flask import Flask,redirect, url_for, request, render_template
+from plot import create_plot
 
 app = Flask(__name__)
 
@@ -37,11 +38,8 @@ def plot():
         text_input = request.form['Stock Symbol']
         date_input1 = request.form['From']
         date_input2 = request.form['To']
-
-        plot_url = plot(text_input, date_input1, date_input2)
-
-        return render_template('plot.html', plot_url=plot_url)
-    
+        plot_url = create_plot(text_input, date_input1, date_input2)
+        return redirect(plot_url)
     return render_template('plot.html', plot_url=None)
 
 @app.route("/contact")
@@ -51,8 +49,6 @@ def contact():
 @app.route("/about")
 def about():
     return render_template("about.html")
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
