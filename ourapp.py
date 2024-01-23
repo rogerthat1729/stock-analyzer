@@ -61,7 +61,7 @@ def plot():
         plt.style.use('ggplot')
         plt.plot(data["DATE"], data["OPEN"], color = 'green')
         plt.plot(data["DATE"], data["CLOSE"], color = 'red')
-        plt.title('Stock opening price vs Date')
+        plt.title(f'{symbol} opening price vs Date')
         plt.xlabel('Date')
         plt.ylabel('Opening Price')
         plot_url = plot_to_url(plt)
