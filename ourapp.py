@@ -1,12 +1,13 @@
+
 from flask import Flask,redirect, url_for, request, render_template, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from plot import give_data
+
 from markets import get_stock_data
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-from jugaad_data.nse import stock_df
 from io import BytesIO
 import base64
 import pandas as pd
@@ -63,9 +64,11 @@ def plot():
         symbol = request.form['Stock Symbol']
         startdate = request.form['From']
         enddate = request.form['To']
+
         entity = request.form['options']
         colors = {'OPEN':'red', 'CLOSE':'green', 'LTP':'blue'}
         data = give_data(symbol, startdate, enddate)
+
         plt.figure(figsize=(10, 6))
         plt.style.use('ggplot')
         plt.plot(data["DATE"], data[entity], color = colors[entity])

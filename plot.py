@@ -18,3 +18,4 @@ def give_data(symbol, startdate, enddate):
     cols = ["DATE", "OPEN", "CLOSE", "HIGH", "LOW", "LTP", "VOLUME", "VALUE", "NO OF TRADES"]
     data = df[cols]
     return data
+
