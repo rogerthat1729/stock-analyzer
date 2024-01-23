@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trading Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='marketstyle.css') }}">
 </head>
 <body>
     <header>
@@ -20,16 +20,26 @@
             </ul>
         </nav>
     </header>
-
-
-
-    <main>
-        <section>
-            <h2>Market Data</h2>
-            <p>View the latest market trends and data.</p>
+  
+            <main>
+                <aside>
+                    <h3>Filters</h3>
+                    <form id="filter-form">
+                        <label for="pe-ratio">P/E Ratio:</label>
+                        <input type="number" id="pe-ratio" name="pe-ratio">
+                        <!-- Add more filters as needed -->
+                        <button type="submit">Apply Filters</button>
+                    </form>
+                </aside>
+                <section>
+                    <h2>Market Data</h2>
+                    <p>View the latest market trends and data.</p>
+                    <div id="stock-list">
+                        <!-- Dynamic market data would be loaded here -->
+                    </div>
+                </section>
+            </main>
             <!-- Dynamic market data would be loaded here -->
-        </section>
-    </main>
 
     <footer>
         <p>&copy; 2024 Trading Platform</p>
