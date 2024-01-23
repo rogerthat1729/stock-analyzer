@@ -30,18 +30,25 @@
             <p>Interactive charts and graphs to analyze the market trends.</p>
         </section>
         <section>
-            <h1>Matplotlib Plot in Flask</h1>
+            <h1>Choose your plot</h1>
 
             <form action="/plot" method="post">
                 <label for="Stock Symbol">Text Input:</label>
                 <input type="text" name="Stock Symbol" required>
-
+                <br><br>
                 <label for="From">Date Input 1:</label>
                 <input type="date" name="From" required>
-
+                <br><br>
                 <label for="To">Date Input 2:</label>
                 <input type="date" name="To" required>
-
+                <br><br>
+                <label for="options">Display a graph of:</label>
+                <select name="options" id="options">
+                    <option value="OPEN">Opening Price</option>
+                    <option value="CLOSE">Closing Price</option>
+                    <option value="LTP">Last Traded Price</option>
+                </select>
+                <br><br>
                 <button type="submit">Generate Plot</button>
             </form>
 

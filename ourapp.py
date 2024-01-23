@@ -1,5 +1,5 @@
 from flask import Flask,redirect, url_for, request, render_template
-from plot import create_plot
+from plot import give_data
 from markets import get_stock_data
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
@@ -51,19 +51,15 @@ def plot():
         symbol = request.form['Stock Symbol']
         startdate = request.form['From']
         enddate = request.form['To']
-        startdate = datetime.strptime(startdate, '%Y-%m-%d').date()
-        enddate = datetime.strptime(enddate, '%Y-%m-%d').date()
-        df = stock_df(symbol=symbol, from_date=startdate, 
-                    to_date=enddate, series="EQ")
-        cols = ["DATE", "OPEN", "CLOSE", "HIGH", "LOW", "LTP", "VOLUME", "VALUE", "NO OF TRADES"]
-        data = df[cols]
+        entity = request.form['options']
+        colors = {'OPEN':'red', 'CLOSE':'green', 'LTP':'blue'}
+        data = give_data(symbol, startdate, enddate)
         plt.figure(figsize=(10, 6))
         plt.style.use('ggplot')
-        plt.plot(data["DATE"], data["OPEN"], color = 'green')
-        plt.plot(data["DATE"], data["CLOSE"], color = 'red')
-        plt.title(f'{symbol} opening price vs Date')
+        plt.plot(data["DATE"], data[entity], color = colors[entity])
+        plt.title(f'{symbol} {entity} vs Date')
         plt.xlabel('Date')
-        plt.ylabel('Opening Price')
+        plt.ylabel(entity)
         plot_url = plot_to_url(plt)
 
     return render_template('plot.html', plot_url=plot_url)
