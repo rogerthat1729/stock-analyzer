@@ -10,17 +10,7 @@ from jugaad_data.nse import stock_df
 from io import BytesIO
 import base64
 
-def create_plot(symbol, startdate, enddate):
-    startdate = datetime.strptime(startdate, '%Y-%m-%d').date()
-    enddate = datetime.strptime(enddate, '%Y-%m-%d').date()
-    df = stock_df(symbol=symbol, from_date=startdate, 
-                to_date=enddate, series="EQ")
-    cols = ["DATE", "OPEN", "CLOSE", "HIGH", "LOW", "LTP", "VOLUME", "VALUE", "NO OF TRADES"]
-    data = df[cols]
-    plt.style.use('ggplot')
-    plt.plot(data["DATE"], data["OPEN"])
-    plt.xlabel('Date')
-    plt.ylabel('Opening Price')
-    plt.grid(visible=False)
-    plt.show()
-
+def return_dataframe(symbol, startdate, enddate):
+     df = stock_df(symbol=symbol, from_date=startdate, 
+                    to_date=enddate, series="EQ")
+     return df

@@ -1,38 +1,10 @@
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Trading Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <header>
-        <h1>Trading Platform</h1>
-        <nav>
-            <ul>
-                <li><a href="http://127.0.0.1:5000">Home</a></li>
-                <li><a href="http://127.0.0.1:5000/market">Markets</a></li>
-                <li><a href="http://127.0.0.1:5000/plot">Plot</a></li>
-                <li><a href="http://127.0.0.1:5000/login">Login</a></li>
-                <li><a href="http://127.0.0.1:5000/about">About Us</a></li>
-                <li><a href="http://127.0.0.1:5000/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>Welcome to Trading Platform, your reliable partner in the world of financial trading. Our mission is to provide an accessible, high-quality trading experience to traders of all levels.</p>
-            <p>Founded in [Year], we've grown to become a leading platform offering real-time data, advanced tools, and expert insights. Our team of seasoned professionals is dedicated to empowering you with the knowledge and resources you need to make informed trading decisions.</p>
-            <p>We're committed to innovation and continuously improving our platform to meet the evolving needs of our users. Thank you for choosing Trading Platform as your trusted trading ally.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Trading Platform</p>
-    </footer>
-</body>
-</html>
+{% block content %}
+  <section>
+    <h2>About Us</h2>
+    <p>Welcome to Trading Platform, your reliable partner in the world of financial trading. Our mission is to provide an accessible, high-quality trading experience to traders of all levels.</p>
+    <p>Founded in [Year], we've grown to become a leading platform offering real-time data, advanced tools, and expert insights. Our team of seasoned professionals is dedicated to empowering you with the knowledge and resources you need to make informed trading decisions.</p>
+    <p>We're committed to innovation and continuously improving our platform to meet the evolving needs of our users. Thank you for choosing Trading Platform as your trusted trading ally.</p>
+  </section>
+{% endblock %}

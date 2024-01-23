@@ -1,48 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='marketstyle.css') }}">
-</head>
-<body>
-    <header>
-        <h1>Trading Platform</h1>
-        <nav>
-            <ul>
-                <li><a href="http://127.0.0.1:5000">Home</a></li>
-                <li><a href="http://127.0.0.1:5000/market">Markets</a></li>
-                <li><a href="http://127.0.0.1:5000/plot">Plot</a></li>
-                <li><a href="http://127.0.0.1:5000/login">Login</a></li>
-                <li><a href="http://127.0.0.1:5000/about">About Us</a></li>
-                <li><a href="http://127.0.0.1:5000/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends 'base.html' %}
+    {% block css %}<link rel="stylesheet" href="{{ url_for('static', filename = 'marketstyle.css') }}" />
+    {% endblock %}
   
-            <main>
-                <aside>
-                    <h3>Filters</h3>
-                    <form id="filter-form">
-                        <label for="pe-ratio">P/E Ratio:</label>
-                        <input type="number" id="pe-ratio" name="pe-ratio">
-                        <!-- Add more filters as needed -->
-                        <button type="submit">Apply Filters</button>
-                    </form>
-                </aside>
-                <section>
-                    <h2>Market Data</h2>
-                    <p>View the latest market trends and data.</p>
-                    <div id="stock-list">
-                        <!-- Dynamic market data would be loaded here -->
-                    </div>
-                </section>
-            </main>
-            <!-- Dynamic market data would be loaded here -->
 
-    <footer>
-        <p>&copy; 2024 Trading Platform</p>
-    </footer>
-</body>
-</html>
+{% block content %}
+  <aside>
+    <h3>Filters</h3>
+    <form id="filter-form">
+      <label for="pe-ratio">P/E Ratio:</label>
+      <input type="number" id="pe-ratio" name="pe-ratio" />
+      <!-- Add more filters as needed -->
+      <button type="submit">Apply Filters</button>
+    </form>
+  </aside>
+  <section>
+    <h2>Market Data</h2>
+    <p>View the latest market trends and data.</p>
+    <div id="stock-list">
+      <div class="stock-item">
+        <h4>RELIANCE</h4>
+        <p>Reliance Industries Limited</p>
+        <p>Current Price: ₹2,430.00</p>
+        <p>P/E Ratio: 25.4</p>
+        <p>Market Cap: ₹15.31T</p>
+      </div>
+      <div class="stock-item">
+        <h4>TCS</h4>
+        <p>Tata Consultancy Services</p>
+        <p>Current Price: ₹3,299.00</p>
+        <p>P/E Ratio: 32.7</p>
+        <p>Market Cap: ₹12.19T</p>
+      </div>
+      <div class="stock-item">
+        <h4>INFY</h4>
+        <p>Infosys Limited</p>
+        <p>Current Price: ₹1,720.00</p>
+        <p>P/E Ratio: 30.2</p>
+        <p>Market Cap: ₹7.24T</p>
+      </div>
+      <!-- Add more stock items as needed -->
+    </div>
+  </section>
+{% endblock %}```
