@@ -1,12 +1,13 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Head content remains the same as the main page -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Platform</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <!-- Header remains the same as the main page -->
     <header>
@@ -27,13 +28,32 @@
         <section>
             <h2>Data Visualization</h2>
             <p>Interactive charts and graphs to analyze the market trends.</p>
-            <!-- Interactive plot or graph would be implemented here -->
+        </section>
+        <section>
+            <h1>Matplotlib Plot in Flask</h1>
+
+            <form action="/plot" method="post">
+                <label for="Stock Symbol">Text Input:</label>
+                <input type="text" name="Stock Symbol" required>
+
+                <label for="From">Date Input 1:</label>
+                <input type="date" name="From" required>
+
+                <label for="To">Date Input 2:</label>
+                <input type="date" name="To" required>
+
+                <button type="submit">Generate Plot</button>
+            </form>
+
+            {% if plot_url %}
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Matplotlib Plot">
+            {% endif %}
         </section>
     </main>
 
-    <!-- Footer remains the same as the main page -->
     <footer>
         <p>&copy; 2024 Trading Platform</p>
     </footer>
 </body>
-</html>
+
+</html> -->
