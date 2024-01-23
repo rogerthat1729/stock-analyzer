@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Header remains the same as the main page -->
-    <header>
+    <!-- <header>
         <h1>Trading Platform</h1>
         <nav>
             <ul>
@@ -21,9 +21,9 @@
                 <li><a href="http://127.0.0.1:5000/contact">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
 
-    <main>
+    <!-- <main>
         <section>
             <h2>Login</h2>
             <form action="/login" method="post">
@@ -32,11 +32,34 @@
                 <button type="submit">Login</button>
             </form>
         </section>
-    </main>
+    </main> -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+    </div>
 
     <!-- Footer remains the same as the main page -->
-    <footer>
+    <!-- <footer>
         <p>&copy; 2024 Trading Platform</p>
-    </footer>
+    </footer> -->
 </body>
 </html>
