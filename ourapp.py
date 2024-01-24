@@ -91,7 +91,7 @@ def register():
         db.session.commit()
 
         flash('Registration successful! Please login.')
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
     return render_template('register.html')
 
 @app.route('/login', methods=['GET', 'POST'])
