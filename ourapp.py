@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from plot import give_data
 
 from markets import get_stock_data
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
@@ -59,25 +60,40 @@ def plot_to_url(plt):
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
-    plot_url = None
     if request.method == 'POST':
-        symbol = request.form['Stock Symbol']
+        num = int(request.form['num_stocks'])
         startdate = request.form['From']
         enddate = request.form['To']
-
         entity = request.form['options']
-        colors = {'OPEN':'red', 'CLOSE':'green', 'LTP':'blue'}
-        data = give_data(symbol, startdate, enddate)
+        return render_template('num_stocks.html', num=num, sd = startdate, ed = enddate, et = entity, plot_url = None)
+    return render_template('plot.html')
 
+@app.route("/plot/stocks", methods = ['GET', 'POST'])
+def add_symbols():
+    plot_url = None
+    if request.method == 'POST':
+        num = int(request.form['num'])
+        startdate = request.form['sd']
+        enddate = request.form['ed']
+        entity = request.form['et']
+        symbols = [request.form[f'stock{i}'] for i in range(num)]
+        data = give_data(symbols, startdate, enddate)
         plt.figure(figsize=(10, 6))
         plt.style.use('ggplot')
-        plt.plot(data["DATE"], data[entity], color = colors[entity])
-        plt.title(f'{symbol} {entity} vs Date')
+        for i, sym in enumerate(data):
+            plt.plot(data[sym]["DATE"], data[sym][entity], color = mpl.colormaps.get_cmap('tab10')(i), label = sym)
+        plt.title(f'{entity} vs Date for these stocks')
         plt.xlabel('Date')
         plt.ylabel(entity)
+        plt.grid(visible=False)
+        plt.legend()
         plot_url = plot_to_url(plt)
 
-    return render_template('plot.html', plot_url=plot_url)
+    return render_template('num_stocks.html', num = num, plot_url = plot_url)
+    
+@app.template_filter('range')
+def _jinja_range(number):
+    return range(number)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

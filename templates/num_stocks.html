@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <h1>Add Stock Symbols</h1>
+    {% if num %}
+        <form action = /plot/stocks method = "post">
+        {% for i in range(num) %}
+            <label for="stock{{ i }}">Stock Symbol {{ i + 1 }}:</label>
+            <input type="text" name="stock{{ i }}" required>
+        {% endfor %}
+        <input type = "hidden" name = "num" value="{{num}}">
+        <input type = "hidden" name = "sd" value="{{sd}}">
+        <input type = "hidden" name = "ed" value="{{ed}}">
+        <input type = "hidden" name = "et" value="{{et}}">
+        <button type = "submit">Generate Plot</button>
+        </form>
+    {% endif %}
+
+    {% if plot_url %}
+      <img src="data:image/png;base64,{{ plot_url }}" alt="Matplotlib Plot" />
+    {% endif %}
+
+</section>
+{% endblock %}
