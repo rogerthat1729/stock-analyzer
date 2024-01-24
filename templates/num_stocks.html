@@ -19,10 +19,14 @@
         <button type = "submit">Generate Plot</button>
         </form>
     {% endif %}
-
-    {% if plot_url %}
-      <img src="data:image/png;base64,{{ plot_url }}" alt="Matplotlib Plot" />
-    {% endif %}
+    <br><br>
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div>
+        {% if pdv %}
+            {{pdv | safe}}
+        {% endif %}
+    </div>
 
 </section>
 {% endblock %}

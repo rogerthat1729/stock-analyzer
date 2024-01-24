@@ -5,6 +5,9 @@ from plot import give_data, create_plot
 from markets import get_stock_data
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+import plotly.express as px
+import plotly.offline as po
 mpl.use('agg')
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
@@ -59,13 +62,13 @@ def plot():
         num = int(request.form['num_stocks'])
         duration = request.form['duration']
         entity = request.form['options']
-        return render_template('num_stocks.html', num=num, duration = duration, et = entity, plot_url = None)
+        return render_template('num_stocks.html', num=num, duration = duration, et = entity)
     return render_template('plot.html')
 
 @app.route("/plot/stocks", methods = ['GET', 'POST'])
 def add_symbols():
-    plot_url = None
     error = None
+    pdv = None
     if request.method == 'POST':
         num = int(request.form['num'])
         duration = request.form['duration']
@@ -75,8 +78,10 @@ def add_symbols():
             if(sym not in stock_list):
                 return render_template('num_stocks.html', error = 1, num = num)
         data = give_data(symbols, duration)
-        plot_url = create_plot(data, entity, duration)
-    return render_template('num_stocks.html', num = num, plot_url = plot_url, error = None)
+        figure = create_plot(data, entity, duration)
+        pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+
+    return render_template('num_stocks.html', num = num, pdv = pdv, error = None)
     
 @app.template_filter('range')
 def _jinja_range(number):
