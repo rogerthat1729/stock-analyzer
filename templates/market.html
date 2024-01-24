@@ -1,45 +1,69 @@
 {% extends 'base.html' %}
-    {% block css %}<link rel="stylesheet" href="{{ url_for('static', filename = 'marketstyle.css') }}" />
-    {% endblock %}
-  
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'marketstyle.css') }}" />
+{% endblock %}
 
 {% block content %}
-  
-  <section>
-    <h2>Market Data</h2>
-    <p>View the latest market trends and data.</p>
-    <div id="stock-list">
-      <div class="stock-item">
-        <h4>RELIANCE</h4>
-        <p>Reliance Industries Limited</p>
-        <p>Current Price: ₹2,430.00</p>
-        <p>P/E Ratio: 25.4</p>
-        <p>Market Cap: ₹15.31T</p>
-      </div>
-      <div class="stock-item">
-        <h4>TCS</h4>
-        <p>Tata Consultancy Services</p>
-        <p>Current Price: ₹3,299.00</p>
-        <p>P/E Ratio: 32.7</p>
-        <p>Market Cap: ₹12.19T</p>
-      </div>
-      <div class="stock-item">
-        <h4>INFY</h4>
-        <p>Infosys Limited</p>
-        <p>Current Price: ₹1,720.00</p>
-        <p>P/E Ratio: 30.2</p>
-        <p>Market Cap: ₹7.24T</p>
-      </div>
-      <!-- Add more stock items as needed -->
-    </div>
-  </section>
-  <aside>
-    <h3>Filters</h3>
-    <form id="filter-form">
-      <label for="pe-ratio">P/E Ratio:</label>
-      <input type="number" id="pe-ratio" name="pe-ratio" />
-      <!-- Add more filters as needed -->
-      <button type="submit">Apply Filters</button>
-    </form>
-  </aside>
-{% endblock %}```
+<section>
+  <h2>Market Data</h2>
+  <p>View the latest market trends and data.</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name - Symbol</th>
+        <th>P/E Ratio</th>
+        <th>Current Price</th>
+        <th>Sector</th>
+        <th>Industry</th>
+      </tr>
+    </thead>
+    <tbody id="stock-list">
+      <!-- Example of a stock item -->
+      <tr class="stock-item">
+        <td>RELIANCE - Reliance Industries Limited</td>
+        <td>25.4</td>
+        <td>₹2,430.00</td>
+        <td>Energy</td>
+        <td>Oil & Gas</td>
+      </tr>
+      <!-- Repeat for other stocks -->
+      <tr class="stock-item w-100">
+        <td>RELIANCE - Reliance Industries Limited</td>
+        <td>25.4</td>
+        <td>₹2,430.00</td>
+        <td>Energy</td>
+        <td>Oil & Gas</td>
+      </tr>
+      <tr class="stock-item">
+        <td>RELIANCE - Reliance Industries Limited</td>
+        <td>25.4</td>
+        <td>₹2,430.00</td>
+        <td>Energy</td>
+        <td>Oil & Gas</td>
+      </tr>
+      <tr class="stock-item">
+        <td>RELIANCE - Reliance Industries Limited</td>
+        <td>25.4</td>
+        <td>₹2,430.00</td>
+        <td>Energy</td>
+        <td>Oil & Gas</td>
+      </tr>
+      <tr class="stock-item">
+        <td>RELIANCE - Reliance Industries Limited</td>
+        <td>25.4</td>
+        <td>₹2,430.00</td>
+        <td>Energy</td>
+        <td>Oil & Gas</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<aside>
+  <h3>Filters</h3>
+  <form id="filter-form">
+    <label for="pe-ratio">Min P/E Ratio:</label>
+    <input type="number" id="pe-ratio" name="pe-ratio" />
+    <button type="submit">Apply Filters</button>
+  </form>
+</aside>
+{% endblock %}

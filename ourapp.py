@@ -44,9 +44,14 @@ def admin1():
     return redirect(url_for("user", name="Aqweqd", entrynum="1212"))
 
 @app.route("/market")
+
 def market():
-    stock_data = get_stock_data()
-    return render_template("market.html", stocks= stock_data)
+    pe_ratio_filter = request.args.get('pe-ratio', type=float)
+    stock_data = get_stock_data()  # Your function to fetch stock data
+    if pe_ratio_filter is not None:
+        stock_data = [stock for stock in stock_data if stock['pe_ratio'] >= pe_ratio_filter]
+    return render_template('market.html', stocks=stock_data)
+
 
 def plot_to_url(plt):
     buf = BytesIO()
