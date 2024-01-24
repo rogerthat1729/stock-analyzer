@@ -64,10 +64,15 @@ def admin1():
 def market():
     
     pe_ratio_filter = request.args.get('pe-ratio', type=float)
+    last_price_filter = request.args.get('last-price', type=float)
     filtered_stocks = get_stock()
 
     if pe_ratio_filter is not None:
-        filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= pe_ratio_filter]
+        filtered_stocks = [stock for stock in filtered_stocks if stock['PE'] >= pe_ratio_filter]
+    if last_price_filter is not None:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= last_price_filter]
+    # Add more filter conditions as needed
+
     return render_template('market.html', stocks=filtered_stocks)
 
 

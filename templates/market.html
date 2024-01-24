@@ -33,10 +33,14 @@
 </section>
 <aside>
   <h3>Filters</h3>
-  <form id="filter-form">
+  <form id="filter-form" method="get">
     <label for="pe-ratio">Min P/E Ratio:</label>
     <input type="number" id="pe-ratio" name="pe-ratio" />
+    <label for="last-price">Min Last Price:</label>
+    <input type="number" id="last-price" name="last-price" />
+    <!-- Add more inputs for additional filters -->
     <button type="submit">Apply Filters</button>
-  </form>
+</form>
+
 </aside>
 {% endblock %}
