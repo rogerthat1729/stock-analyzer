@@ -3,3 +3,4 @@ test.py
 second.html
 Ignored
 instance
+__pycache__
