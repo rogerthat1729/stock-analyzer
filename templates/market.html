@@ -11,50 +11,23 @@
     <thead>
       <tr>
         <th>Name - Symbol</th>
-        <th>P/E Ratio</th>
-        <th>Current Price</th>
-        <th>Sector</th>
-        <th>Industry</th>
+        
+        <th>Last Price</th>
+        <th>IntraDay High</th>
+        <th>IntraDay Low</th>
       </tr>
     </thead>
     <tbody id="stock-list">
-      <!-- Example of a stock item -->
+      <!-- Dynamically generate stock items -->
+      {% for stock in stocks %}
       <tr class="stock-item">
-        <td>RELIANCE - Reliance Industries Limited</td>
-        <td>25.4</td>
-        <td>₹2,430.00</td>
-        <td>Energy</td>
-        <td>Oil & Gas</td>
+        <td>{{ stock.Name }}</td>
+       
+        <td>{{ stock.LastPrice }}</td>
+        <td>{{ stock.IntraDayHigh }}</td>
+        <td>{{ stock.IntraDayLow }}</td>
       </tr>
-      <!-- Repeat for other stocks -->
-      <tr class="stock-item w-100">
-        <td>RELIANCE - Reliance Industries Limited</td>
-        <td>25.4</td>
-        <td>₹2,430.00</td>
-        <td>Energy</td>
-        <td>Oil & Gas</td>
-      </tr>
-      <tr class="stock-item">
-        <td>RELIANCE - Reliance Industries Limited</td>
-        <td>25.4</td>
-        <td>₹2,430.00</td>
-        <td>Energy</td>
-        <td>Oil & Gas</td>
-      </tr>
-      <tr class="stock-item">
-        <td>RELIANCE - Reliance Industries Limited</td>
-        <td>25.4</td>
-        <td>₹2,430.00</td>
-        <td>Energy</td>
-        <td>Oil & Gas</td>
-      </tr>
-      <tr class="stock-item">
-        <td>RELIANCE - Reliance Industries Limited</td>
-        <td>25.4</td>
-        <td>₹2,430.00</td>
-        <td>Energy</td>
-        <td>Oil & Gas</td>
-      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </section>

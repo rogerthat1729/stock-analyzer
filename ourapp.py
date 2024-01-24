@@ -13,12 +13,25 @@ from io import BytesIO
 import base64
 import pandas as pd
 
+from flask_caching import Cache
+
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+stocks = []
+
+
+#Cache Work!!
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+cache.init_app(app)
+
+@cache.cached(timeout=1000, key_prefix='stocks')
+def get_stock():
+    return get_stock_data()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -44,14 +57,18 @@ def admin():
 def admin1():
     return redirect(url_for("user", name="Aqweqd", entrynum="1212"))
 
-@app.route("/market")
 
+
+
+@app.route("/market")
 def market():
+    
     pe_ratio_filter = request.args.get('pe-ratio', type=float)
-    stock_data = get_stock_data()  # Your function to fetch stock data
+    filtered_stocks = get_stock()
+
     if pe_ratio_filter is not None:
-        stock_data = [stock for stock in stock_data if stock['pe_ratio'] >= pe_ratio_filter]
-    return render_template('market.html', stocks=stock_data)
+        filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= pe_ratio_filter]
+    return render_template('market.html', stocks=filtered_stocks)
 
 
 def plot_to_url(plt):
@@ -154,3 +171,5 @@ def about():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    stocks = get_stock()
+    
