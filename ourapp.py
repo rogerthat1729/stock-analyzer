@@ -12,6 +12,15 @@ from io import BytesIO
 import base64
 import pandas as pd
 
+stock_list = ["ADANIPORTS", "ASIANPAINT", "AXISBANK", "BAJAJ-AUTO", "BAJFINANCE", 
+                "BAJAJFINSV", "BPCL", "BHARTIARTL", "BRITANNIA", "CIPLA", "COALINDIA", 
+                "DIVISLAB", "DRREDDY", "EICHERMOT", "GRASIM", "HCLTECH", "HDFCBANK", 
+                "HDFCLIFE", "HEROMOTOCO", "HINDALCO", "HINDUNILVR", "HDFC", "ICICIBANK", 
+                "ITC", "IOC", "INDUSINDBK", "INFY", "JSWSTEEL", "KOTAKBANK", "LT", 
+                "M&M", "MARUTI", "NTPC", "NESTLEIND", "ONGC", "POWERGRID", "RELIANCE", 
+                "SBILIFE", "SHREECEM", "SBIN", "SUNPHARMA", "TCS", "TATACONSUM", "TATAMOTORS", 
+                "TATASTEEL", "TECHM", "TITAN", "UPL", "ULTRACEMCO", "WIPRO"]
+
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
@@ -56,14 +65,18 @@ def plot():
 @app.route("/plot/stocks", methods = ['GET', 'POST'])
 def add_symbols():
     plot_url = None
+    error = None
     if request.method == 'POST':
         num = int(request.form['num'])
         duration = request.form['duration']
         entity = request.form['et']
         symbols = [request.form[f'stock{i}'] for i in range(num)]
+        for sym in symbols:
+            if(sym not in stock_list):
+                return render_template('num_stocks.html', error = 1, num = num)
         data = give_data(symbols, duration)
         plot_url = create_plot(data, entity, duration)
-    return render_template('num_stocks.html', num = num, plot_url = plot_url)
+    return render_template('num_stocks.html', num = num, plot_url = plot_url, error = None)
     
 @app.template_filter('range')
 def _jinja_range(number):

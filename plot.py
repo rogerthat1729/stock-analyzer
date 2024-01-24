@@ -5,18 +5,27 @@ import numpy as np
 import sys
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from dateutil.relativedelta import relativedelta
 from jugaad_data.nse import stock_df
 from io import BytesIO
 import base64
+
+stock_list = ["ADANIPORTS", "ASIANPAINT", "AXISBANK", "BAJAJ-AUTO", "BAJFINANCE", 
+                "BAJAJFINSV", "BPCL", "BHARTIARTL", "BRITANNIA", "CIPLA", "COALINDIA", 
+                "DIVISLAB", "DRREDDY", "EICHERMOT", "GRASIM", "HCLTECH", "HDFCBANK", 
+                "HDFCLIFE", "HEROMOTOCO", "HINDALCO", "HINDUNILVR", "HDFC", "ICICIBANK", 
+                "ITC", "IOC", "INDUSINDBK", "INFY", "JSWSTEEL", "KOTAKBANK", "LT", 
+                "M&M", "MARUTI", "NTPC", "NESTLEIND", "ONGC", "POWERGRID", "RELIANCE", 
+                "SBILIFE", "SHREECEM", "SBIN", "SUNPHARMA", "TCS", "TATACONSUM", "TATAMOTORS", 
+                "TATASTEEL", "TECHM", "TITAN", "UPL", "ULTRACEMCO", "WIPRO"]
 
 def give_dates(duration):
     enddate = datetime.now().date()
     if(duration=="week"):
         startdate = enddate - relativedelta(weeks=1)
     elif(duration=="month"):
-        startdate = enddate - relativedelta(month=1)
+        startdate = enddate - relativedelta(months=1)
     elif(duration=="year"):
         startdate = enddate - relativedelta(years=1)
     elif(duration=="fiveyear"):
@@ -26,8 +35,8 @@ def give_dates(duration):
 def give_data(symbols, duration):
     # startdate = datetime.strptime(startdate, '%Y-%m-%d').date()
     # enddate = datetime.strptime(enddate, '%Y-%m-%d').date()
-    dates = give_dates(duration)
     dataframes = {}
+    dates = give_dates(duration)
     for sym in symbols:
         df = stock_df(symbol=sym, from_date=dates[0], 
                     to_date=dates[1], series="EQ")
@@ -60,5 +69,4 @@ def create_plot(data, entity, duration):
     plt.grid(visible=False)
     plt.legend()
     return plot_to_url(plt)
-
 
