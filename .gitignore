@@ -2,3 +2,5 @@ oldmain.py
 test.py
 second.html
 Ignored
+instance
+__pycache__
