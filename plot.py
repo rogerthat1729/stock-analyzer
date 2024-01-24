@@ -26,14 +26,15 @@ stock_list = ["ADANIPORTS", "ASIANPAINT", "AXISBANK", "BAJAJ-AUTO", "BAJFINANCE"
 
 def give_dates(duration):
     enddate = datetime.now().date()
+    startdate = enddate
     if(duration=="week"):
-        startdate = enddate - relativedelta(weeks=1)
+        startdate -= relativedelta(weeks=1)
     elif(duration=="month"):
-        startdate = enddate - relativedelta(months=1)
+        startdate -= relativedelta(months=1)
     elif(duration=="year"):
-        startdate = enddate - relativedelta(years=1)
+        startdate -= relativedelta(years=1)
     elif(duration=="fiveyear"):
-        startdate = enddate - relativedelta(years=5)
+        startdate -= relativedelta(years=5)
     return (startdate, enddate)
 
 def give_data(symbols, duration):

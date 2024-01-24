@@ -3,6 +3,10 @@
   <section>
     <h2>Data Visualization</h2>
 
+    {% if error %}
+        <p>{{error}}</p>
+    {% endif %}
+
     <h1>Choose your plot</h1>
 
     <form action="/plot" method="post">

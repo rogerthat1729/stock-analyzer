@@ -69,18 +69,22 @@ def plot():
 def add_symbols():
     error = None
     pdv = None
+    num = None
     if request.method == 'POST':
-        num = int(request.form['num'])
-        duration = request.form['duration']
-        entity = request.form['et']
-        symbols = [request.form[f'stock{i}'] for i in range(num)]
-        for sym in symbols:
-            if(sym not in stock_list):
-                return render_template('num_stocks.html', error = 1, num = num)
-        data = give_data(symbols, duration)
-        figure = create_plot(data, entity, duration)
-        pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-
+        if 'submit' in request.form:
+            num = int(request.form['num'])
+            duration = request.form['duration']
+            entity = request.form['et']
+            symbols = [request.form[f'stock{i}'] for i in range(num)]
+            for sym in symbols:
+                if(sym not in stock_list):
+                    error = 'Please provide all stock symbols.'
+                    return render_template('plot.html', error = error)
+            data = give_data(symbols, duration)
+            figure = create_plot(data, entity, duration)
+            pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+        if 'reset' in request.form:
+            return render_template('plot.html', error = None)
     return render_template('num_stocks.html', num = num, pdv = pdv, error = None)
     
 @app.template_filter('range')
