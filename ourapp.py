@@ -1,12 +1,11 @@
-
 from flask import Flask,redirect, url_for, request, render_template, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from plot import give_data
-
+from plot import give_data, create_plot
 from markets import get_stock_data
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+mpl.use('agg')
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from io import BytesIO
@@ -28,7 +27,7 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route("/")  # Going to the default domain automatically sends us here
+@app.route("/") 
 def home():
     return render_template("index.html")
 
@@ -40,32 +39,18 @@ def user(name, entrynum):
 def admin():
     return render_template("second.html",content = "Testing")
 
-@app.route("/admin1")
-def admin1():
-    return redirect(url_for("user", name="Aqweqd", entrynum="1212"))
-
 @app.route("/market")
 def market():
     stock_data = get_stock_data()
     return render_template("market.html", stocks= stock_data)
 
-def plot_to_url(plt):
-    buf = BytesIO()
-    plt.savefig(buf, format='png')
-    buf.seek(0)
-    buffer = b''.join(buf)
-    buffer_base64 = base64.b64encode(buffer)
-    plt.close()
-    return buffer_base64.decode('utf-8')
-
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
     if request.method == 'POST':
         num = int(request.form['num_stocks'])
-        startdate = request.form['From']
-        enddate = request.form['To']
+        duration = request.form['duration']
         entity = request.form['options']
-        return render_template('num_stocks.html', num=num, sd = startdate, ed = enddate, et = entity, plot_url = None)
+        return render_template('num_stocks.html', num=num, duration = duration, et = entity, plot_url = None)
     return render_template('plot.html')
 
 @app.route("/plot/stocks", methods = ['GET', 'POST'])
@@ -73,22 +58,11 @@ def add_symbols():
     plot_url = None
     if request.method == 'POST':
         num = int(request.form['num'])
-        startdate = request.form['sd']
-        enddate = request.form['ed']
+        duration = request.form['duration']
         entity = request.form['et']
         symbols = [request.form[f'stock{i}'] for i in range(num)]
-        data = give_data(symbols, startdate, enddate)
-        plt.figure(figsize=(10, 6))
-        plt.style.use('ggplot')
-        for i, sym in enumerate(data):
-            plt.plot(data[sym]["DATE"], data[sym][entity], color = mpl.colormaps.get_cmap('tab10')(i), label = sym)
-        plt.title(f'{entity} vs Date for these stocks')
-        plt.xlabel('Date')
-        plt.ylabel(entity)
-        plt.grid(visible=False)
-        plt.legend()
-        plot_url = plot_to_url(plt)
-
+        data = give_data(symbols, duration)
+        plot_url = create_plot(data, entity, duration)
     return render_template('num_stocks.html', num = num, plot_url = plot_url)
     
 @app.template_filter('range')

@@ -9,6 +9,7 @@
     <h2>Market Data</h2>
     <p>View the latest market trends and data.</p>
     <div id="stock-list">
+      {% for i in  %}
       <div class="stock-item">
         <h4>RELIANCE</h4>
         <p>Reliance Industries Limited</p>
@@ -16,21 +17,7 @@
         <p>P/E Ratio: 25.4</p>
         <p>Market Cap: ₹15.31T</p>
       </div>
-      <div class="stock-item">
-        <h4>TCS</h4>
-        <p>Tata Consultancy Services</p>
-        <p>Current Price: ₹3,299.00</p>
-        <p>P/E Ratio: 32.7</p>
-        <p>Market Cap: ₹12.19T</p>
-      </div>
-      <div class="stock-item">
-        <h4>INFY</h4>
-        <p>Infosys Limited</p>
-        <p>Current Price: ₹1,720.00</p>
-        <p>P/E Ratio: 30.2</p>
-        <p>Market Cap: ₹7.24T</p>
-      </div>
-      <!-- Add more stock items as needed -->
+      {% endif %}
     </div>
   </section>
   <aside>
@@ -42,4 +29,5 @@
       <button type="submit">Apply Filters</button>
     </form>
   </aside>
+
 {% endblock %}```
