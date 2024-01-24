@@ -32,9 +32,8 @@ nav ul li a {
 }
 
 main {
-    padding: 20px;
-}
-
+    padding-bottom: 60px; /* Adjust as necessary to match the footer height */
+  }
 main section {
     margin-bottom: 20px;
     background: #fff;
@@ -44,12 +43,43 @@ main section {
 }
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    padding: 20px 0;
-    background: #333;
-    color: #fff;
-}
+    background: #333; /* Or any color/theme you prefer */
+    color: white; /* Text color */
+    padding: 20px 0; /* Padding for aesthetics */
+  }
+  
 
 footer p {
     margin: 0;
 }
+
+
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Adjust height to make the form vertically centered */
+  }
+  .form-container {
+    width: 100%;
+    max-width: 400px; /* Adjust width as per your requirement */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: for shadow */
+    border-radius: 10px;
+    background: white; /* Optional: for background */
+  }
+  .form-field {
+    margin-bottom: 16px; /* Spacing between fields, adjust as needed */
+  }
+  .btn-primary {
+    width: 100%; /* Make the button full width */
+  }
+  .form-text {
+    margin-top: 16px; /* Spacing after the button, adjust as needed */
+  }
