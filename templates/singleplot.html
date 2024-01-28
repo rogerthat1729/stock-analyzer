@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+    <form method='get'>
+        <label for="duration">Time duration: </label>
+        <select name="duration" id="duration">
+            <option value="week">Last Week</option>
+            <option value="month">Last Month</option>
+            <option value="year">Last Year</option>
+            <option value="fiveyear">Last 5 Years</option>
+        </select required>
+        <br /><br />
+        <label for="options">Display a graph of:</label>
+        <select name="options" id="options">
+            <option value="OPEN">Opening Price</option>
+            <option value="CLOSE">Closing Price</option>
+            <option value="LTP">Last Traded Price</option>
+        </select>
+        <br><br>
+        <button type='submit'>Generate Plot</button>
+    </form>
+    <!-- <br>
+    <form>
+        <button type='submit' name='reset'>Reset</button>
+    </form> -->
+    <br><br>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div>
+        {% if pdv %}
+        {{pdv | safe}}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

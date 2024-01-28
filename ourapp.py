@@ -8,12 +8,12 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 import plotly.express as px
 import plotly.offline as po
-mpl.use('agg')
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from io import BytesIO
 import base64
 import pandas as pd
+from flask_caching import Cache
 
 stock_list = ["ADANIPORTS", "ASIANPAINT", "AXISBANK", "BAJAJ-AUTO", "BAJFINANCE", 
                 "BAJAJFINSV", "BPCL", "BHARTIARTL", "BRITANNIA", "CIPLA", "COALINDIA", 
@@ -30,6 +30,15 @@ app.secret_key = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+stocks = []
+
+#Cache Work!!
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+cache.init_app(app)
+
+@cache.cached(timeout=1000, key_prefix='stocks')
+def get_stock():
+    return get_stock_data()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -47,14 +56,33 @@ def home():
 def user(name, entrynum):
     return f"Hello {name}! Your entry number is {entrynum}."
 
-@app.route("/admin")
-def admin():
-    return render_template("second.html",content = "Testing")
-
 @app.route("/market")
 def market():
-    stock_data = get_stock_data()
-    return render_template("market.html", stocks= stock_data)
+    pe_ratio_filter = request.args.get('pe-ratio', type=float)
+    last_price_filter = request.args.get('last-price', type=float)
+    filtered_stocks = get_stock()
+
+    if pe_ratio_filter is not None:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['PE'] >= pe_ratio_filter]
+    if last_price_filter is not None:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= last_price_filter]
+    if 'reset' in request.form:
+        filtered_stocks = get_stock()
+
+    return render_template('market.html', stocks=filtered_stocks)
+
+@app.route('/market/<symbol>', methods = ['GET', 'POST'])
+def market_detail(symbol):
+    pdv = None
+    duration = request.args.get('duration')
+    entity = request.args.get('options')
+    symbols = [symbol]
+    if duration is not None and entity is not None:
+        data = give_data(symbols, duration)
+        figure = create_plot(data, entity, duration)
+        pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+        
+    return render_template('singleplot.html', pdv = pdv)
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
