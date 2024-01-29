@@ -10,7 +10,7 @@
     {% endif %}
 
     {% if num %}
-        <form action = /plot/stocks method = "post">
+        <form method = "post">
         {% for i in range(num) %}
             <label for="stock{{ i }}">Stock Symbol {{ i + 1 }}:</label>
             <input type="text" name="stock{{ i }}" required>
@@ -22,7 +22,7 @@
         </form>
     {% endif %}
     <br><br>
-        <form action = /plot/stocks method = "post">
+        <form method = "post">
             <button type = "submit" name = "reset">Reset</button>
         </form>
     <br><br>

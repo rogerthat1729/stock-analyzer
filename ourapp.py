@@ -15,14 +15,9 @@ import base64
 import pandas as pd
 from flask_caching import Cache
 
-stock_list = ["ADANIPORTS", "ASIANPAINT", "AXISBANK", "BAJAJ-AUTO", "BAJFINANCE", 
-                "BAJAJFINSV", "BPCL", "BHARTIARTL", "BRITANNIA", "CIPLA", "COALINDIA", 
-                "DIVISLAB", "DRREDDY", "EICHERMOT", "GRASIM", "HCLTECH", "HDFCBANK", 
-                "HDFCLIFE", "HEROMOTOCO", "HINDALCO", "HINDUNILVR", "HDFC", "ICICIBANK", 
-                "ITC", "IOC", "INDUSINDBK", "INFY", "JSWSTEEL", "KOTAKBANK", "LT", 
-                "M&M", "MARUTI", "NTPC", "NESTLEIND", "ONGC", "POWERGRID", "RELIANCE", 
-                "SBILIFE", "SHREECEM", "SBIN", "SUNPHARMA", "TCS", "TATACONSUM", "TATAMOTORS", 
-                "TATASTEEL", "TECHM", "TITAN", "UPL", "ULTRACEMCO", "WIPRO"]
+syms = pd.read_csv('ind_nifty50list.csv')
+stock_list = syms['Symbol'].tolist()
+dataframe = None
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -48,7 +43,7 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route("/") 
+@app.route("/")
 def home():
     return render_template("index.html")
 
@@ -81,39 +76,34 @@ def market_detail(symbol):
         data = give_data(symbols, duration)
         figure = create_plot(data, entity, duration)
         pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-        
     return render_template('singleplot.html', pdv = pdv)
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
     if request.method == 'POST':
-        num = int(request.form['num_stocks'])
-        duration = request.form['duration']
-        entity = request.form['options']
-        return render_template('num_stocks.html', num=num, duration = duration, et = entity)
-    return render_template('plot.html')
+        if 'submit' in request.form:
+            num = int(request.form['num_stocks'])
+            duration = request.form['duration']
+            entity = request.form['options']
+            return redirect(url_for('add_symbols', num=num, duration = duration, et = entity))
+    return render_template('plot.html', error = None)
 
-@app.route("/plot/stocks", methods = ['GET', 'POST'])
-def add_symbols():
-    error = None
-    pdv = None
-    num = None
+@app.route("/plot/stocks/<int:num>/<string:duration>/<string:et>", methods = ['GET', 'POST'])
+def add_symbols(num, duration, et):
     if request.method == 'POST':
         if 'submit' in request.form:
-            num = int(request.form['num'])
-            duration = request.form['duration']
-            entity = request.form['et']
             symbols = [request.form[f'stock{i}'] for i in range(num)]
             for sym in symbols:
-                if(sym not in stock_list):
-                    error = 'Please provide all stock symbols.'
-                    return render_template('plot.html', error = error)
+                if sym not in stock_list or sym is None:
+                    error = 'Please provide correct stock symbols.'
+                    return redirect(url_for('plot', error = error))
             data = give_data(symbols, duration)
-            figure = create_plot(data, entity, duration)
+            figure = create_plot(data, et, duration)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+            return render_template('num_stocks.html', num = num, pdv = pdv, error = None)
         if 'reset' in request.form:
-            return render_template('plot.html', error = None)
-    return render_template('num_stocks.html', num = num, pdv = pdv, error = None)
+            return redirect(url_for('plot', error = None))
+    return render_template('num_stocks.html', num = num, pdv = None, error = None)
     
 @app.template_filter('range')
 def _jinja_range(number):
