@@ -62,16 +62,17 @@ def market(loggedIn):
 
     return render_template('market.html', loggedIn = loggedIn, stocks=filtered_stocks)
 
-@app.route('/market/<symbol>', methods = ['GET', 'POST'])
+@app.route('/market/<string:symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
     pdv = None
-    duration = request.args.get('duration')
-    entity = request.args.get('options')
-    symbols = [symbol]
-    if duration is not None and entity is not None:
-        data = give_data(symbols, duration)
-        figure = create_plot(data, entity, duration)
-        pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+    if request.method == 'POST':
+        duration = request.form['duration']
+        entity = request.form['options']
+        symbols = [symbol]
+        if duration is not None and entity is not None:
+            data = give_data(symbols, duration)
+            figure = create_plot(data, entity, duration)
+            pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
     return render_template('singleplot.html', pdv = pdv)
 
 @app.route("/plot", methods = ['GET', 'POST'])
@@ -130,23 +131,28 @@ def login():
         if user and check_password_hash(user.password_hash, password):
             session['user_id'] = user.id
             session['username'] = user.username
+            session['logged_in'] = True
             return redirect(url_for('dashboard'))
         else:
             flash('Invalid username or password')
             return redirect(url_for('login'))
-    return render_template('login.html')
+    else:
+        if 'user_id' in session:
+            return redirect(url_for('dashboard'))
+        return render_template('login.html')
 
 @app.route('/dashboard')
 def dashboard():
     if 'user_id' in session:
         return render_template('welcome.html', username=session['username'])
     else:
-        return redirect(url_for('home'))
+        return redirect(url_for('login'))
 
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
     session.pop('username', None)
+    session.pop('logged_in', None)
     return redirect(url_for('home'))
 
 @app.route("/contact")

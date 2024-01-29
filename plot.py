@@ -56,19 +56,58 @@ def create_plot(data, entity, duration):
     # plt.grid(visible=False)
     # plt.legend()
     fig = go.Figure()
+    mn_price = 1e9
 
     for cnt, sym in enumerate(data):
             fig.add_trace(go.Scatter(x=data[sym]["DATE"], y=data[sym][entity],
                                     mode='lines',
                                     name=sym,
                                     line=dict(color=px.colors.qualitative.Set1[cnt])))
+            mn_price = min(mn_price, min(data[sym][entity]))
+            
     entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LTP': 'Last Traded Price'}
-    duration_strings = {'week': 'Last Week', 'month': 'Last Month', 'year': 'Last Year', 'fiveyear': 'Last 5 Years'}
+    # duration_strings = {'week': 'Last Week', 'month': 'Last Month', 'year': 'Last Year', 'fiveyear': 'Last 5 Years'}
 
-    fig.update_layout(title=f'{entity_strings[entity]} vs Date for these stocks for the {duration_strings[duration]}',
+    fig.update_layout(title=f'{entity_strings[entity]} vs Date for these stocks',
                     xaxis_title='Date',
                     yaxis_title=entity,
+                    xaxis = dict(
+                        showline=True,
+                        showgrid=True,
+                        showticklabels=True,
+                        linecolor='rgb(204, 204, 204)',
+                        linewidth=2,
+                        ticks='outside',
+                        tickfont=dict(
+                            family='Arial',
+                            size=12,
+                            color='rgb(82, 82, 82)',
+                        )
+                    ),
+                    yaxis=dict(
+                        range = [mn_price, 'auto'],
+                        showgrid=True,
+                        zeroline=False,
+                        showline=False,
+                        showticklabels=True,
+                    ),
                     showlegend=True,
-                    template='plotly_dark')
+                    plot_bgcolor='white')
+    
+    fig.update_xaxes(
+        rangeslider_visible=True,
+        rangeselector=dict(
+            buttons=list([
+                dict(count=7, label="1w", step="day", stepmode="backward"),
+                dict(count=1, label="1m", step="month", stepmode="backward"),
+                dict(count=6, label="6m", step="month", stepmode="backward"),
+                dict(count=1, label="1y", step="year", stepmode="backward"),
+                dict(step="all")
+            ])
+        ),
+        rangeselector_font = dict(size = 10),
+        rangeselector_bgcolor = 'rgb(200, 200, 200)',
+        rangeselector_font_color = 'rgb(50, 50, 50)'
+    )
     return fig
 
