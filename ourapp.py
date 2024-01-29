@@ -1,20 +1,28 @@
-
 from flask import Flask,redirect, url_for, request, render_template, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from plot import give_data
-
+from plot import give_data, create_plot
 from markets import get_stock_data
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+import plotly.express as px
+import plotly.offline as po
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from io import BytesIO
 import base64
 import pandas as pd
-
 from flask_caching import Cache
 
+stock_list = ["ADANIPORTS", "ASIANPAINT", "AXISBANK", "BAJAJ-AUTO", "BAJFINANCE", 
+                "BAJAJFINSV", "BPCL", "BHARTIARTL", "BRITANNIA", "CIPLA", "COALINDIA", 
+                "DIVISLAB", "DRREDDY", "EICHERMOT", "GRASIM", "HCLTECH", "HDFCBANK", 
+                "HDFCLIFE", "HEROMOTOCO", "HINDALCO", "HINDUNILVR", "HDFC", "ICICIBANK", 
+                "ITC", "IOC", "INDUSINDBK", "INFY", "JSWSTEEL", "KOTAKBANK", "LT", 
+                "M&M", "MARUTI", "NTPC", "NESTLEIND", "ONGC", "POWERGRID", "RELIANCE", 
+                "SBILIFE", "SHREECEM", "SBIN", "SUNPHARMA", "TCS", "TATACONSUM", "TATAMOTORS", 
+                "TATASTEEL", "TECHM", "TITAN", "UPL", "ULTRACEMCO", "WIPRO"]
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -22,16 +30,6 @@ app.secret_key = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-stocks = []
-
-
-#Cache Work!!
-cache = Cache(config={'CACHE_TYPE': 'simple'})
-cache.init_app(app)
-
-@cache.cached(timeout=1000, key_prefix='stocks')
-def get_stock():
-    return get_stock_data()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,7 +39,7 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route("/")  # Going to the default domain automatically sends us here
+@app.route("/") 
 def home():
     return render_template("index.html")
 
@@ -57,12 +55,8 @@ def admin():
 def admin1():
     return redirect(url_for("user", name="Aqweqd", entrynum="1212"))
 
-
-
-
 @app.route("/market")
 def market():
-    
     pe_ratio_filter = request.args.get('pe-ratio', type=float)
     last_price_filter = request.args.get('last-price', type=float)
     filtered_stocks = get_stock()
@@ -71,52 +65,54 @@ def market():
         filtered_stocks = [stock for stock in filtered_stocks if stock['PE'] >= pe_ratio_filter]
     if last_price_filter is not None:
         filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= last_price_filter]
-    # Add more filter conditions as needed
+    if 'reset' in request.form:
+        filtered_stocks = get_stock()
 
     return render_template('market.html', stocks=filtered_stocks)
 
-
-def plot_to_url(plt):
-    buf = BytesIO()
-    plt.savefig(buf, format='png')
-    buf.seek(0)
-    buffer = b''.join(buf)
-    buffer_base64 = base64.b64encode(buffer)
-    plt.close()
-    return buffer_base64.decode('utf-8')
+@app.route('/market/<symbol>', methods = ['GET', 'POST'])
+def market_detail(symbol):
+    pdv = None
+    duration = request.args.get('duration')
+    entity = request.args.get('options')
+    symbols = [symbol]
+    if duration is not None and entity is not None:
+        data = give_data(symbols, duration)
+        figure = create_plot(data, entity, duration)
+        pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+        
+    return render_template('singleplot.html', pdv = pdv)
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
     if request.method == 'POST':
         num = int(request.form['num_stocks'])
-        startdate = request.form['From']
-        enddate = request.form['To']
+        duration = request.form['duration']
         entity = request.form['options']
-        return render_template('num_stocks.html', num=num, sd = startdate, ed = enddate, et = entity, plot_url = None)
+        return render_template('num_stocks.html', num=num, duration = duration, et = entity)
     return render_template('plot.html')
 
 @app.route("/plot/stocks", methods = ['GET', 'POST'])
 def add_symbols():
-    plot_url = None
+    error = None
+    pdv = None
+    num = None
     if request.method == 'POST':
-        num = int(request.form['num'])
-        startdate = request.form['sd']
-        enddate = request.form['ed']
-        entity = request.form['et']
-        symbols = [request.form[f'stock{i}'] for i in range(num)]
-        data = give_data(symbols, startdate, enddate)
-        plt.figure(figsize=(10, 6))
-        plt.style.use('ggplot')
-        for i, sym in enumerate(data):
-            plt.plot(data[sym]["DATE"], data[sym][entity], color = mpl.colormaps.get_cmap('tab10')(i), label = sym)
-        plt.title(f'{entity} vs Date for these stocks')
-        plt.xlabel('Date')
-        plt.ylabel(entity)
-        plt.grid(visible=False)
-        plt.legend()
-        plot_url = plot_to_url(plt)
-
-    return render_template('num_stocks.html', num = num, plot_url = plot_url)
+        if 'submit' in request.form:
+            num = int(request.form['num'])
+            duration = request.form['duration']
+            entity = request.form['et']
+            symbols = [request.form[f'stock{i}'] for i in range(num)]
+            for sym in symbols:
+                if(sym not in stock_list):
+                    error = 'Please provide all stock symbols.'
+                    return render_template('plot.html', error = error)
+            data = give_data(symbols, duration)
+            figure = create_plot(data, entity, duration)
+            pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+        if 'reset' in request.form:
+            return render_template('plot.html', error = None)
+    return render_template('num_stocks.html', num = num, pdv = pdv, error = None)
     
 @app.template_filter('range')
 def _jinja_range(number):

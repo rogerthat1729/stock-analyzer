@@ -2,6 +2,13 @@
 {% block content %}
 <section>
     <h1>Add Stock Symbols</h1>
+
+    {% if error %}
+    <script>
+        alert('Enter valid symbol')
+    </script>
+    {% endif %}
+
     {% if num %}
         <form action = /plot/stocks method = "post">
         {% for i in range(num) %}
@@ -9,16 +16,22 @@
             <input type="text" name="stock{{ i }}" required>
         {% endfor %}
         <input type = "hidden" name = "num" value="{{num}}">
-        <input type = "hidden" name = "sd" value="{{sd}}">
-        <input type = "hidden" name = "ed" value="{{ed}}">
+        <input type = "hidden" name = "duration" value="{{duration}}">
         <input type = "hidden" name = "et" value="{{et}}">
-        <button type = "submit">Generate Plot</button>
+        <button type = "submit" name = "submit">Generate Plot</button>
         </form>
     {% endif %}
-
-    {% if plot_url %}
-      <img src="data:image/png;base64,{{ plot_url }}" alt="Matplotlib Plot" />
-    {% endif %}
+    <br><br>
+        <form action = /plot/stocks method = "post">
+            <button type = "submit" name = "reset">Reset</button>
+        </form>
+    <br><br>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div>
+        {% if pdv %}
+            {{pdv | safe}}
+        {% endif %}
+    </div>
 
 </section>
 {% endblock %}

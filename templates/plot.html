@@ -2,7 +2,10 @@
 {% block content %}
   <section>
     <h2>Data Visualization</h2>
-    <p>Interactive charts and graphs to analyze the market trends.</p>
+
+    {% if error %}
+        <p>{{error}}</p>
+    {% endif %}
 
     <h1>Choose your plot</h1>
 
@@ -12,12 +15,13 @@
       <input type="number" name="num_stocks" id = "num_stocks" required />
       <br /><br />
 
-      <label for="From">Start Date:</label>
-      <input type="date" name="From" required />
-      <br /><br />
-
-      <label for="To">End Date:</label>
-      <input type="date" name="To" required />
+      <label for="duration">Time duration: </label>
+      <select name="duration" id="duration">
+        <option value="week">Last Week</option>
+        <option value="month">Last Month</option>
+        <option value="year">Last Year</option>
+        <option value="fiveyear">Last 5 Years</option>
+      </select required>
       <br /><br />
 
       <label for="options">Display a graph of:</label>
@@ -26,7 +30,6 @@
         <option value="CLOSE">Closing Price</option>
         <option value="LTP">Last Traded Price</option>
       </select>
-
       <br /><br />
 
       <button type="submit">Add Stock Symbols</button>
