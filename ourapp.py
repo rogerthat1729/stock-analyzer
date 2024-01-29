@@ -30,7 +30,7 @@ app.secret_key = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-stocks = []
+
 
 #Cache Work!!
 cache = Cache(config={'CACHE_TYPE': 'simple'})
@@ -39,6 +39,7 @@ cache.init_app(app)
 @cache.cached(timeout=1000, key_prefix='stocks')
 def get_stock():
     return get_stock_data()
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -52,9 +53,6 @@ with app.app_context():
 def home():
     return render_template("index.html")
 
-@app.route("/<name>/<entrynum>")
-def user(name, entrynum):
-    return f"Hello {name}! Your entry number is {entrynum}."
 
 @app.route("/market")
 def market():
@@ -173,3 +171,5 @@ def about():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
+    
