@@ -31,6 +31,16 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+
+#Cache Work!!
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+cache.init_app(app)
+
+@cache.cached(timeout=1000, key_prefix='stocks')
+def get_stock():
+    return get_stock_data()
+
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
@@ -43,17 +53,6 @@ with app.app_context():
 def home():
     return render_template("index.html")
 
-@app.route("/<name>/<entrynum>")
-def user(name, entrynum):
-    return f"Hello {name}! Your entry number is {entrynum}."
-
-@app.route("/admin")
-def admin():
-    return render_template("second.html",content = "Testing")
-
-@app.route("/admin1")
-def admin1():
-    return redirect(url_for("user", name="Aqweqd", entrynum="1212"))
 
 @app.route("/market")
 def market():
@@ -172,5 +171,5 @@ def about():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    stocks = get_stock()
+    
     
