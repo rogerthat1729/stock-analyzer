@@ -4,8 +4,6 @@ import pandas as pd
 
 symbols = pd.read_csv('ind_nifty50list.csv')
 
-symbols = pd.read_csv('ind_nifty50list.csv')
-
 def get_stock_data():
     stock_list = symbols['Symbol'].tolist()
     parameters = []

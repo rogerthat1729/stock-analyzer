@@ -18,7 +18,11 @@
       <!-- Dynamically generate stock items -->
       {% for stock in stocks %}
       <tr>
+        {%if loggedIn == '1' :%}
         <td><a href = "/market/{{stock.Name}}">{{ stock.Name }}</a></td>
+        {% else %}
+        <td>{{ stock.Name }}</td>
+        {% endif %}
         <td>{{ stock.LastPrice }}</td>
         <td>{{ stock.IntraDayHigh }}</td>
         <td>{{ stock.IntraDayLow }}</td>

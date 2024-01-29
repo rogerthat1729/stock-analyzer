@@ -35,7 +35,6 @@ cache.init_app(app)
 def get_stock():
     return get_stock_data()
 
-
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
@@ -48,13 +47,12 @@ with app.app_context():
 def home():
     return render_template("index.html")
 
-
-@app.route("/market")
-def market():
+@app.route("/market/<loggedIn>")
+def market(loggedIn):
     pe_ratio_filter = request.args.get('pe-ratio', type=float)
     last_price_filter = request.args.get('last-price', type=float)
     filtered_stocks = get_stock()
-
+    
     if pe_ratio_filter is not None:
         filtered_stocks = [stock for stock in filtered_stocks if stock['PE'] >= pe_ratio_filter]
     if last_price_filter is not None:
@@ -62,7 +60,7 @@ def market():
     if 'reset' in request.form:
         filtered_stocks = get_stock()
 
-    return render_template('market.html', stocks=filtered_stocks)
+    return render_template('market.html', loggedIn = loggedIn, stocks=filtered_stocks)
 
 @app.route('/market/<symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
