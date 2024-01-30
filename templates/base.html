@@ -18,7 +18,7 @@
     </div>
     <ul class="nav-list">
       <li><a href="http://127.0.0.1:5000">Home</a></li>
-      <li><a href="http://127.0.0.1:5000/contact">News</a></li>
+      <li><a href="http://127.0.0.1:5000/news">News</a></li>
       {% if usr %}
       <li><a href="http://127.0.0.1:5000/market">Markets</a></li>
       <li><a href="http://127.0.0.1:5000/plot">Plot</a></li>
@@ -34,6 +34,21 @@
       {%endif%}
     </ul>
   </nav>
+  <div class="marquee-container">
+    <div class="marquee" aria-live="polite">
+      <div class="marquee-content">
+        <!-- Repeat the content to create a continuous effect -->
+        <span class="marquee-item">📈 Top Gainer: Company A - up by 5%</span>
+        <span class="marquee-item">📉 Top Loser: Company B - down by 3%</span>
+        <!-- Repeat the items as many times as needed to fill the screen -->
+        <span class="marquee-item">📈 Top Gainer: Company A - up by 5%</span>
+        <span class="marquee-item">📉 Top Loser: Company B - down by 3%</span>
+        <!-- ... -->
+      </div>
+    </div>
+  </div>
+  
+
   {% block content %}{% endblock %}
 
   <!-- Modal  -->
@@ -61,6 +76,18 @@
     function closeModal() {
       document.getElementById('flash-modal').style.display = 'none';
     }
+    document.addEventListener('DOMContentLoaded', function () {
+      const marqueeContent = document.querySelector('.marquee-content');
+      
+      marqueeContent.addEventListener('mouseover', function() {
+        this.style.animationPlayState = 'paused';
+      });
+    
+      marqueeContent.addEventListener('mouseout', function() {
+        this.style.animationPlayState = 'running';
+      });
+    });
+    
   </script>
 
   <footer class="footer">
