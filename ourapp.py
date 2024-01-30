@@ -70,7 +70,7 @@ def market():
 
     return render_template('market.html', stocks=filtered_stocks, usr = usr)
 
-@app.route('/market/<string:symbol>', methods = ['GET', 'POST'])
+@app.route('/market/<symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
     global usr
     if not usr:

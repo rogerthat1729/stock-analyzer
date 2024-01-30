@@ -4,7 +4,7 @@
 
     <!-- Plot Display Section -->
     <section class="plot-display-section">
-        <form class="plot-form" method='get'>
+        <form class="plot-form" method='post'>
             <div class="form-group">
                 <label for="duration">Time duration:</label>
                 <select name="duration" id="duration">
@@ -25,6 +25,10 @@
             </div>
 
             <button type='submit' class="btn">Generate Plot</button>
+        </form>
+        <br>
+        <form>
+            <button type='submit' class="btn"><a href="/market">Back</a></button>
         </form>
 
         <!-- Plotly graph container -->
