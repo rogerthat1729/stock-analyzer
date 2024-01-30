@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title%}<title>Trading Pro - Contact</title>{% endblock %}
+     {%block content%}
+    <!-- News Section -->
+    <main class="news-main">
+        <h1>Latest Stock News</h1>
+        <div class="news-container">
+            {% for article in news_articles %}
+                <div class="news-article">
+                    <img src="{{ article['urlToImage'] }}" alt="News Thumbnail" class="news-image">
+                    <h2 class="news-title">{{ article['title'] }}</h2>
+                    <p class="news-description">{{ article['description'] }}</p>
+                    <a href="{{ article['url'] }}" target="_blank" class="news-link">Read more</a>
+                    <p class="news-published">Published at: {{ article['publishedAt'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    {%endblock%}
