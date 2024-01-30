@@ -1,51 +1,45 @@
 {% extends 'base.html' %}
-{% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename = 'marketstyle.css') }}" />
-{% endblock %}
+{% block title%}<title>Trading Pro - Market</title>{% endblock %}
+     {%block content%}
 
-{% block content %}
-<section>
-  <h2>Market Data</h2>
-  <p>View the latest market trends and data.</p>
-  <table class="table table-striped">
-    <thead>
-        <th>Name-Symbol</th>
-        <th>Last Price</th>
-        <th>IntraDay High</th>
-        <th>IntraDay Low</th>
-    </thead>
-    <tbody>
-      <!-- Dynamically generate stock items -->
-      {% for stock in stocks %}
-      <tr>
-        {%if loggedIn == '1' :%}
-        <td><a href = "/market/{{stock.Name}}">{{ stock.Name }}</a></td>
-        {% else %}
-        <td>{{ stock.Name }}</td>
-        {% endif %}
-        <td>{{ stock.LastPrice }}</td>
-        <td>{{ stock.IntraDayHigh }}</td>
-        <td>{{ stock.IntraDayLow }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</section>
-<aside>
-  <h3>Filters</h3>
-  <form id="filter-form" method="get">
-    <label for="pe-ratio">Min P/E Ratio:</label>
-    <input type="number" id="peratio" name="pe-ratio" />
-    <label for="last-price">Min Last Price:</label>
-    <input type="number" id="lastprice" name="last-price" />
-    <!-- Add more inputs for additional filters -->
-    <br>
-    <button type="submit">Apply Filters</button>
-  </form>
-  <br>
-  <form action = '/market'>
-    <button type = 'submit' name = 'reset'> Reset</button>
-  </form>
+    <main class="market-main">
+      <section class="market-data">
+        <h2>Market Data</h2>
+        <p>View the latest market trends and data.</p>
+        <div class="market-table">
+          <div class="table-header">
+            <div>Name-Symbol</div>
+            <div>Last Price</div>
+            <div>IntraDay High</div>
+            <div>IntraDay Low</div>
+          </div>
+          {% for stock in stocks %}
+            <div class="table-row">
+              <div>
+                <a href="/market/{{ stock.Name }}">{{ stock.Name }}</a>
+              </div>
+              <div>{{ stock.LastPrice }}</div>
+              <div>{{ stock.IntraDayHigh }}</div>
+              <div>{{ stock.IntraDayLow }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
 
-</aside>
-{% endblock %}
+      <aside class="market-filters">
+        <h3>Filters</h3>
+        <form id="filter-form" method="get">
+        <div class="filter-form">
+          <label for="pe-ratio">Min P/E Ratio:</label>
+          <input type="number" id="peratio" name="pe-ratio" />
+          <label for="last-price">Min Last Price:</label>
+          <input type="number" id="lastprice" name="last-price" />
+          <div class="filter-buttons">
+            <button type="submit" class="filter-button">Apply Filters</button>
+            <button type="submit" name="reset" class="filter-button reset">Reset</button>
+          </div>
+        </div>
+        </form>
+      </aside>
+    </main>
+    {% endblock %}

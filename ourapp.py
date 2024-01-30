@@ -35,6 +35,9 @@ cache.init_app(app)
 def get_stock():
     return get_stock_data()
 
+insession = False
+usr = None
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
@@ -45,10 +48,15 @@ with app.app_context():
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    global usr
+    return render_template("index.html", usr = usr)
 
-@app.route("/market/<loggedIn>")
-def market(loggedIn):
+@app.route("/market")
+def market():
+    global usr
+    if not usr:
+        flash('Please login to access this page.')
+        return redirect(url_for('home', usr = usr))
     pe_ratio_filter = request.args.get('pe-ratio', type=float)
     last_price_filter = request.args.get('last-price', type=float)
     filtered_stocks = get_stock()
@@ -60,10 +68,14 @@ def market(loggedIn):
     if 'reset' in request.form:
         filtered_stocks = get_stock()
 
-    return render_template('market.html', loggedIn = loggedIn, stocks=filtered_stocks)
+    return render_template('market.html', stocks=filtered_stocks, usr = usr)
 
 @app.route('/market/<string:symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
+    global usr
+    if not usr:
+        flash('Please login to access this page.')
+        return redirect(url_for('home', usr = usr))
     pdv = None
     if request.method == 'POST':
         duration = request.form['duration']
@@ -73,34 +85,42 @@ def market_detail(symbol):
             data = give_data(symbols, duration)
             figure = create_plot(data, entity, duration)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', pdv = pdv)
+    return render_template('singleplot.html', pdv = pdv, usr = usr)
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
+    global usr
+    if not usr:
+        flash('Please login to access this page.')
+        return redirect(url_for('home', usr = usr))
     if request.method == 'POST':
         if 'submit' in request.form:
             num = int(request.form['num_stocks'])
             duration = request.form['duration']
             entity = request.form['options']
-            return redirect(url_for('add_symbols', num=num, duration = duration, et = entity))
-    return render_template('plot.html', error = None)
+            return redirect(url_for('add_symbols', num=num, duration = duration, et = entity, usr = usr))
+    return render_template('plot.html', error = None, usr = usr)
 
 @app.route("/plot/stocks/<int:num>/<string:duration>/<string:et>", methods = ['GET', 'POST'])
 def add_symbols(num, duration, et):
+    global usr
+    if not usr:
+        flash('Please login to access this page.')
+        return redirect(url_for('home', usr = usr))
     if request.method == 'POST':
         if 'submit' in request.form:
             symbols = [request.form[f'stock{i}'] for i in range(num)]
             for sym in symbols:
                 if sym not in stock_list or sym is None:
                     error = 'Please provide correct stock symbols.'
-                    return redirect(url_for('plot', error = error))
+                    return redirect(url_for('plot', error = error, usr = usr))
             data = give_data(symbols, duration)
             figure = create_plot(data, et, duration)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-            return render_template('num_stocks.html', num = num, pdv = pdv, error = None)
+            return render_template('num_stocks.html', num = num, pdv = pdv, error = None, usr = usr)
         if 'reset' in request.form:
-            return redirect(url_for('plot', error = None))
-    return render_template('num_stocks.html', num = num, pdv = None, error = None)
+            return redirect(url_for('plot', error = None, usr = usr))
+    return render_template('num_stocks.html', num = num, pdv = None, error = None, usr = usr)
     
 @app.template_filter('range')
 def _jinja_range(number):
@@ -108,6 +128,7 @@ def _jinja_range(number):
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    global usr
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -118,11 +139,12 @@ def register():
         db.session.commit()
 
         flash('Registration successful! Please login.')
-        return redirect(url_for('login'))
-    return render_template('register.html')
+        return redirect(url_for('login', usr = usr))
+    return render_template('register.html', usr = usr)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    global usr
     if(request.method=='POST'):
         username = request.form['username']
         password = request.form['password']
@@ -132,36 +154,40 @@ def login():
             session['user_id'] = user.id
             session['username'] = user.username
             session['logged_in'] = True
-            return redirect(url_for('dashboard'))
+            usr = user.username
+            return redirect(url_for('dashboard', usr = usr))
         else:
             flash('Invalid username or password')
-            return redirect(url_for('login'))
+            return redirect(url_for('login', usr = usr))
     else:
-        if 'user_id' in session:
-            return redirect(url_for('dashboard'))
-        return render_template('login.html')
+        if usr is not None:
+            return redirect(url_for('dashboard', usr = usr))
+    return render_template('login.html', usr = usr)
 
 @app.route('/dashboard')
 def dashboard():
-    if 'user_id' in session:
-        return render_template('welcome.html', username=session['username'])
+    global usr
+    if usr is not None:
+        return render_template('welcome.html', username=session['username'], usr = usr)
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for('login', usr = usr))
 
 @app.route('/logout')
 def logout():
+    global usr
     session.pop('user_id', None)
     session.pop('username', None)
     session.pop('logged_in', None)
-    return redirect(url_for('home'))
+    usr = None
+    return redirect(url_for('home', usr = usr))
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.html", usr = usr)
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", usr = usr)
 
 if __name__ == "__main__":
     app.run(debug=True)

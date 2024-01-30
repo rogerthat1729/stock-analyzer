@@ -1,85 +1,746 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+.navbar {
+background-color: #333;
+color: white;
+padding: 0 20px; /* Added padding for some space on the sides */
+display: flex; /* Use flexbox for navbar */
+justify-content: space-between; /* Aligns children to each end */
+align-items: center; /* Centers children vertically */
 }
 
-header h1 {
-    margin: 0;
+.nav-list,
+.login-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex; /* Use flexbox for the list items as well */
+align-items: center; /* Centers children vertically */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/* Remove float from both .nav-list li and .login-list li */
+.nav-list li,
+.login-list li {
+padding: 10px; /* Add padding for clickable area */
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.nav-list li a,
+.login-list li a {
+display: block;
+color: white;
+text-align: center;
+padding: 10px 16px; /* Adjusted padding for consistency */
+text-decoration: none;
+transition: background-color 0.3s;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.nav-list li a:hover,
+.login-list li a:hover {
+background-color: #555;
 }
 
-main {
-    padding-bottom: 60px; /* Adjust as necessary to match the footer height */
-  }
-main section {
-    margin-bottom: 20px;
-    background: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    background: #333; /* Or any color/theme you prefer */
-    color: white; /* Text color */
-    padding: 20px 0; /* Padding for aesthetics */
-  }
+/* BELOW IS THE DROP DOWN FEATURE THAT IS NOT IN USE RIGHT NOW */
+
+/* 
+.dropdown {
+  display: none;
+  position: absolute;
+
+  background-color: #444343;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding-left: 0px;
   
+  
+}
 
-footer p {
-    margin: 0;
+.dropdown li {
+  float: none;
+  display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: left;
+
+}
+
+.dropdown :hover {
+  display: block;
+  
+}
+
+.dropdown li:hover {
+  display: block;
+  background-color: #ddd;
+}
+
+.nav-list li:hover .dropdown {
+  display: block;
+} */
+
+
+/* Existing styles from the previous CSS code */
+
+/* Logo Styles */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  float: left;
+  padding: 0px 0px;
+  
+}
+
+.logo {
+
+  height: 55px; /* Adjust as needed */
+}
+
+.logo-name {
+  margin-left: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Adjusting navbar list for logo */
+.nav-list {
+  padding-left: 0px; /* Adjust according to logo size */
 }
 
 
 
-.main-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Adjust height to make the form vertically centered */
+/* Existing styles from the previous CSS code */
+
+/* Footer Styles */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Homepage Content Styles */
+.homepage-content {
+  padding: 20px;
+  text-align: center;
+  /* Add more styles as needed */
+}
+
+
+/* Existing styles from the previous CSS code */
+
+/* Hero Section Styles */
+.hero {
+  background-image: url('trading-background.jpg'); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Features Section Styles */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.feature {
+  text-align: center;
+  width: 30%;
+}
+
+.feature h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  font-size: 16px;
+}
+
+/* Footer Styles (already provided in the previous response) */
+
+
+
+
+/* Keyframes for background slide */
+@keyframes backgroundSlide {
+  0% {
+      background-image: url('1.png'); /* Replace with your first image */
   }
-  .form-container {
-    width: 100%;
-    max-width: 400px; /* Adjust width as per your requirement */
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: for shadow */
-    border-radius: 10px;
-    background: white; /* Optional: for background */
+  25% {
+      background-image: url('2.png'); /* Replace with your second image */
   }
-  .form-field {
-    margin-bottom: 16px; /* Spacing between fields, adjust as needed */
+  50% {
+      background-image: url('3.png'); /* Replace with your third image */
   }
-  .btn-primary {
-    width: 100%; /* Make the button full width */
+  75% {
+      background-image: url('4.png'); /* Replace with your fourth image */
   }
-  .form-text {
-    margin-top: 16px; /* Spacing after the button, adjust as needed */
+  100% {
+      background-image: url('1.png'); /* Loop back to the first image */
   }
+}
+
+/* Hero Section Styles with animation */
+.hero {
+  /* Other styles... */
+  animation: backgroundSlide 10s infinite; /* Adjust time as needed */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+
+/* Rest of the existing styles */
+
+
+/* Contact Section Styles */
+.contact {
+  padding: 50px;
+  text-align: center;
+  background-color: #fff; /* Adjust as needed */
+}
+
+.contact h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Button Styles (if not already defined) */
+
+
+/* Additional Global Styles */
+
+/* after login.html update */
+
+/* Login Section Styles */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center ;
+
+}
+
+.form-field {
+  margin-bottom: 16px;
+}
+
+.form-field input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-text {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.form-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-text a:hover {
+  text-decoration: underline;
+}
+
+/* Additional Global Styles (if not already defined in your CSS) */
+
+
+/* Footer Styles (reuse from the homepage if already defined) */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* After Register.html */
+
+/* Registration Section Styles (similar to login styles) */
+.registration-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* Button and other styles (same as login page) */
+/* ... */
+
+/* About Section Styles */
+.about-section {
+  padding: 50px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+
+/* Plot Section Styles */
+.plot-section {
+  padding: 50px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.plot-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.plot-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Plot Display Section Styles */
+.plot-display-section {
+  padding: 50px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.plot-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#plot-container {
+  margin-top: 20px;
+}
+
+
+
+/* welcome.thml made */ 
+
+/* Dashboard Styles */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.welcome-container {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.welcome-container h1 {
+  color: #007bff;
+}
+
+.logout-button {
+  display: inline-block;
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.dashboard-news, .dashboard-links {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dashboard-news h2, .dashboard-links h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.news-list, .quick-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-list li a, .quick-links li a {
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.news-list li a:hover, .quick-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .dashboard-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* After single_plot.html*/
+
+
+/*After num_stocks.html */
+/* Stock Input Section Styles */
+.stock-input-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.stock-form {
+  margin: auto;
+  max-width: 800px;
+}
+
+.stock-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stock-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stock-input label {
+  margin-bottom: 5px;
+}
+
+.stock-input input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.reset-form {
+  margin-top: 20px;
+}
+
+.reset-btn {
+  background-color: #dc3545;
+}
+
+.plot-display {
+  margin-top: 20px;
+}
+
+
+/* Market.css */
+/*
+.main-header {
+  Styles for your header 
+}*/
+
+.market-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.market-data {
+  width: 75%;
+}
+
+.market-data h2,
+.market-filters h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.market-table {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+}
+
+.table-header div {
+  flex: 1;
+  text-align: left;
+  padding: 0 10px;
+}
+
+/* Dynamically generated table rows will use these styles */
+.market-table div {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.market-table div div {
+  flex: 1;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.market-table .table-row {
+  display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.market-table .table-row:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.market-table .table-row div {
+  flex: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.market-table .table-row div a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.market-table .table-row div a:hover {
+  text-decoration: underline;
+}
+
+
+.market-filters {
+  width: 20%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.filter-form label {
+  display: block;
+}
+
+.filter-form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.filter-buttons {
+  text-align: right;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.filter-button.reset {
+  background-color: #6c757d;
+}
+
+.filter-button:hover {
+  opacity: 0.8;
+}
+
+/* .main-footer {
+   Styles for your footer 
+} */
+
+/* Additional styling for responsiveness and aesthetics */
+@media (max-width: 768px) {
+  .market-table .table-header,
+  .market-table .table-row {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+/* Modal Styles */
+
+.modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1000; /* High z-index to be on top of other content */
+}
+
+.modal-dialog-centered {
+width: 100%;
+max-width: 500px; /* Adjust width as necessary */
+margin: auto;
+}
+
+.modal-content {
+background-color: #fff;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid #e1e1e1;
+padding-bottom: 10px;
+margin-bottom: 20px;
+}
+
+.modal-title {
+margin: 0;
+}
+
+.modal-close {
+background: none;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+}
+
+.modal-body {
+max-height: 300px;
+overflow-y: auto; /* Enable scroll if content is too long */
+}

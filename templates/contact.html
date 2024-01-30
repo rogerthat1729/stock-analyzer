@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
-
-{% block content %}
-  <section>
-    <h2>Contact Us</h2>
-    <form action="/submit_contact" method="post">
-      <input type="text" name="name" placeholder="Your Name" />
-      <input type="email" name="email" placeholder="Your Email" />
-      <textarea name="message" placeholder="Your Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-{% endblock %}
+{% block title%}<title>Trading Pro - Contact</title>{% endblock %}
+     {%block content%}
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="/submit_contact" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </section>
+    {%endblock%}

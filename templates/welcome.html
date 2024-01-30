@@ -1,18 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Platform</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <div class="welcome-container">
-        <h1>Welcome, {{ username }}!</h1><br>
-        <p>This is your dashboard.</p><br>
-        <a href="/plot" class="plot-button">Plot stocks vs time</a><br>
-        <a href="/market/1" class="market-button">View market data</a><br>
-        <a href="/logout" class="logout-button">Logout</a>
+{% extends 'base.html' %}
+{% block title%}<title>Trading Pro - Dashboard</title>{% endblock %}
+     {%block content%}
+
+    <div class="dashboard-container">
+        <div class="welcome-container">
+            <h1>Welcome, {{ username }}!</h1>
+            <p>This is your dashboard.</p>
+            <a href="/logout" class="logout-button">Logout</a>
+        </div>
+
+        <div class="dashboard-news">
+            <h2>Latest News</h2>
+            <ul class="news-list">
+                <li><a href="#">News Item 1</a></li>
+                <li><a href="#">News Item 2</a></li>
+                <li><a href="#">News Item 3</a></li>
+            </ul>
+        </div>
+
+        <div class="dashboard-links">
+            <h2>Quick Links</h2>
+            <ul class="quick-links">
+                <li><a href="/market">Markets</a></li>
+                <li><a href="/plot">Data Visualization</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
     </div>
-</body>
-</html>
+{% endblock %}

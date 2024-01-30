@@ -1,34 +1,38 @@
 {% extends 'base.html' %}
-{% block content %}
-<section>
-    <form method='post'>
-        <label for="duration">Time duration: </label>
-        <select name="duration" id="duration">
-            <option value="week">Last Week</option>
-            <option value="month">Last Month</option>
-            <option value="year">Last Year</option>
-            <option value="fiveyear">Last 5 Years</option>
-        </select required>
-        <br /><br />
-        <label for="options">Display a graph of:</label>
-        <select name="options" id="options">
-            <option value="OPEN">Opening Price</option>
-            <option value="CLOSE">Closing Price</option>
-            <option value="LTP">Last Traded Price</option>
-        </select>
-        <br><br>
-        <button type='submit'>Generate Plot</button>
-    </form>
-    <!-- <br>
-    <form>
-        <button type='submit' name='reset'>Reset</button>
-    </form> -->
-    <br><br>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <div>
-        {% if pdv %}
-        {{pdv | safe}}
-        {% endif %}
-    </div>
-</section>
-{% endblock %}
+{% block title%}<title>Trading Pro - Market Plot</title>{% endblock %}
+     {%block content%}
+
+    <!-- Plot Display Section -->
+    <section class="plot-display-section">
+        <form class="plot-form" method='get'>
+            <div class="form-group">
+                <label for="duration">Time duration:</label>
+                <select name="duration" id="duration">
+                    <option value="week">Last Week</option>
+                    <option value="month">Last Month</option>
+                    <option value="year">Last Year</option>
+                    <option value="fiveyear">Last 5 Years</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="options">Display a graph of:</label>
+                <select name="options" id="options">
+                    <option value="OPEN">Opening Price</option>
+                    <option value="CLOSE">Closing Price</option>
+                    <option value="LTP">Last Traded Price</option>
+                </select>
+            </div>
+
+            <button type='submit' class="btn">Generate Plot</button>
+        </form>
+
+        <!-- Plotly graph container -->
+        <div id="plot-container">
+            <!-- Generated plot will be displayed here -->
+            {% if pdv %}
+            {{pdv | safe}}
+            {% endif %}
+        </div>
+    </section>
+    {% endblock %}

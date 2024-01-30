@@ -57,6 +57,7 @@ def create_plot(data, entity, duration):
     # plt.legend()
     fig = go.Figure()
     mn_price = 1e9
+    mx_price = 0
 
     for cnt, sym in enumerate(data):
             fig.add_trace(go.Scatter(x=data[sym]["DATE"], y=data[sym][entity],
@@ -64,6 +65,7 @@ def create_plot(data, entity, duration):
                                     name=sym,
                                     line=dict(color=px.colors.qualitative.Set1[cnt])))
             mn_price = min(mn_price, min(data[sym][entity]))
+            mx_price = max(mx_price, max(data[sym][entity]))
             
     entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LTP': 'Last Traded Price'}
     # duration_strings = {'week': 'Last Week', 'month': 'Last Month', 'year': 'Last Year', 'fiveyear': 'Last 5 Years'}
@@ -85,7 +87,7 @@ def create_plot(data, entity, duration):
                         )
                     ),
                     yaxis=dict(
-                        range = [mn_price, 'auto'],
+                        range = [mn_price, mx_price],
                         showgrid=True,
                         zeroline=False,
                         showline=False,
