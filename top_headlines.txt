@@ -1,0 +1,149 @@
+{
+    "status": "ok",
+    "totalResults": 11,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "NDTV News"
+            },
+            "author": null,
+            "title": "Adani Flagship Stock May Return Over 50%, Says Analyst - NDTV",
+            "description": "The Adani Group's flagship company can deliver a gain of more than 50%, Cantor Fitzgerald & Co. said, adding that the firm is central to India's economic ambitions.",
+            "url": "https://www.ndtv.com/india-news/adani-flagship-stock-may-return-over-50-says-analyst-4952495",
+            "urlToImage": "https://c.ndtvimg.com/2024-01/a9rq3it8_adani-generic-bloomberg_625x300_29_January_24.jpeg?ver-20240117.06",
+            "publishedAt": "2024-01-29T07:26:44Z",
+            "content": "Adani Enterprises rose as much as 5.4% on Monday and the other group firms also gained.\r\nThe Adani Group's flagship company can deliver a gain of more than 50%, Cantor Fitzgerald &amp; Co. said, addi\u2026 [+1788 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Livemint"
+            },
+            "author": "Asit Manohar",
+            "title": "3:5 bonus shares, 1:10 stock split: Multibagger SME stock turns \u20b91 lakh an allottee into \u20b94.41 lakh in 5 years | Mint - Mint",
+            "description": "Multibagger stock: The SME stock listed on NSE SME Emerge platform on 5th April 2019 at  \u20b9255, delivering a nominal premium of  \u20b93 per share",
+            "url": "https://www.livemint.com/market/stock-market-news/35-bonus-shares-1-10-stock-split-multibagger-sme-stock-turns-rs-1-lakh-an-allootte-into-rs-4-41-lakh-in-5-years-11706510341627.html",
+            "urlToImage": "https://www.livemint.com/lm-img/img/2024/01/29/1600x900/Multibagger_stock_SME_stocks_Stock_market_news_1706510477078_1706510477372.jpg",
+            "publishedAt": "2024-01-29T06:55:25Z",
+            "content": "3:5 bonus shares, 1:10 stock split: A long-term stock market investor enjoys some extra benefits over a short-term investor or a trader. While short-term investors and traders earn from the stock mov\u2026 [+3461 chars]"
+        },
+        {
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "Nikhil Agarwal",
+            "title": "HDFC Bank shares rally 2% as LIC ready to play white knight - The Economic Times",
+            "description": "HDFC Bank stock is trading at decadal-low valuations of about 2.1 times to book value. Not just LIC, but other long-term investors are finding value in the stock.",
+            "url": "https://economictimes.indiatimes.com/markets/stocks/news/hdfc-bank-shares-rally-2-as-lic-ready-to-play-white-knight/articleshow/107221120.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-107221096,width-1200,height-630,imgsize-28532,overlay-etmarkets/photo.jpg",
+            "publishedAt": "2024-01-29T06:15:37Z",
+            "content": "Following a 14% downside seen in seven trading sessions after Q3 disappointment, shares of HDFC Bank on Monday jumped up to 2% to the day's high of Rs 1,462.85 after investors took comfort in RBI's a\u2026 [+2366 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Livemint"
+            },
+            "author": "Asit Manohar",
+            "title": "Stock market today: BPCL share price trades positive ahead of Q3 results today. Buy or wait? | Mint - Mint",
+            "description": "BPCL Q3 results today: The board of directors of the PSU company is going to consider and approve the un-audited Q3 results 2024",
+            "url": "https://www.livemint.com/market/stock-market-news/stock-market-today-bpcl-share-price-trades-positive-ahead-of-q3-results-today-buy-or-wait-11706505655140.html",
+            "urlToImage": "https://www.livemint.com/lm-img/img/2024/01/29/1600x900/BPCL_share_price_Q3_result_today_Stock_market_news_1706505911520_1706505911724.jpg",
+            "publishedAt": "2024-01-29T05:36:26Z",
+            "content": "Stock market today: Bharat Petroleum Corporation Limited (BPCL) is going to declare its Q3 results today. Therefore, BPCL share price is expected to remain under the radar of stock market observers a\u2026 [+3140 chars]"
+        },
+        {
+            "source": {
+                "id": "the-times-of-india",
+                "name": "The Times of India"
+            },
+            "author": "ETMarkets.com",
+            "title": "Hot Stocks: Brokerage firms on HDFC Bank, Dalmia Bharat, SBI Life and IOC - The Economic Times",
+            "description": "Macquarie maintained outperform rating on HDFC Bank with target price of Rs 2075. The bank is consolidating, focusing on NIMs. Deposit growth must exceed loan growth by 400bps over next 3 years for pre-merger NIMs. CLSA raised target price for SBI Life to Rs \u2026",
+            "url": "https://economictimes.indiatimes.com/markets/stocks/news/hot-stocks-brokerage-firms-on-hdfc-bank-dalmia-bharat-sbi-life-and-ioc/articleshow/107217809.cms",
+            "urlToImage": "https://img.etimg.com/thumb/msid-107217795,width-1200,height-630,imgsize-29832,overlay-etmarkets/photo.jpg",
+            "publishedAt": "2024-01-29T04:39:54Z",
+            "content": "Brokerage Nomura maintained a neutral rating on IOC while CLSA retained buy calls on SBI Life and Dalmia Bharat. Macquarie retained an outperform rating on HDFC Bank.We have collated a list of recomm\u2026 [+2112 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Moneycontrol"
+            },
+            "author": "Dhuraivel Gunasekaran",
+            "title": "Chasing multibaggers: Micro-cap stocks that Flexicap MFs added - Moneycontrol",
+            "description": "Quality microcap stocks have the potential to outperform over the long term. Despite market highs, Flexicap mutual funds can add small- and micro-cap stocks due to the flexibility",
+            "url": "https://www.moneycontrol.com/news/photos/business/personal-finance/chasing-multibaggers-micro-cap-stocks-that-flexicap-mfs-added-12138101.html",
+            "urlToImage": "https://images.moneycontrol.com/static-mcnews/2024/01/Intro1-3-770x432.jpg",
+            "publishedAt": "2024-01-29T02:27:56Z",
+            "content": "Discover the latest business news, Sensex, and Nifty updates. Obtain Personal Finance insights, tax queries, and expert opinions on Moneycontrol or download the Moneycontrol App to stay updated!"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Moneycontrol"
+            },
+            "author": "Sunil Shankar Matkar",
+            "title": "Trade Spotlight | Your strategy to deal in Nalco, IFB Industries, Rain Industries today - Moneycontrol",
+            "description": "NALCO formed bullish candlestick pattern on the daily charts, with strong volumes. The stock traded well above all key moving averages (20, 50, 100 and 200-day EMA - exponential moving average), which is a positive sign.",
+            "url": "https://www.moneycontrol.com/news/business/markets/trade-spotlight-your-strategy-to-deal-in-nalco-ifb-industries-rain-industries-today-12138541.html",
+            "urlToImage": "https://images.moneycontrol.com/static-mcnews/2023/12/stocks_sensex_nifty_stockmarket1-1-770x433.jpg",
+            "publishedAt": "2024-01-29T00:46:49Z",
+            "content": "Technically, the benchmark Nifty 50 is expected to be volatile in the coming days, especially after the correction in last couple of weeks. But, on the overall, the sentiments are still in favour of \u2026 [+4206 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Moneycontrol"
+            },
+            "author": "Sameet Chavan",
+            "title": "Hot Stocks | Bet on Samvardhana Motherson, sell Jubilant Foodworks for short term - Moneycontrol",
+            "description": "The levels to monitor in the Budget week are around the psychological mark of 21,000, coinciding with 50-SMA. In the case of any negative surprises, Nifty may decline towards 20,800 or even towards the bullish gap of 20,500.",
+            "url": "https://www.moneycontrol.com/news/business/markets/hot-stocks-bet-on-samvardhana-motherson-sell-jubilant-foodworks-for-short-term-12138391.html",
+            "urlToImage": "https://images.moneycontrol.com/static-mcnews/2020/11/buy-2-1-770x433.jpg",
+            "publishedAt": "2024-01-29T00:44:24Z",
+            "content": "The Nifty 50 slipped on the monthly expiry day\u00a0on January 25 at the end of a volatile session, concluding the week with a percent cut, just above 21,350.\r\nFor the second consecutive week, the Nifty e\u2026 [+3087 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Etnownews.com"
+            },
+            "author": "ET Now Digital",
+            "title": "88% JUMP in 3 months! Multibagger stock to consider dividend on February 2 - Do you own? - ET Now",
+            "description": "EIL is set to deliberate on an interim dividend for the financial year 2023-24 during its Board of Directors meeting scheduled on February 2, 2024. According to a BSE filing on January 24, 2024, the meeting will also encompass the discussion and approval of t\u2026",
+            "url": "https://www.etnownews.com/markets/88-jump-in-3-months-multibagger-stock-to-consider-dividend-on-february-2-do-you-own-article-107204623",
+            "urlToImage": "https://etstatic.tnn.in/thumb/msid-107204623,width-1280,height-720,resizemode-75/107204623.jpg",
+            "publishedAt": "2024-01-28T13:02:30Z",
+            "content": "RITES share price NSE, BSE: LIC-backed PSU stock SOARS 12%; to declare dividend in Q3 - Paid Rs 20.25 per share in FY23"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Rediff.com"
+            },
+            "author": "Ram Prasad Sahu",
+            "title": "Asian Paints needs fresh coat as margin pressures build up in markets - Rediff.com",
+            "description": "A weaker-than-expected sales performance, concerns about higher competitive intensity in the current year, and earning cuts by some brokerages have weighed on the stock of the country's largest paint maker, Asian Paints.\n\nWhile the Q3 volume show was slightly\u2026",
+            "url": "https://www.rediff.com/money/report/asian-paints-needs-fresh-coat-as-margin-pressures-build-up-in-markets/20240127.htm",
+            "urlToImage": "https://im.rediff.com/money/2023/nov/06nov-asian-paints.jpg",
+            "publishedAt": "2024-01-27T14:40:13Z",
+            "content": "A weaker-than-expected sales performance, concerns about higher competitive intensity in the current year, and earning cuts by some brokerages have weighed on the stock of the country\u2019s largest paint\u2026 [+3992 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Tradebrains.in"
+            },
+            "author": "Trade Brains",
+            "title": "Stocks to Watch: 6 Stocks that will trade ex-dividend next week - Trade Brains",
+            "description": "The dividend is the amount of money that a company pays to its shareholders as dividends on a per-share basis. On the other side, the dividend yield indicates how much a company pays in dividends each year based on its stock price.",
+            "url": "https://tradebrains.in/features/stocks-to-watch-6-stocks-that-will-trade-ex-dividend-next-week-8/",
+            "urlToImage": "https://tradebrains.in/features/wp-content/uploads/2023/03/market-cover-image-1.jpg",
+            "publishedAt": "2024-01-27T14:30:00Z",
+            "content": "The dividend is the amount of money that a company pays to its shareholders as dividends on a per-share basis. On the other side, the dividend yield indicates how much a company pays in dividends eac\u2026 [+5167 chars]"
+        }
+    ]
+}

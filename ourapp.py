@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from plot import give_data, create_plot
 from markets import get_stock_data
+from news import get_stock_news
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
@@ -34,6 +35,10 @@ cache.init_app(app)
 @cache.cached(timeout=1000, key_prefix='stocks')
 def get_stock():
     return get_stock_data()
+
+@cache.cached(timeout=2000, key_prefix='news')
+def get_news():
+    return get_stock_news()
 
 insession = False
 usr = None
@@ -188,6 +193,12 @@ def contact():
 @app.route("/about")
 def about():
     return render_template("about.html", usr = usr)
+
+@app.route("/news")
+def latest_news():
+    global usr
+    news_data = get_news() 
+    return render_template('news.html', news_articles=news_data['articles'],usr = usr)
 
 if __name__ == "__main__":
     app.run(debug=True)
