@@ -620,52 +620,7 @@ background-color: #555;
 }
 
 
-/*After num_stocks.html */
-/* Stock Input Section Styles */
-.stock-input-section {
-  padding: 20px;
-  text-align: center;
-}
 
-.stock-form {
-  margin: auto;
-  max-width: 800px;
-}
-
-.stock-input-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.stock-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stock-input label {
-  margin-bottom: 5px;
-}
-
-.stock-input input {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-.reset-form {
-  margin-top: 20px;
-}
-
-.reset-btn {
-  background-color: #dc3545;
-}
-
-.plot-display {
-  margin-top: 20px;
-}
 
 
 /* Market.css */
@@ -869,6 +824,7 @@ overflow-y: auto; /* Enable scroll if content is too long */
 }
 
 .news-article {
+  align-self: center;
   width: 30%;
   margin-bottom: 20px;
   padding: 10px;
@@ -883,7 +839,9 @@ overflow-y: auto; /* Enable scroll if content is too long */
 }
 
 .news-title {
-  color: #007bff;
+  /* color: #007bff; */
+  color:#007bff ;
+  background-color:#ddd;
   font-size: 18px;
   margin: 10px 0;
 }
@@ -945,3 +903,138 @@ select {
   display: block;
   margin-top: 5px;
 }
+
+
+/* Updates num_stocks page */
+
+/* Plot Page Styles */
+.plot-page-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.plot-display-container {
+  width: 68%;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.stock-input-container {
+  width: 28%; /* Adjust width as necessary */
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-left: 2%; /* Spacing between the two sections */
+}
+
+.stock-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-input {
+  margin-bottom: 10px;
+}
+
+.stock-input input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.reset-btn {
+  background-color: #dc3545;
+}
+
+.reset-btn:hover {
+  background-color: #b02a37;
+}
+
+@media (max-width: 768px) {
+  .plot-page-container {
+      flex-direction: column;
+  }
+
+  .plot-display-container,
+  .stock-input-container {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+.stock-info-container {
+  width: 20%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-info {
+  margin-bottom: 15px;
+}
+
+/*After num_stocks.html */
+/* Stock Input Section Styles */
+/* .stock-input-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.stock-form {
+  margin: auto;
+  max-width: 800px;
+}
+
+
+.stock-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.stock-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stock-input label {
+  margin-bottom: 5px;
+}
+
+.stock-input input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.reset-form {
+  margin-top: 20px;
+}
+
+
+
+.plot-display {
+  margin-top: 20px;
+} */

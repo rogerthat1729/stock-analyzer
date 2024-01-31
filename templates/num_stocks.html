@@ -1,50 +1,59 @@
+
+
 {% extends 'base.html' %}
-{% block title%}<title>Trading Pro - Plot Stocks</title>{% endblock %}
-{%block content%}
+{% block title %}<title>Trading Pro - Plot Stocks</title>{% endblock %}
+{% block content %}
 
-<section class="stock-input-section">
-    <h1>Add Stock Symbols</h1>
+<div class="plot-page-container">
+    <div class="plot-display-container">
+        {% if pdv %}
+        {{ pdv | safe }}
+        {% endif %}
+    </div>
+    
 
-    {% if error %}
-    <script>alert('Enter valid symbol')</script>
-    {% endif %}
+    {% if data %}
+        <div class="stock-info-container">
+            
+            {% for sym in data %}
+            <div class='stock-info'>
+                <h3>{{ sym }} Information</h3>
+                <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
+                <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
+            </div>
+            {% endfor %}
+            
+            
+            <form method="post" class="reset-form">
+                <button type="submit" name="reset" class="btn reset-btn">Reset</button>
+            </form>
+        </div>
+    {% else %}
+    <div class="stock-input-container">
+        <h1>Add Stock Symbols</h1>
+        {% if error %}
+        <script>alert('Enter valid symbol')</script>
+        {% endif %}
 
-    {% if num %}
-    <form method="post" class="stock-form">
-        <div class="stock-input-container">
+        {% if num %}
+        <form method="post" class="stock-form">
             {% for i in range(num) %}
             <div class="stock-input">
                 <label for="stock{{ i }}">Stock {{ i + 1 }}:</label>
                 <input type="text" name="stock{{ i }}" id="stock{{ i }}" required>
             </div>
             {% endfor %}
-        </div>
-        <input type="hidden" name="num" value="{{ num }}">
-        <input type="hidden" name="duration" value="{{ duration }}">
-        <input type="hidden" name="et" value="{{ et }}">
-        <button type="submit" name="submit" class="btn">Generate Plot</button>
-    </form>
-    {% endif %}
-
-    <form method="post" class="reset-form">
-        <button type="submit" name="reset" class="btn reset-btn">Reset</button>
-    </form>
-    <br>
-    {% if data %}
-    {% for sym in data%}
-    <div class='stock-info'>
-        <h3>{{ sym }} Information</h3>
-        <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
-        <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
-    </div>
-    {% endfor %}
-    {% endif %}
-    <br>
-    <div class="plot-display">
-        {% if pdv %}
-        {{ pdv | safe }}
+            <input type="hidden" name="num" value="{{ num }}">
+            <input type="hidden" name="duration" value="{{ duration }}">
+            <input type="hidden" name="et" value="{{ et }}">
+            <button type="submit" name="submit" class="btn">Generate Plot</button>
+        </form>
+        <form method="post" class="reset-form">
+            <button type="submit" name="reset" class="btn reset-btn">Reset</button>
+        </form>
         {% endif %}
     </div>
-</section>
+    {% endif %}
+</div>
 
 {% endblock %}

@@ -31,7 +31,7 @@ def get_stock():
 def get_news():
     return get_stock_news()
 
-usr = None
+usr = 12345
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
