@@ -126,6 +126,7 @@ def get_current_data():
                 to_sort.append((diff, sym))
         except Exception as e:
             print(f"Data not available for symbol: {sym}. Skipping.")
+
             continue
     to_sort.sort()
     all_data = []
@@ -133,11 +134,8 @@ def get_current_data():
         df = stock_df(symbol=to_sort[i][1], from_date=dates[0], 
                     to_date=dates[1], series="EQ")
         data = {}
+        data = df.iloc[0].to_dict()
         data['symbol'] = to_sort[i][1]
-        data['open'] = df['OPEN'].iloc[0]
-        data['low'] = df['LOW'].iloc[0]
-        data['high'] = df['HIGH'].iloc[0]
-        data['close'] = df['CLOSE'].iloc[0]
         all_data.append(data)
     return all_data
 

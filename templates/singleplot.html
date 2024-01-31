@@ -1,42 +1,52 @@
 {% extends 'base.html' %}
 {% block title%}<title>Trading Pro - Market Plot</title>{% endblock %}
-     {%block content%}
+{%block content%}
 
-    <!-- Plot Display Section -->
-    <section class="plot-display-section">
-        <h2>{{symbol}} Data Visualization</h2>
+<!-- Plot Display Section -->
+<section class="plot-display-section">
+    <h2>{{symbol}} Data Visualization</h2>
 
-        <form class="plot-form" method='post'>
-            <div class="form-group">
-                <label for="options">Display a graph of:</label>
-                <select name="options" id="options">
-                    <option value="OPEN">Opening Price</option>
-                    <option value="CLOSE">Closing Price</option>
-                    <option value="LOW">Intraday Low</option>
-                    <option value="HIGH">Intraday High</option>
-                    {% if type == 'stock' %}
-                    <option value="VOLUME">Volume</option>
-                    <option value="VALUE">Value</option>
-                    <option value="NO OF TRADES">No of Trades</option>
-                    {% endif %}
-                </select>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="plottype">Type of graph:</label>
-                <select name="plottype" id="plottype">
-                    <option value="normal">Line Graph</option>
-                    <option value="candle">Candlestick Plot</option>
-                </select>
-            </div>
-            <br>
-            <button type='submit' class="btn">Generate Plot</button>
-        </form>
-        <br><br>
-        <div id="plot-container">
-            {% if pdv %}
-            {{pdv | safe}}
-            {% endif %}
+    <form class="plot-form" method='post'>
+        <div class="form-group">
+            <label for="options">Display a graph of:</label>
+            <select name="options" id="options">
+                <option value="OPEN">Opening Price</option>
+                <option value="CLOSE">Closing Price</option>
+                <option value="LOW">Intraday Low</option>
+                <option value="HIGH">Intraday High</option>
+                {% if type == 'stock' %}
+                <option value="VOLUME">Volume</option>
+                <option value="VALUE">Value</option>
+                <option value="NO OF TRADES">No of Trades</option>
+                {% endif %}
+            </select>
         </div>
-    </section>
-    {% endblock %}
+        <br>
+        <div class="form-group">
+            <label for="plottype">Type of graph:</label>
+            <select name="plottype" id="plottype">
+                <option value="normal">Line Graph</option>
+                <option value="candle">Candlestick Plot</option>
+            </select>
+        </div>
+        <br>
+        <button type='submit' class="btn">Generate Plot</button>
+    </form>
+    <br><br>
+    {% if data %}
+    {% for sym in data%}
+    <div class='stock-info'>
+        <h3>{{ sym }} Information</h3>
+        <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
+        <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <br>
+    <div id="plot-container">
+        {% if pdv %}
+        {{pdv | safe}}
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
