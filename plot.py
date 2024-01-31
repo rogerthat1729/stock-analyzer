@@ -2,10 +2,13 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-from jugaad_data.nse import stock_df, index_df
+from jugaad_data.nse import stock_df, index_df,NSELive
 
 entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Market Cap', 'NO OF TRADES':'No of Trades'}
 type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
+    
+
+
 
 def give_dates(duration):
     enddate = datetime.now().date()
@@ -134,6 +137,12 @@ def get_current_data():
         data['diff'] = "{:.2f}".format(diff)
         all_data.append(data)
     return all_data
+
+def convert_to_dict(df):
+    data = {}
+    for i in range(len(df)):
+        data[df[i]['symbol']] = df[i]
+    return data
 
 def get_performers(data):
     return (data[:5], list(reversed(data[-5:])))
