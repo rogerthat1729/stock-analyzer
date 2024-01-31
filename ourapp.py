@@ -75,6 +75,7 @@ def market():
 @app.route('/market/<symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
     global usr
+    data = None
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
@@ -87,7 +88,7 @@ def market_detail(symbol):
             data = give_data(symbols)
             figure = create_plot(data, entity, 'stock',typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', symbol = symbol, pdv = pdv, usr = usr, type = 'stock')
+    return render_template('singleplot.html', symbol = symbol, pdv = pdv, usr = usr, type = 'stock', data = data)
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
@@ -106,6 +107,7 @@ def plot():
 @app.route("/plot/stocks/<int:num>/<string:et>/<string:typ>", methods = ['GET', 'POST'])
 def add_symbols(num, et, typ):
     global usr
+    data = None
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
@@ -119,10 +121,10 @@ def add_symbols(num, et, typ):
             data = give_data(symbols)
             figure = create_plot(data, et, 'stock', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-            return render_template('num_stocks.html', num = num, pdv = pdv, error = None, usr = usr)
+            return render_template('num_stocks.html', num = num, pdv = pdv, error = None, usr = usr, data = data)
         if 'reset' in request.form:
             return redirect(url_for('plot', error = None, usr = usr))
-    return render_template('num_stocks.html', num = num, pdv = None, error = None, usr = usr)
+    return render_template('num_stocks.html', num = num, pdv = None, error = None, usr = usr, data = data)
     
 @app.template_filter('range')
 def _jinja_range(number):
@@ -201,6 +203,7 @@ def latest_news():
 def indices():
     global usr
     df = get_index_data()
+    dataframe = None
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
@@ -208,10 +211,11 @@ def indices():
     if request.method == 'POST':
         entity = request.form['options']
         typ = request.form['plottype']
+        dataframe = {'NIFTY50': df}
         if entity is not None and typ is not None:
-            figure = create_plot(df, entity, 'index', typ)
+            figure = create_plot(dataframe, entity, 'index', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv)
+    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv, data = dataframe)
 
 @app.route("/performers", methods = ['GET'])
 def gainers_and_losers():

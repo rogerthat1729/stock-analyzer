@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title%}<title>Trading Pro - Plot Stocks</title>{% endblock %}
-     {%block content%}
+{%block content%}
 
 <section class="stock-input-section">
     <h1>Add Stock Symbols</h1>
@@ -15,7 +15,7 @@
             {% for i in range(num) %}
             <div class="stock-input">
                 <label for="stock{{ i }}">Stock {{ i + 1 }}:</label>
-                <input type="text" name="stock{{ i }}" required>
+                <input type="text" name="stock{{ i }}" id="stock{{ i }}" required>
             </div>
             {% endfor %}
         </div>
@@ -29,7 +29,17 @@
     <form method="post" class="reset-form">
         <button type="submit" name="reset" class="btn reset-btn">Reset</button>
     </form>
-
+    <br>
+    {% if data %}
+    {% for sym in data%}
+    <div class='stock-info'>
+        <h3>{{ sym }} Information</h3>
+        <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
+        <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <br>
     <div class="plot-display">
         {% if pdv %}
         {{ pdv | safe }}
