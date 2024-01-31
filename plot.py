@@ -12,7 +12,7 @@ import plotly.io as pio
 from datetime import datetime, timedelta, date
 from dateutil.relativedelta import relativedelta
 from jugaad_data.nse import stock_df, index_df
-from nsetools import Nse
+
 
 entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Value', 'NO OF TRADES':'No of Trades'}
 type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
@@ -109,23 +109,24 @@ def create_plot(data, entity, type, plottype):
 
 def get_index_data():
     dates = give_dates('fiveyear')
-    df = index_df(symbol='NIFTY 50', from_date=dates[0], 
-                to_date=dates[1])
+    df = index_df(symbol='NIFTY 50', from_date=dates[0], to_date=dates[1])
     return df
 
 def get_current_data():
-    syms = pd.read_csv('ind_nifty50list.csv')
+    syms = pd.read_csv('updated_combined_nifty50_next50_total_market.csv')
+    
     stock_list = syms['Symbol'].tolist()
     dates = give_dates('day')
     to_sort = []
     for sym in stock_list:
         try:
-            df = stock_df(symbol=sym, from_date=dates[0], 
-                        to_date=dates[1], series="EQ")
-            diff = df['CLOSE'].iloc[-1] - df['OPEN'].iloc[-1]
-            to_sort.append((diff, sym))
+            df = stock_df(symbol=sym, from_date=dates[0], to_date=dates[1], series="EQ")
+            if not df.empty:
+                diff = df['CLOSE'].iloc[-1] - df['OPEN'].iloc[-1]
+                to_sort.append((diff, sym))
         except Exception as e:
-            print(f"Data is not available for {sym}")
+            print(f"Data not available for symbol: {sym}. Skipping.")
+
             continue
     to_sort.sort()
     all_data = []
