@@ -14,7 +14,6 @@
   <nav class="navbar">
     <div class="navbar-logo">
       <img src="{{ url_for('static', filename='logo.png') }}" class="logo" />
-      <!-- <span class="logo-name">VPTrading</span> -->
     </div>
     <ul class="nav-list">
       <li><a href="http://127.0.0.1:5000">Home</a></li>
@@ -38,17 +37,11 @@
     <div class="marquee" aria-live="polite">
       <div class="marquee-content">
         <!-- Repeat the content to create a continuous effect -->
-        <span class="marquee-item">📈 Top Gainer: Company A - up by 5%</span>
-        <span class="marquee-item">📉 Top Loser: Company B - down by 3%</span>
-        <!-- Repeat the items as many times as needed to fill the screen -->
-        <span class="marquee-item">📈 Top Gainer: Company A - up by 5%</span>
-        <span class="marquee-item">📉 Top Loser: Company B - down by 3%</span>
-        <!-- ... -->
+        <span class="marquee-item"><a href="/performers">📈 Top Gainers 📉 Top Losers</a></span>
       </div>
     </div>
   </div>
   
-
   {% block content %}{% endblock %}
 
   <!-- Modal  -->

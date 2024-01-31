@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title%}<title>Trading Pro - Performers</title>{% endblock %}
+{%block content%}
+
+<main class="market-main">
+    <section class="market-data">
+        <h2>Top Gainers and Losers</h2>
+        <p>View the current best and worst performing stocks in NSE.</p>
+        <div class="market-table">
+            <div class="table-header">
+                <div>Name-Symbol</div>
+                <div>Today's Opening Price</div>
+                <div>Today's Closing Price</div>
+                <div>IntraDay High</div>
+                <div>IntraDay Low</div>
+            </div>
+            {% for stock in gainers %}
+            <div class="table-row">
+                <div>
+                    <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
+                </div>
+                <div>{{ stock['open'] }}</div>
+                <div>{{ stock['close'] }}</div>
+                <div>{{ stock['high'] }}</div>
+                <div>{{ stock['low'] }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <br><br>
+        <div class="market-table">
+            <div class="table-header">
+                <div>Name-Symbol</div>
+                <div>Today's Opening Price</div>
+                <div>Today's Closing Price</div>
+                <div>IntraDay High</div>
+                <div>IntraDay Low</div>
+            </div>
+            {% for stock in losers %}
+            <div class="table-row">
+                <div>
+                    <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
+                </div>
+                <div>{{ stock['open'] }}</div>
+                <div>{{ stock['close'] }}</div>
+                <div>{{ stock['high'] }}</div>
+                <div>{{ stock['low'] }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+{% endblock %}

@@ -4,32 +4,36 @@
 
     <!-- Plot Display Section -->
     <section class="plot-display-section">
-        <form class="plot-form" method='get'>
-            <div class="form-group">
-                <label for="duration">Time duration:</label>
-                <select name="duration" id="duration">
-                    <option value="week">Last Week</option>
-                    <option value="month">Last Month</option>
-                    <option value="year">Last Year</option>
-                    <option value="fiveyear">Last 5 Years</option>
-                </select>
-            </div>
+        <h2>{{symbol}} Data Visualization</h2>
 
+        <form class="plot-form" method='post'>
             <div class="form-group">
                 <label for="options">Display a graph of:</label>
                 <select name="options" id="options">
                     <option value="OPEN">Opening Price</option>
                     <option value="CLOSE">Closing Price</option>
-                    <option value="LTP">Last Traded Price</option>
+                    <option value="LOW">Intraday Low</option>
+                    <option value="HIGH">Intraday High</option>
+                    {% if type == 'stock' %}
+                    <option value="VOLUME">Volume</option>
+                    <option value="VALUE">Value</option>
+                    <option value="NO OF TRADES">No of Trades</option>
+                    {% endif %}
                 </select>
             </div>
-
+            <br>
+            <div class="form-group">
+                <label for="plottype">Type of graph:</label>
+                <select name="plottype" id="plottype">
+                    <option value="normal">Line Graph</option>
+                    <option value="candle">Candlestick Plot</option>
+                </select>
+            </div>
+            <br>
             <button type='submit' class="btn">Generate Plot</button>
         </form>
-
-        <!-- Plotly graph container -->
+        <br><br>
         <div id="plot-container">
-            <!-- Generated plot will be displayed here -->
             {% if pdv %}
             {{pdv | safe}}
             {% endif %}
