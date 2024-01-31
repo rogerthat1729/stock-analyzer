@@ -6,9 +6,6 @@ from jugaad_data.nse import stock_df, index_df,NSELive
 
 entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Market Cap', 'NO OF TRADES':'No of Trades'}
 type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
-    
-
-
 
 csv_data = pd.read_csv('merged_stock_industry_marketcap_data.csv')
 csv_data = csv_data[['Symbol', 'Industry', 'MarketCap']]

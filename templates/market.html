@@ -1,78 +1,93 @@
 {% extends 'base.html' %}
 {% block title%}<title>Trading Pro - Market</title>{% endblock %}
-     {%block content%}
+{%block content%}
 
-    <main class="market-main">
-      <section class="market-data">
-        <h2>Market Data</h2>
-        <p>View the latest market trends and data.</p>
-        <div class="market-table">
-          <div class="table-header">
-            <div>Name-Symbol</div>
-            <div>Industry</div>
-            <div>Opening Price</div>
-            <div>Closing Price</div>
-            <div>Last Traded Price</div>
-            <div>52 Wk. High</div>
-            <div>52 Wk. Low</div>
-            <div>Volume</div>
-            <div>Market Cap(in Lakhs)</div>
-            <div>%Change</div>
+<main class="market-main">
+  <section class="market-data">
+    <h2>Market Data</h2>
+    <p>View the latest market trends and data.</p>
+    <div class="market-table">
+      <div class="table-header">
+        <div>Name-Symbol</div>
+        <div>Industry</div>
+        <div>Opening Price</div>
+        <div>Closing Price</div>
+        <div>Last Traded Price</div>
+        <div>52 Wk. High</div>
+        <div>52 Wk. Low</div>
+        <div>Volume</div>
+        <div>Market Cap(in Lakhs)</div>
+        <div>%Change</div>
+      </div>
+      {% for stock in stocks %}
+      <div class="table-row">
+        <div>
+          <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
         </div>
-        {% for stock in stocks %}
-        <div class="table-row">
-            <div>
-                <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
-            </div>
-            <div>{{ stock['Industry'] }}</div>
-            <div>{{ stock['OPEN'] }}</div>
-            <div>{{ stock['CLOSE'] }}</div>
-            <div>{{ stock['LTP'] }}</div>
-            <div>{{ stock['52W H'] }}</div>
-            <div>{{ stock['52W L'] }}</div>
-            <div>{{ stock['VOLUME'] }}</div>
-            <div>{{ stock['MarketCap'] }}</div>
-            {% if stock['sign'] == 1 %}
-              <div style = "color: green;">+{{ stock['diff'] }}%</div>
-            {% else %}
-              <div style="color: red;">{{ stock['diff'] }}%</div>
-            {% endif %}
+        <div>{{ stock['Industry'] }}</div>
+        <div>{{ stock['OPEN'] }}</div>
+        <div>{{ stock['CLOSE'] }}</div>
+        <div>{{ stock['LTP'] }}</div>
+        <div>{{ stock['52W H'] }}</div>
+        <div>{{ stock['52W L'] }}</div>
+        <div>{{ stock['VOLUME'] }}</div>
+        <div>{{ stock['MarketCap'] }}</div>
+        {% if stock['sign'] == 1 %}
+        <div style="color: green;">+{{ stock['diff'] }}%</div>
+        {% else %}
+        <div style="color: red;">{{ stock['diff'] }}%</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <aside class="market-filters">
+    <h3>Filters</h3>
+    <form id="filter-form" method="get">
+      <div class="filter-form">
+        <label for="open-min">Min Opening Price:</label>
+        <input type="range" id="open-min" name="open-min" min="0" max="50000" step="100" value='0'>
+        <span id="open-min-value"></span>
+
+        <label for="open-max">Max Opening Price:</label>
+        <input type="range" id="open-max" name="open-max" min="0" max="50000" step="100" value='0'>
+        <span id="open-max-value"></span>
+
+        <label for="last-min">Min Last Price:</label>
+        <input type="range" id="last-min" name="last-min" min="0" max="50000" step="100" value='0'>
+        <span id="last-min-value"></span>
+
+        <label for="last-max">Max Last Price:</label>
+        <input type="range" id="last-max" name="last-max" min="0" max="50000" step="100" value='0'>
+        <span id="last-max-value"></span>
+
+        <label for="volume-min">Min Volume:</label>
+        <input type="range" id="volume-min" name="volume-min" min="0" max="20000000" step="100000" value='0'>
+        <span id="volume-min-value"></span>
+
+        <label for="change-min">Min %Change:</label>
+        <input type="number" id="change-min" name="change-min" min="-100" max="100" step="1" value='0'>
+        <span id="change-min-value"></span>
+
+        <label for="change-max">Max %change:</label>
+        <input type="number" id="change-max" name="change-max" min="-100" max="100" step="1" value='0'>
+        <span id="change-max-value"></span>
+
+        <label for="stock-name">Stock Name:</label>
+        <select id="stock-name" name="stock-name">
+          <option value="">Select a Stock</option>
+          {% for stock in stocks %}
+          <option value="{{ stock['symbol'] }}">{{ stock['symbol'] }}</option>
+          {% endfor %}
+        </select>
+
+        <div class="filter-buttons">
+          <button type="submit" id = 'submit' class="filter-button">Apply Filters</button>
+          <button type="submit" name = "reset" class="filter-button reset">Reset</button>
         </div>
-        {% endfor %}
-        </div>
-      </section>
-
-      <aside class="market-filters">
-        <h3>Filters</h3>
-        <form id="filter-form" method="get">
-        <div class="filter-form">
-          <label for="open">Min OPEN:</label>
-          <input type="number" id="open" name="open" />
-          <label for="last-price">Min Last Price:</label>
-          <input type="number" id="lastprice" name="last-price" />
-
-          <!-- New Filter for Volume Name -->
-          <label for="volume-min">Min Volume:</label>
-          <input type="range" id="volume-min" name="volume-min" min="0" max="1000000" step="10000">
-          <span id="volume-min-value"></span>
-        
-          <!-- New Filter for Stock Name -->
-          <label for="stock-name">Stock Name:</label>
-          <select id="stock-name" name="stock-name">
-            <option value="">Select a Stock</option>
-            {% for stock in stocks %}
-            <option value="{{ stock['symbol'] }}">{{ stock['symbol'] }}</option>
-            {% endfor %}
-          </select>
-
-          <div class="filter-buttons">
-            <button type="submit" class="filter-button">Apply Filters</button>
-            <button type="submit" name="reset" class="filter-button reset">Reset</button>
-          </div>
-        </div>
-
-       
-        </form>
-      </aside>
-    </main>
-    {% endblock %}
+      </div>
+    </form>
+  </aside>
+</main>
+{% endblock %}

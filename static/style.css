@@ -625,20 +625,12 @@ background-color: #555;
   }
 }
 
-
-
-
-
 /* Market.css */
-/*
-.main-header {
-  Styles for your header 
-}*/
 
 .market-main {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
 }
 
 .market-data {

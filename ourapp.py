@@ -42,8 +42,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
-    
-    watchlist = db.Column(db.String(500), default='')  # stores comma-separated symbols
+    watchlist = db.Column(db.String(500), default='')
 
 with app.app_context():
     db.create_all()
@@ -59,24 +58,31 @@ def market():
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
-    pe_ratio_filter = request.args.get('open', type=float)
-    last_price_filter = request.args.get('last-price', type=float)
-     # new filters added
+    min_open_filter = request.args.get('open-min', type=float)
+    max_open_filter = request.args.get('open-max', type=float)
+    min_last_price_filter = request.args.get('last-min', type=float)
+    max_last_price_filter = request.args.get('last-max', type=float)
     volume_min_filter = request.args.get('volume-min', type=int)
-    stock_name_filter = request.args.get('stock-name')
+    min_change_filter = request.args.get('change-min', type=float)
+    max_change_filter = request.args.get('change-max', type=float)
+    stock_name_filter = request.args.get('stock-name', type=str)
     filtered_stocks = get_stock()
-    
-    if pe_ratio_filter is not None:
-        filtered_stocks = [stock for stock in filtered_stocks if stock['OPEN'] >= pe_ratio_filter]
-    if last_price_filter is not None:
-        filtered_stocks = [stock for stock in filtered_stocks if stock['LTP'] >= last_price_filter]
-    if volume_min_filter is not None:
+    if min_open_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['OPEN'] >= min_open_filter]
+    if max_open_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['OPEN'] <= max_open_filter]
+    if min_last_price_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['LTP'] >= min_last_price_filter]
+    if max_last_price_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['LTP'] <= max_last_price_filter]
+    if volume_min_filter:
         filtered_stocks = [stock for stock in filtered_stocks if stock['VOLUME'] >= volume_min_filter]
-        print(volume_min_filter)
-    
+    if min_change_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if float(stock['diff']) >= min_change_filter]
+    if max_change_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if float(stock['diff']) <= max_change_filter]
     if stock_name_filter:
         filtered_stocks = [stock for stock in filtered_stocks if stock['symbol'] == stock_name_filter]
-    
     if 'reset' in request.form:
         filtered_stocks = get_stock()
 
@@ -129,15 +135,15 @@ def add_symbols(num, et, typ):
             symbols = [request.form[f'stock{i}'] for i in range(num)]
             for sym in symbols:
                 if sym not in stock_list or sym is None:
-                    error = 'Please provide correct stock symbols.'
-                    return redirect(url_for('plot', error = error, usr = usr))
+                    flash('Please provide correct stock symbols.')
+                    return redirect(url_for('plot', usr = usr))
             data = give_data(symbols)
             figure = create_plot(data, et, 'stock', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-            return render_template('num_stocks.html', num = num, pdv = pdv, error = None, usr = usr, data = data)
+            return render_template('num_stocks.html', num = num, pdv = pdv, usr = usr, data = data)
         if 'reset' in request.form:
-            return redirect(url_for('plot', error = None, usr = usr))
-    return render_template('num_stocks.html', num = num, pdv = None, error = None, usr = usr, data = data)
+            return redirect(url_for('plot', usr = usr))
+    return render_template('num_stocks.html', num = num, pdv = None, usr = usr, data = data)
     
 @app.template_filter('range')
 def _jinja_range(number):
@@ -180,8 +186,6 @@ def login():
         if usr is not None:
             return redirect(url_for('dashboard', usr = usr))
     return render_template('login.html', usr = usr)
-
-
 
 @app.route('/logout')
 def logout():
@@ -232,37 +236,14 @@ def gainers_and_losers():
     gainers, losers = get_performers(data)
     return render_template("performers.html", usr = usr, both = [gainers, losers])
 
-
-#search bar on base page 
 @app.route('/search')
 def search():
     search_symbol = request.args.get('search_symbol').upper()
-    
-    # DO this once on start up
-    with open('SYMBOL_Marketcap.csv', 'r') as file:
-        csv_reader = csv.reader(file)
-        stock_list = [row[0] for row in csv_reader]  # Get the list of symbols from the CSV file
-    
     if search_symbol in stock_list:
         return redirect(url_for('market_detail', symbol=search_symbol))
     else:
         flash('Invalid Stock Symbol')
         return redirect(url_for('home'))
-    
-
-
-def get_live_stock_data(symbol):
-    data = get_stock()
-    for stock in data:
-        if stock['symbol'] == symbol:
-            return {
-        'Name': stock.get('Name', 'N/A'),
-        'Open': stock.get('Open', 'N/A'),
-        'High': stock.get('High', 'N/A')
-    }
-    return None
-
-
 
 @app.route('/dashboard')
 def dashboard():
@@ -271,12 +252,8 @@ def dashboard():
         #code to get the data for the symbols in watchlist
         user = User.query.get(session['user_id'])
         watchlist_symbols = user.watchlist.split(',') if user.watchlist else []
-        
         #code to get the live data for the symbols in watchlist
-        
-        live_data = get_dict_stock()
-        
-
+        live_data = convert_to_dict(get_stock())
         news_data = get_news()
         return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4],watchlist_symbols=watchlist_symbols, live_data=live_data)
     else:
@@ -292,9 +269,9 @@ def update_watchlist():
     user = User.query.get(session['user_id'])
     symbol = request.form.get('symbol')
     action = request.form.get('action')
-
     
     symbol = symbol.upper()
+
     if action == 'add':
         if symbol and symbol in stock_list and symbol not in user.watchlist:
             user.watchlist += ',' + symbol if user.watchlist else symbol
