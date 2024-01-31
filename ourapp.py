@@ -1,7 +1,7 @@
 from flask import Flask,redirect, url_for, request, render_template, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from plot import give_data, create_plot, get_index_data, get_performers, get_current_data
+from plot import give_data, create_plot, get_index_data, get_performers, get_current_data,convert_to_dict
 from news import get_stock_news
 import plotly.offline as po
 import pandas as pd
@@ -28,6 +28,10 @@ def get_stock():
     data = get_current_data()
     return list(reversed(data))
 
+@cache.cached(timeout=10000, key_prefix='dict_stocks')
+def get_dict_stock():
+    return convert_to_dict(get_current_data())
+
 @cache.cached(timeout=10000, key_prefix='news')
 def get_news():
     return get_stock_news()
@@ -38,6 +42,8 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
+    
+    watchlist = db.Column(db.String(500), default='')  # stores comma-separated symbols
 
 with app.app_context():
     db.create_all()
@@ -175,14 +181,7 @@ def login():
             return redirect(url_for('dashboard', usr = usr))
     return render_template('login.html', usr = usr)
 
-@app.route('/dashboard')
-def dashboard():
-    global usr
-    if usr is not None:
-        news_data = get_news()
-        return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4])
-    else:
-        return redirect(url_for('login', usr = usr))
+
 
 @app.route('/logout')
 def logout():
@@ -249,6 +248,65 @@ def search():
     else:
         flash('Invalid Stock Symbol')
         return redirect(url_for('home'))
+    
+
+
+def get_live_stock_data(symbol):
+    data = get_stock()
+    for stock in data:
+        if stock['symbol'] == symbol:
+            return {
+        'Name': stock.get('Name', 'N/A'),
+        'Open': stock.get('Open', 'N/A'),
+        'High': stock.get('High', 'N/A')
+    }
+    return None
+
+
+
+@app.route('/dashboard')
+def dashboard():
+    global usr
+    if usr is not None:
+        #code to get the data for the symbols in watchlist
+        user = User.query.get(session['user_id'])
+        watchlist_symbols = user.watchlist.split(',') if user.watchlist else []
+        
+        #code to get the live data for the symbols in watchlist
+        
+        live_data = get_dict_stock()
+        
+
+        news_data = get_news()
+        return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4],watchlist_symbols=watchlist_symbols, live_data=live_data)
+    else:
+        return redirect(url_for('login', usr = usr))
+    
+#trying watchlist
+@app.route('/update_watchlist', methods=['POST'])
+def update_watchlist():
+    if usr is None:
+        flash('Please log in to update your watchlist.')
+        return redirect(url_for('login', usr = usr))
+
+    user = User.query.get(session['user_id'])
+    symbol = request.form.get('symbol')
+    action = request.form.get('action')
+
+    
+    
+    if action == 'add':
+        if symbol and symbol in stock_list and symbol not in user.watchlist:
+            user.watchlist += ',' + symbol if user.watchlist else symbol
+    elif action == 'remove':
+        if symbol in user.watchlist:
+            symbols = user.watchlist.split(',')
+            symbols.remove(symbol)
+            user.watchlist = ','.join(symbols)
+
+    db.session.commit()
+    return redirect(url_for('dashboard', usr = usr))
+
 
 
 if __name__ == "__main__":
