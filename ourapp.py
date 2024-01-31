@@ -8,7 +8,7 @@ import pandas as pd
 from flask_caching import Cache
 import csv
 
-syms = pd.read_csv('ind_nifty50list.csv')
+syms = pd.read_csv('updated_combined_nifty50_next50_total_market.csv')
 stock_list = syms['Symbol'].tolist()
 dataframe = None
 
@@ -89,6 +89,8 @@ def market_detail(symbol):
     symbols = [symbol]
     data = give_data(symbols)
     if request.method == 'POST':
+        if 'reset' in request.form:
+            return redirect(url_for('home', usr = usr))
         entity = request.form['options']
         typ = request.form['plottype']
     figure = create_plot(data, entity, 'stock', typ)

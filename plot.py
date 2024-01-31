@@ -32,8 +32,10 @@ def give_dates(duration):
 def include_csv_data(data):
     global csv_data
     for df in data:
-        df['Industry'] = csv_data.loc[df['symbol']]['Industry']
-        df['MarketCap'] = csv_data.loc[df['symbol']]['MarketCap']
+        ind = csv_data.loc[df['symbol']]['Industry']
+        markcap = csv_data.loc[df['symbol']]['MarketCap']
+        df['Industry'] = ind if ind else 'Not Available'
+        df['MarketCap'] = markcap if markcap else 'Not Available'
     return data
 
 def give_data(symbols):
