@@ -11,15 +11,20 @@ import plotly.offline as po
 import plotly.io as pio
 from datetime import datetime, timedelta, date
 from dateutil.relativedelta import relativedelta
-from jugaad_data.nse import stock_df
-from io import BytesIO
-import base64
+from jugaad_data.nse import stock_df, index_df
+from nsetools import Nse
+
+entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Value', 'NO OF TRADES':'No of Trades'}
+type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
 
 def give_dates(duration):
     enddate = datetime.now().date()
+    enddate -= timedelta(days=enddate.weekday())
     startdate = enddate
     if(duration=="week"):
         startdate -= relativedelta(weeks=1)
+    elif(duration=='day'):
+        startdate -= relativedelta(days=1)
     elif(duration=="month"):
         startdate -= relativedelta(months=1)
     elif(duration=="year"):
@@ -28,11 +33,9 @@ def give_dates(duration):
         startdate -= relativedelta(years=5)
     return (startdate, enddate)
 
-def give_data(symbols, duration):
-    # startdate = datetime.strptime(startdate, '%Y-%m-%d').date()
-    # enddate = datetime.strptime(enddate, '%Y-%m-%d').date()
+def give_data(symbols):
     dataframes = {}
-    dates = give_dates(duration)
+    dates = give_dates('fiveyear')
     for sym in symbols:
         df = stock_df(symbol=sym, from_date=dates[0], 
                     to_date=dates[1], series="EQ")
@@ -43,34 +46,26 @@ def give_data(symbols, duration):
         data[sym] = dataframes[sym][cols]
     return data
 
-def create_plot(data, entity, duration):
-    # plt.figure(figsize=(10, 6))
-    # plt.style.use('ggplot')
-    # for i, sym in enumerate(data):
-    #     plt.plot(data[sym]["DATE"], data[sym][entity], color = mpl.colormaps.get_cmap('tab10')(i), label = sym)
-    # entity_strings = {'OPEN':'Opening Price', 'CLOSE':'Closing Price', 'LTP': 'Last Traded Price'}
-    # duration_strings = {'week':'Last Week', 'month':'Last Month', 'year':'Last Year', 'fiveyear':'Last 5 Years'}
-    # plt.title(f'{entity_strings[entity]} vs Date for these stocks for the {duration_strings[duration]}')
-    # plt.xlabel('Date')
-    # plt.ylabel(entity)
-    # plt.grid(visible=False)
-    # plt.legend()
+def create_plot(data, entity, type, plottype):
     fig = go.Figure()
-    mn_price = 1e9
-    mx_price = 0
-
+    date = 'DATE'
+    if type == 'index':
+        date = 'HistoricalDate'
     for cnt, sym in enumerate(data):
-            fig.add_trace(go.Scatter(x=data[sym]["DATE"], y=data[sym][entity],
+        if plottype == 'normal':
+            fig.add_trace(go.Scatter(x=data[sym][date], y=data[sym][entity],
                                     mode='lines',
-                                    name=sym,
-                                    line=dict(color=px.colors.qualitative.Set1[cnt])))
-            mn_price = min(mn_price, min(data[sym][entity]))
-            mx_price = max(mx_price, max(data[sym][entity]))
-            
-    entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LTP': 'Last Traded Price'}
-    # duration_strings = {'week': 'Last Week', 'month': 'Last Month', 'year': 'Last Year', 'fiveyear': 'Last 5 Years'}
+                                    name=sym))
+        else:
+            fig.add_trace(go.Candlestick(x=data[sym][date],
+                                        open=data[sym]['OPEN'],
+                                        high=data[sym]['HIGH'],
+                                        low=data[sym]['LOW'],
+                                        close=data[sym]['CLOSE'],
+                                        name=sym,
+                                        increasing_line_color= 'green', decreasing_line_color= 'red'))
 
-    fig.update_layout(title=f'{entity_strings[entity]} vs Date for these stocks',
+    fig.update_layout(title=f'{type_strings[plottype]} {entity_strings[entity]} vs Date for these stocks',
                     xaxis_title='Date',
                     yaxis_title=entity,
                     xaxis = dict(
@@ -87,10 +82,9 @@ def create_plot(data, entity, duration):
                         )
                     ),
                     yaxis=dict(
-                        range = [mn_price, mx_price],
+                        showline = True,
                         showgrid=True,
                         zeroline=False,
-                        showline=False,
                         showticklabels=True,
                     ),
                     showlegend=True,
@@ -113,3 +107,36 @@ def create_plot(data, entity, duration):
     )
     return fig
 
+def get_index_data():
+    dates = give_dates('fiveyear')
+    df = index_df(symbol='NIFTY 50', from_date=dates[0], 
+                to_date=dates[1])
+    return df
+
+def get_current_data():
+    syms = pd.read_csv('ind_nifty50list.csv')
+    stock_list = syms['Symbol'].tolist()
+    dates = give_dates('day')
+    to_sort = []
+    for sym in stock_list:
+        df = stock_df(symbol=sym, from_date=dates[0], 
+                    to_date=dates[1], series="EQ")
+        diff = df['CLOSE'].iloc[-1] - df['OPEN'].iloc[-1]
+        to_sort.append((diff, sym))
+    to_sort.sort()
+    all_data = []
+    for i in range(len(to_sort)):
+        df = stock_df(symbol=to_sort[i][1], from_date=dates[0], 
+                    to_date=dates[1], series="EQ")
+        data = {}
+        data['symbol'] = to_sort[i][1]
+        data['open'] = df['OPEN'].iloc[0]
+        data['low'] = df['LOW'].iloc[0]
+        data['high'] = df['HIGH'].iloc[0]
+        data['close'] = df['CLOSE'].iloc[0]
+        all_data.append(data)
+    return all_data
+
+def get_performers():
+    data = get_current_data()
+    return (reversed(data[-5:]), data[:5])

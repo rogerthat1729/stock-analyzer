@@ -1,8 +1,7 @@
 from flask import Flask,redirect, url_for, request, render_template, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from plot import give_data, create_plot
-from markets import get_stock_data
+from plot import give_data, create_plot, get_index_data, get_performers, get_current_data
 from news import get_stock_news
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -27,20 +26,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
 #Cache Work!!
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 cache.init_app(app)
 
 @cache.cached(timeout=1000, key_prefix='stocks')
 def get_stock():
-    return get_stock_data()
+    data = get_current_data()
+    return reversed(data)
 
 @cache.cached(timeout=2000, key_prefix='news')
 def get_news():
     return get_stock_news()
 
-insession = False
 usr = None
 
 class User(db.Model):
@@ -72,7 +70,6 @@ def market():
         filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= last_price_filter]
     if 'reset' in request.form:
         filtered_stocks = get_stock()
-
     return render_template('market.html', stocks=filtered_stocks, usr = usr)
 
 @app.route('/market/<symbol>', methods = ['GET', 'POST'])
@@ -83,14 +80,14 @@ def market_detail(symbol):
         return redirect(url_for('home', usr = usr))
     pdv = None
     if request.method == 'POST':
-        duration = request.form['duration']
         entity = request.form['options']
+        typ = request.form['plottype']
         symbols = [symbol]
-        if duration is not None and entity is not None:
-            data = give_data(symbols, duration)
-            figure = create_plot(data, entity, duration)
+        if entity is not None and typ is not None:
+            data = give_data(symbols)
+            figure = create_plot(data, entity, 'stock',typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', pdv = pdv, usr = usr)
+    return render_template('singleplot.html', symbol = symbol, pdv = pdv, usr = usr, type = 'stock')
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
@@ -101,13 +98,13 @@ def plot():
     if request.method == 'POST':
         if 'submit' in request.form:
             num = int(request.form['num_stocks'])
-            duration = request.form['duration']
+            typ = request.form['plottype']
             entity = request.form['options']
-            return redirect(url_for('add_symbols', num=num, duration = duration, et = entity, usr = usr))
+            return redirect(url_for('add_symbols', num=num, et = entity, usr = usr, typ = typ))
     return render_template('plot.html', error = None, usr = usr)
 
-@app.route("/plot/stocks/<int:num>/<string:duration>/<string:et>", methods = ['GET', 'POST'])
-def add_symbols(num, duration, et):
+@app.route("/plot/stocks/<int:num>/<string:et>/<string:typ>", methods = ['GET', 'POST'])
+def add_symbols(num, et, typ):
     global usr
     if not usr:
         flash('Please login to access this page.')
@@ -119,8 +116,8 @@ def add_symbols(num, duration, et):
                 if sym not in stock_list or sym is None:
                     error = 'Please provide correct stock symbols.'
                     return redirect(url_for('plot', error = error, usr = usr))
-            data = give_data(symbols, duration)
-            figure = create_plot(data, et, duration)
+            data = give_data(symbols)
+            figure = create_plot(data, et, 'stock', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
             return render_template('num_stocks.html', num = num, pdv = pdv, error = None, usr = usr)
         if 'reset' in request.form:
@@ -199,6 +196,28 @@ def latest_news():
     global usr
     news_data = get_news() 
     return render_template('news.html', news_articles=news_data['articles'],usr = usr)
+
+@app.route('/nifty50', methods = ['GET', 'POST'])
+def indices():
+    global usr
+    df = get_index_data()
+    if not usr:
+        flash('Please login to access this page.')
+        return redirect(url_for('home', usr = usr))
+    pdv = None
+    if request.method == 'POST':
+        entity = request.form['options']
+        typ = request.form['plottype']
+        if entity is not None and typ is not None:
+            figure = create_plot(df, entity, 'index', typ)
+            pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv)
+
+@app.route("/performers", methods = ['GET'])
+def gainers_and_losers():
+    global usr
+    gainers, losers = get_performers()
+    return render_template("performers.html", usr = usr, gainers = gainers, losers = losers)
 
 if __name__ == "__main__":
     app.run(debug=True)

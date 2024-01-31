@@ -9,20 +9,22 @@
         <div class="market-table">
           <div class="table-header">
             <div>Name-Symbol</div>
-            <div>Last Price</div>
+            <div>Today's Opening Price</div>
+            <div>Today's Closing Price</div>
             <div>IntraDay High</div>
             <div>IntraDay Low</div>
-          </div>
-          {% for stock in stocks %}
-            <div class="table-row">
-              <div>
-                <a href="/market/{{ stock.Name }}">{{ stock.Name }}</a>
-              </div>
-              <div>{{ stock.LastPrice }}</div>
-              <div>{{ stock.IntraDayHigh }}</div>
-              <div>{{ stock.IntraDayLow }}</div>
+        </div>
+        {% for stock in stocks %}
+        <div class="table-row">
+            <div>
+                <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
             </div>
-          {% endfor %}
+            <div>{{ stock['open'] }}</div>
+            <div>{{ stock['close'] }}</div>
+            <div>{{ stock['high'] }}</div>
+            <div>{{ stock['low'] }}</div>
+        </div>
+        {% endfor %}
         </div>
       </section>
 

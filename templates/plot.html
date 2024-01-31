@@ -1,37 +1,37 @@
 {% extends 'base.html' %}
 {% block title%}<title>Trading Pro - Plot</title>{% endblock %}
-     {%block content%}
-    
-    <!-- Plot Section -->
-    <section class="plot-section">
-        <h2>Data Visualization</h2>
-        <form class="plot-form" action="/plot" method="post">
-            <div class="form-group">
-                <label for="num_stocks">Number of stocks you want to plot:</label>
-                <input type="number" name="num_stocks" id="num_stocks" required />
-            </div>
+{%block content%}
 
-            <div class="form-group">
-                <label for="duration">Time duration:</label>
-                <select name="duration" id="duration">
-                    <option value="week">Last Week</option>
-                    <option value="month">Last Month</option>
-                    <option value="year">Last Year</option>
-                    <option value="fiveyear">Last 5 Years</option>
-                </select>
-            </div>
+<!-- Plot Section -->
+<section class="plot-section">
+    <h2>Data Visualization</h2>
+    <form class="plot-form" action="/plot" method="post">
 
-            <div class="form-group">
-                <label for="options">Display a graph of:</label>
-                <select name="options" id="options">
-                    <option value="OPEN">Opening Price</option>
-                    <option value="CLOSE">Closing Price</option>
-                    <option value="LTP">Last Traded Price</option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn" name = 'submit'>Add Stock Symbols</button>
-        </form>
-    </section>
+        <div class="form-group">
+            <label for="num_stocks">Number of stocks you want to plot:</label>
+            <input type="number" name="num_stocks" id="num_stocks" required />
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="options">Display a graph of:</label>
+            <select name="options" id="options">
+                <option value="OPEN">Opening Price</option>
+                <option value="CLOSE">Closing Price</option>
+                <option value="LOW">Intraday Low</option>
+                <option value="HIGH">Intraday High</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="plottype">Type of graph:</label>
+            <select name="plottype" id="plottype">
+                <option value="normal">Line Graph</option>
+                <option value="candle">Candlestick Plot</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" class="btn" name='submit'>Add Stock Symbols</button>
+    </form>
+</section>
 
 {% endblock %}
