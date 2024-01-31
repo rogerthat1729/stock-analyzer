@@ -33,7 +33,7 @@ cache.init_app(app)
 @cache.cached(timeout=10000, key_prefix='stocks')
 def get_stock():
     data = get_current_data()
-    return reversed(data)
+    return list(reversed(data))
 
 @cache.cached(timeout=10000, key_prefix='news')
 def get_news():
@@ -183,7 +183,8 @@ def login():
 def dashboard():
     global usr
     if usr is not None:
-        return render_template('welcome.html', username=session['username'], usr = usr)
+        news_data = get_news()
+        return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4])
     else:
         return redirect(url_for('login', usr = usr))
 
@@ -208,7 +209,7 @@ def about():
 def latest_news():
     global usr
     news_data = get_news() 
-    return render_template('news.html', news_articles=news_data['articles'],usr = usr)
+    return render_template('news.html', news_articles=news_data['articles'], usr = usr)
 
 @app.route('/nifty50', methods = ['GET', 'POST'])
 def indices():
@@ -231,10 +232,10 @@ def indices():
 @app.route("/performers", methods = ['GET'])
 def gainers_and_losers():
     global usr
-    gainers, losers = get_performers()
+    data = get_stock()
+    gainers, losers = get_performers(data)
     return render_template("performers.html", usr = usr, gainers = gainers, losers = losers)
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
     
