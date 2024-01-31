@@ -1,5 +1,4 @@
 from newsapi import NewsApiClient
-import datetime as dt
 import datetime
 
 today = datetime.date.today()

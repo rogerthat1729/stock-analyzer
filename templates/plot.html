@@ -2,7 +2,6 @@
 {% block title%}<title>Trading Pro - Plot</title>{% endblock %}
 {%block content%}
 
-<!-- Plot Section -->
 <section class="plot-section">
     <h2>Data Visualization</h2>
     <form class="plot-form" action="/plot" method="post">
@@ -19,6 +18,9 @@
                 <option value="CLOSE">Closing Price</option>
                 <option value="LOW">Intraday Low</option>
                 <option value="HIGH">Intraday High</option>
+                <option value="VOLUME">Volume</option>
+                <option value="VALUE">Value</option>
+                <option value="NO OF TRADES">No of Trades</option>
             </select>
         </div>
         <br>

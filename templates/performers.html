@@ -6,6 +6,7 @@
     <section class="market-data">
         <h2>Top Gainers and Losers</h2>
         <p>View the current best and worst performing stocks in NSE.</p>
+        {% for stocks in both%}
         <div class="market-table">
             <div class="table-header">
                 <div>Name-Symbol</div>
@@ -20,8 +21,9 @@
                 <div>Volume</div>
                 <div>Value</div>
                 <div>No of Trades</div>
+                <div>%Change</div>
             </div>
-            {% for stock in gainers %}
+            {% for stock in stocks %}
             <div class="table-row">
                 <div>
                     <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
@@ -37,44 +39,16 @@
                 <div>{{ stock['VOLUME'] }}</div>
                 <div>{{ stock['VALUE'] }}</div>
                 <div>{{ stock['NO OF TRADES'] }}</div>
+                {% if stock['sign'] == 1 %}
+                <div style="color: green;">+{{ stock['diff'] }}%</div>
+                {% else %}
+                <div style="color: red;">{{ stock['diff'] }}%</div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
         <br><br>
-        <div class="market-table">
-            <div class="table-header">
-                <div>Name-Symbol</div>
-                <div>Opening Price</div>
-                <div>Closing Price</div>
-                <div>Last Traded Price</div>
-                <div>Previous Closing Price</div>
-                <div>IntraDay High</div>
-                <div>IntraDay Low</div>
-                <div>52 Wk. High</div>
-                <div>52 Wk. Low</div>
-                <div>Volume</div>
-                <div>Value</div>
-                <div>No of Trades</div>
-            </div>
-            {% for stock in losers %}
-            <div class="table-row">
-                <div>
-                    <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
-                </div>
-                <div>{{ stock['OPEN'] }}</div>
-                <div>{{ stock['CLOSE'] }}</div>
-                <div>{{ stock['LTP'] }}</div>
-                <div>{{ stock['PREV. CLOSE'] }}</div>
-                <div>{{ stock['HIGH'] }}</div>
-                <div>{{ stock['LOW'] }}</div>
-                <div>{{ stock['52W H'] }}</div>
-                <div>{{ stock['52W L'] }}</div>
-                <div>{{ stock['VOLUME'] }}</div>
-                <div>{{ stock['VALUE'] }}</div>
-                <div>{{ stock['NO OF TRADES'] }}</div>
-            </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
     </section>
 </main>
 

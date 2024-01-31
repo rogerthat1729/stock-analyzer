@@ -1,20 +1,10 @@
-import time
-import os
 import pandas as pd
-import numpy as np
-import sys
-import matplotlib.pyplot as plt
-import matplotlib as mpl
 import plotly.graph_objects as go
-import plotly.express as px
-import plotly.offline as po
-import plotly.io as pio
-from datetime import datetime, timedelta, date
+from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 from jugaad_data.nse import stock_df, index_df
 
-
-entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Value', 'NO OF TRADES':'No of Trades'}
+entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Market Cap', 'NO OF TRADES':'No of Trades'}
 type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
 
 def give_dates(duration):
@@ -65,7 +55,7 @@ def create_plot(data, entity, type, plottype):
                                         name=sym,
                                         increasing_line_color= 'green', decreasing_line_color= 'red'))
 
-    fig.update_layout(title=f'{type_strings[plottype]} {entity_strings[entity]} vs Date for these stocks',
+    fig.update_layout(title=f'{type_strings[plottype]} of {entity_strings[entity]} vs Date for these stocks',
                     xaxis_title='Date',
                     yaxis_title=entity,
                     xaxis = dict(
@@ -122,11 +112,10 @@ def get_current_data():
         try:
             df = stock_df(symbol=sym, from_date=dates[0], to_date=dates[1], series="EQ")
             if not df.empty:
-                diff = df['CLOSE'].iloc[-1] - df['OPEN'].iloc[-1]
+                diff = (df['LTP'].iloc[0] - df['OPEN'].iloc[0])/(df['OPEN'].iloc[0])*100
                 to_sort.append((diff, sym))
         except Exception as e:
             print(f"Data not available for symbol: {sym}. Skipping.")
-
             continue
     to_sort.sort()
     all_data = []
@@ -136,6 +125,13 @@ def get_current_data():
         data = {}
         data = df.iloc[0].to_dict()
         data['symbol'] = to_sort[i][1]
+        data['VALUE'] = "{:,}".format(data['VALUE'])
+        diff = (df['LTP'].iloc[0] - df['OPEN'].iloc[0])/(df['OPEN'].iloc[0])*100
+        if diff >= 0:
+            data['sign'] = 1
+        else:
+            data['sign'] = 0
+        data['diff'] = "{:.2f}".format(diff)
         all_data.append(data)
     return all_data
 

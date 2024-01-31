@@ -3,15 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from plot import give_data, create_plot, get_index_data, get_performers, get_current_data
 from news import get_stock_news
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-import plotly.express as px
 import plotly.offline as po
-from datetime import datetime, timedelta
-from dateutil.relativedelta import relativedelta
-from io import BytesIO
-import base64
 import pandas as pd
 from flask_caching import Cache
 
@@ -80,14 +72,15 @@ def market_detail(symbol):
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
     pdv = None
+    entity = 'OPEN'
+    typ = 'normal'
+    symbols = [symbol]
+    data = give_data(symbols)
     if request.method == 'POST':
         entity = request.form['options']
         typ = request.form['plottype']
-        symbols = [symbol]
-        if entity is not None and typ is not None:
-            data = give_data(symbols)
-            figure = create_plot(data, entity, 'stock',typ)
-            pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+    figure = create_plot(data, entity, 'stock', typ)
+    pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
     return render_template('singleplot.html', symbol = symbol, pdv = pdv, usr = usr, type = 'stock', data = data)
 
 @app.route("/plot", methods = ['GET', 'POST'])
@@ -209,13 +202,14 @@ def indices():
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
     pdv = None
+    entity = 'OPEN'
+    typ = 'normal'
+    dataframe = {'NIFTY50': df}
     if request.method == 'POST':
         entity = request.form['options']
         typ = request.form['plottype']
-        dataframe = {'NIFTY50': df}
-        if entity is not None and typ is not None:
-            figure = create_plot(dataframe, entity, 'index', typ)
-            pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
+    figure = create_plot(dataframe, entity, 'index', typ)
+    pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
     return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv, data = dataframe)
 
 @app.route("/performers", methods = ['GET'])
@@ -223,7 +217,7 @@ def gainers_and_losers():
     global usr
     data = get_stock()
     gainers, losers = get_performers(data)
-    return render_template("performers.html", usr = usr, gainers = gainers, losers = losers)
+    return render_template("performers.html", usr = usr, both = [gainers, losers])
 
 if __name__ == "__main__":
     app.run(debug=True)
