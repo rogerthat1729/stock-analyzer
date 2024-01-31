@@ -1,8 +1,24 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-bottom: 5%; /* Same as your footer height */
   background-color: #f4f4f4;
+}
+
+/* Footer Styles */
+
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5%; /* Define the height of your footer */
 }
 
 .navbar {
@@ -152,16 +168,7 @@ background-color: #555;
 
 /* Existing styles from the previous CSS code */
 
-/* Footer Styles */
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+
 
 /* Homepage Content Styles */
 .homepage-content {
@@ -1024,7 +1031,7 @@ select {
 }
 
 
-/*watchlist.css */
+/* watchlist.css
 .dashboard-watchlist {
   background-color: white;
   padding: 20px;
@@ -1067,47 +1074,64 @@ select {
 
 .add-symbol-container button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* Main Dashboard Container */
 .dashboard-main-container {
-  width: 60%;
+  max-width: 70%;
   margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.dashboard-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
 }
 
-/* Top Section with Welcome and News */
-.dashboard-top {
-  margin-top: 1%;
-  display: flex;
-  text-align: center;
-  /* justify-content: space-between; */
-  width: 100%;
+.dashboard-header h1 {
+  color: #007bff;
 }
 
-/* Welcome Container */
-.welcome-container {
-  width: 48%;
-  align-items: center;
-  /* Other styles remain the same */
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
 }
 
-/* News Container */
-.dashboard-news {
-  width: 90%;
-  /* Other styles remain the same */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }
 
-/* News List Enhancement */
+.dashboard-news, .dashboard-watchlist {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.dashboard-news h2, .dashboard-watchlist h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
 .news-list {
   list-style: none;
   padding: 0;
 }
 
 .news-list li {
-  background-color: #f4f4f4;
+  background-color: #fff;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -1122,18 +1146,59 @@ select {
   color: #0056b3;
 }
 
-/* Responsive Design Adjustments */
-@media (max-width: 768px) {
-  .dashboard-main-container {
-    width: 90%;
-  }
+.add-symbol-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-  .dashboard-top {
+.add-symbol-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-symbol-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-symbol-form button:hover {
+  background-color: #0056b3;
+}
+
+.watchlist-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.watchlist-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(40% - 10px);
+}
+
+.watchlist-item h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    display: flex;
     flex-direction: column;
   }
 
-  .welcome-container, .dashboard-news {
+  .watchlist-item {
     width: 100%;
   }
 }
+
 

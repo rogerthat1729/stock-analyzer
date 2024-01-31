@@ -294,7 +294,7 @@ def update_watchlist():
     action = request.form.get('action')
 
     
-    
+    symbol = symbol.upper()
     if action == 'add':
         if symbol and symbol in stock_list and symbol not in user.watchlist:
             user.watchlist += ',' + symbol if user.watchlist else symbol
