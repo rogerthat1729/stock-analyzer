@@ -12,15 +12,15 @@
         <div class="dashboard-news">
             <h2>Latest News</h2>
             <ul class="news-list">
-                <li><a href="#">News Item 1</a></li>
-                <li><a href="#">News Item 2</a></li>
-                <li><a href="#">News Item 3</a></li>
+                {% for article in news_data %}
+                    <li><a href="{{article['url']}}">{{article['title']}}</a></li>
+                {% endfor %}
             </ul>
         </div>
 
         <div class="dashboard-links">
-            <h2>Quick Links</h2>
-            <ul class="quick-links">
+            <h2>Watch List</h2>
+            <ul class="watch-list">
                 <li><a href="/market">Markets</a></li>
                 <li><a href="/plot">Data Visualization</a></li>
                 <li><a href="/about">About Us</a></li>
