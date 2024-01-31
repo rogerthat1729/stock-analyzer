@@ -81,6 +81,16 @@
       });
     });
     
+    /* Slider on market webpage */
+    function updateSliderValue() {
+      document.getElementById('volume-min-value').textContent = document.getElementById('volume-min').value;
+    }
+    document.getElementById('volume-min').addEventListener('input', updateSliderValue);
+    
+    function resetFilters() {
+      document.getElementById('filter-form').reset();
+      // Add additional reset logic if needed
+    }
   </script>
 
   <footer class="footer">
