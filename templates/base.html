@@ -31,6 +31,11 @@
     </ul>
 
     
+    <!-- Dark Mode Toggle -->
+<div class="theme-switch">
+  <input type="checkbox" id="dark-mode-toggle" name="theme">
+  <label for="dark-mode-toggle">Dark Mode</label>
+</div>
 
     <ul class="login-list">
       {% if usr %}
@@ -99,6 +104,23 @@
       // Add additional reset logic if needed
     }
   </script>
+
+ 
+  <script>
+    //dark mode
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleSwitch = document.getElementById('dark-mode-toggle');
+  
+      toggleSwitch.addEventListener('change', function(e) {
+        if (e.target.checked) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      });
+    });
+  </script>
+  
 
   <footer class="footer">
     <p>© 2024 Trading Pro. All rights reserved.</p>
