@@ -6,6 +6,7 @@ from news import get_stock_news
 import plotly.offline as po
 import pandas as pd
 from flask_caching import Cache
+import csv
 
 syms = pd.read_csv('ind_nifty50list.csv')
 stock_list = syms['Symbol'].tolist()
@@ -229,6 +230,24 @@ def gainers_and_losers():
     data = get_stock()
     gainers, losers = get_performers(data)
     return render_template("performers.html", usr = usr, both = [gainers, losers])
+
+
+#search bar on base page 
+@app.route('/search')
+def search():
+    search_symbol = request.args.get('search_symbol').upper()
+    
+    # DO this once on start up
+    with open('SYMBOL_Marketcap.csv', 'r') as file:
+        csv_reader = csv.reader(file)
+        stock_list = [row[0] for row in csv_reader]  # Get the list of symbols from the CSV file
+    
+    if search_symbol in stock_list:
+        return redirect(url_for('market_detail', symbol=search_symbol))
+    else:
+        flash('Invalid Stock Symbol')
+        return redirect(url_for('home'))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
