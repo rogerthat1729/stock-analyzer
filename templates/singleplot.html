@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 {% block title%}<title>Trading Pro - Market Plot</title>{% endblock %}
 {%block content%}
-
+<div class="plot-page-container">
+    <div class="plot-display-container">
+        {% if pdv %}
+        {{ pdv | safe }}
+        {% endif %}
+    </div>
+    
 <!-- Plot Display Section -->
-<section class="plot-display-section">
+
+<div class="stock-input-container">
     <h2>{{symbol}} Data Visualization</h2>
 
     <form class="plot-form" method='post'>
@@ -28,24 +35,27 @@
                 <option value="candle">Candlestick Plot</option>
             </select>
         </div>
-        <br>
+      
         <button type='submit' class="btn">Generate Plot</button>
     </form>
-    <br>
     {% if data %}
-    {% for sym in data%}
-    <div class='stock-info'>
-        <h3>{{ sym }} Information</h3>
-        <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
-        <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
-    </div>
-    {% endfor %}
+        
+        {% for sym in data%}
+        <div class='stock-info'>
+            <h3>{{ sym }} Information</h3>
+            <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
+            <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
+        </div>
+        {% endfor %}
+        <form method="post" class="reset-form">
+            <button type="submit" name="reset" class="btn reset-btn">Reset</button>
+        </form>
+       
     {% endif %}
-    <br>
-    <div id="plot-container">
-        {% if pdv %}
-        {{pdv | safe}}
-        {% endif %}
-    </div>
-</section>
+    
+</div>
+    <br><br>
+    
+    
+
 {% endblock %}
