@@ -34,6 +34,7 @@ def include_csv_data(data):
     for df in data:
         ind = csv_data.loc[df['symbol']]['Industry']
         markcap = csv_data.loc[df['symbol']]['MarketCap']
+        markcap = "{:,.2f}".format(markcap)
         df['Industry'] = ind if ind else 'Not Available'
         df['MarketCap'] = markcap if markcap else 'Not Available'
     return data

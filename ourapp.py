@@ -32,7 +32,7 @@ def get_stock():
 def get_news():
     return get_stock_news()
 
-usr = 12345
+usr = None
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
