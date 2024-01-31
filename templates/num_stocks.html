@@ -10,7 +10,6 @@
         {{ pdv | safe }}
         {% endif %}
     </div>
-    
 
     {% if data %}
         <div class="stock-info-container">
@@ -23,18 +22,14 @@
             </div>
             {% endfor %}
             
-            
             <form method="post" class="reset-form">
                 <button type="submit" name="reset" class="btn reset-btn">Reset</button>
             </form>
         </div>
     {% else %}
+
     <div class="stock-input-container">
         <h1>Add Stock Symbols</h1>
-        {% if error %}
-        <script>alert('Enter valid symbol')</script>
-        {% endif %}
-
         {% if num %}
         <form method="post" class="stock-form">
             {% for i in range(num) %}
