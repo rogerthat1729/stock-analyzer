@@ -3,36 +3,32 @@
   <title>Trading Pro - Dashboard</title>
 {% endblock %}
 {% block content %}
-  <div class="dashboard-main-container">
-    <div class="dashboard-top">
-      <div class="welcome-container">
-        <h1>Welcome, {{ username }}!</h1>
-        <p>This is your dashboard.</p>
-        <a href="/logout" class="logout-button">Logout</a>
-        <br>
-        <br>
-        <div class="dashboard-news">
-          <h2>Latest News</h2>
-          <ul class="news-list">
-            {% for article in news_data %}
-              <li>
-                <a href="{{ article['url'] }}">{{ article['title'] }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      
+  <div class="dashboard-container">
+    <div class="welcome-container">
+      <h1>Welcome, {{ username }}!</h1>
+      <p>This is your dashboard.</p>
+      <a href="/logout" class="logout-button">Logout</a>
     </div>
+
+    
+    <!-- 
+        <div class="dashboard-links">
+            <h2>Quick Links</h2>
+            <ul class="watch-list">
+                <li><a href="/market">Markets</a></li>
+                <li><a href="/plot">Data Visualization</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+     -->
     <div class="add-symbol-container">
-      <!-- Add Symbol Form -->
       <form action="{{ url_for('update_watchlist') }}" method="post">
         <input type="text" name="symbol" placeholder="Enter Symbol" required />
         <button type="submit" name="action" value="add">Add to Watchlist</button>
       </form>
     </div>
     <div class="dashboard-watchlist">
-      <!-- Watchlist Items -->
       <h2>Your Watchlist</h2>
       <div class="watchlist-items">
         {% for symbol in watchlist_symbols %}
@@ -48,9 +44,16 @@
         {% endfor %}
       </div>
     </div>
+    <br>
+    <div class="dashboard-news">
+        <h2>Latest News</h2>
+        <ul class="news-list">
+          {% for article in news_data %}
+            <li>
+              <a href="{{ article['url'] }}">{{ article['title'] }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
   </div>
-  <br>
-        <br><br>
-        <br><br>
-        <br>
 {% endblock %}
