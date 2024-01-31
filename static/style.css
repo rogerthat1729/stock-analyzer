@@ -1,8 +1,24 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-bottom: 5%; /* Same as your footer height */
   background-color: #f4f4f4;
+}
+
+/* Footer Styles */
+
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5%; /* Define the height of your footer */
 }
 
 .navbar {
@@ -152,16 +168,7 @@ background-color: #555;
 
 /* Existing styles from the previous CSS code */
 
-/* Footer Styles */
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+
 
 /* Homepage Content Styles */
 .homepage-content {
@@ -1016,7 +1023,7 @@ select {
 }
 
 
-/*watchlist.css */
+/* watchlist.css
 .dashboard-watchlist {
   background-color: white;
   padding: 20px;
@@ -1059,49 +1066,255 @@ select {
 
 .add-symbol-container button:hover {
   background-color: #0056b3;
-}
+} */
 
-/*After num_stocks.html */
-/* Stock Input Section Styles */
-/* .stock-input-section {
-  padding: 20px;
-  text-align: center;
-}
-
-.stock-form {
+/* Main Dashboard Container */
+.dashboard-main-container {
+  max-width: 70%;
   margin: auto;
-  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
-
-.stock-input-container {
+.dashboard-header {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.dashboard-header h1 {
+  color: #007bff;
+}
+
+.logout-button {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-news, .dashboard-watchlist {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.dashboard-news h2, .dashboard-watchlist h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+}
+
+.news-list li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.news-list li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.news-list li a:hover {
+  color: #0056b3;
+}
+
+.add-symbol-form {
+  display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
-.stock-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.stock-input label {
-  margin-bottom: 5px;
-}
-
-.stock-input input {
-  padding: 8px;
+.add-symbol-form input {
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
-.reset-form {
-  margin-top: 20px;
+
+.add-symbol-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-symbol-form button:hover {
+  background-color: #0056b3;
+}
+
+.watchlist-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.watchlist-item {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(40% - 10px);
+}
+
+.watchlist-item h3 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .watchlist-item {
+    width: 100%;
+  }
 }
 
 
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
 
-.plot-display {
-  margin-top: 20px;
-} */
+body.dark-mode .navbar,
+body.dark-mode .footer {
+  background-color: #1c1c1c;
+}
+
+body.dark-mode a,
+body.dark-mode .navbar-search-form input,
+body.dark-mode .logout-button,
+body.dark-mode .btn,
+body.dark-mode .filter-button,
+body.dark-mode .add-symbol-form button,
+body.dark-mode .modal-close {
+  color: #9fa8da;
+}
+
+body.dark-mode .navbar-search-form input,
+body.dark-mode .add-symbol-form input,
+body.dark-mode .filter-form input[type="number"],
+body.dark-mode .plot-form input[type="number"],
+body.dark-mode .form-field input,
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea,
+body.dark-mode select {
+  background-color: #333;
+  border-color: #555;
+  color: #ddd;
+}
+
+body.dark-mode .dashboard-main-container,
+body.dark-mode .dashboard-news,
+body.dark-mode .dashboard-watchlist,
+body.dark-mode .news-article,
+body.dark-mode .market-table,
+body.dark-mode .market-filters,
+body.dark-mode .plot-display-container,
+body.dark-mode .stock-input-container,
+body.dark-mode .stock-info-container,
+body.dark-mode .modal-content {
+  background-color: #242424;
+  color: #ffffff;
+}
+
+body.dark-mode .table-header,
+body.dark-mode .marquee-container,
+body.dark-mode .modal-header {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .news-list li,
+body.dark-mode .watchlist-item {
+  background-color: #333;
+}
+
+/* Ensure the hover effects are also suitable for dark mode */
+body.dark-mode .nav-list li a:hover,
+body.dark-mode .login-list li a:hover,
+body.dark-mode .news-list li a:hover,
+body.dark-mode .quick-links li a:hover,
+body.dark-mode .market-table .table-row div a:hover {
+  background-color: #444;
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode .filter-button:hover,
+body.dark-mode .add-symbol-form button:hover,
+body.dark-mode .reset-btn:hover {
+  background-color: #50597b;
+}
+
+/* Additional dark mode styles as needed */
+
+/* Toggle Switch Styles */
+.theme-switch {
+  /* Styles for the switch container */
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch input[type="checkbox"] {
+  /* Styles for the checkbox (toggle) */
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.theme-switch label {
+  /* Styles for the label */
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.theme-switch label:after {
+  /* Styles for the knob inside the switch */
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #007bff;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}

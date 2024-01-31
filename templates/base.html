@@ -33,6 +33,13 @@
     </ul>
 
 
+    
+    <!-- Dark Mode Toggle -->
+<div class="theme-switch">
+  <input type="checkbox" id="dark-mode-toggle" name="theme">
+  <label for="dark-mode-toggle">Dark Mode</label>
+</div>
+
 
     <ul class="login-list">
       {% if usr %}
@@ -104,23 +111,27 @@
     document.getElementById('last-min').addEventListener('input', updateSliderValue);
     document.getElementById('last-max').addEventListener('input', updateSliderValue);
 
-    // document.getElementById('filter-form').addEventListener('submit', function (event) {
-    //   event.preventDefault();
-    //   if (document.activeElement.id == 'submit') {
-    //     document.getElementById('open-min').textContent = document.getElementById('open-min').value;
-    //     document.getElementById('open-max').textContent = document.getElementById('open-max').value;
-    //     document.getElementById('last-min').textContent = document.getElementById('last-min').value;
-    //     document.getElementById('last-max').textContent = document.getElementById('last-max').value;
-    //     document.getElementById('volume-min').textContent = document.getElementById('volume-min').value;
-    //     document.getElementById('change-min').textContent = document.getElementById('change-min').value;
-    //     document.getElementById('change-max').textContent = document.getElementById('change-max').value;
-    //   }
-    // });
-
     function resetFilters() {
       document.getElementById('filter-form').reset();
     }
   </script>
+
+ 
+  <script>
+    //dark mode
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleSwitch = document.getElementById('dark-mode-toggle');
+  
+      toggleSwitch.addEventListener('change', function(e) {
+        if (e.target.checked) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      });
+    });
+  </script>
+  
 
   <footer class="footer">
     <p>© 2024 Trading Pro. All rights reserved.</p>

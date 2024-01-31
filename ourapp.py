@@ -269,6 +269,9 @@ def update_watchlist():
     user = User.query.get(session['user_id'])
     symbol = request.form.get('symbol')
     action = request.form.get('action')
+    
+    symbol = symbol.upper()
+
     if action == 'add':
         if symbol and symbol in stock_list and symbol not in user.watchlist:
             user.watchlist += ',' + symbol if user.watchlist else symbol
