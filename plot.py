@@ -139,6 +139,5 @@ def get_current_data():
         all_data.append(data)
     return all_data
 
-def get_performers():
-    data = get_current_data()
-    return (reversed(data[-5:]), data[:5])
+def get_performers(data):
+    return (data[:5], list(reversed(data[-5:])))

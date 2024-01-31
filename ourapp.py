@@ -33,7 +33,7 @@ cache.init_app(app)
 @cache.cached(timeout=1000, key_prefix='stocks')
 def get_stock():
     data = get_current_data()
-    return reversed(data)
+    return list(reversed(data))
 
 @cache.cached(timeout=2000, key_prefix='news')
 def get_news():
@@ -221,10 +221,10 @@ def indices():
 @app.route("/performers", methods = ['GET'])
 def gainers_and_losers():
     global usr
-    gainers, losers = get_performers()
+    data = get_stock()
+    gainers, losers = get_performers(data)
     return render_template("performers.html", usr = usr, gainers = gainers, losers = losers)
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
     
