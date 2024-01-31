@@ -30,12 +30,12 @@ db = SQLAlchemy(app)
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 cache.init_app(app)
 
-@cache.cached(timeout=1000, key_prefix='stocks')
+@cache.cached(timeout=10000, key_prefix='stocks')
 def get_stock():
     data = get_current_data()
     return list(reversed(data))
 
-@cache.cached(timeout=2000, key_prefix='news')
+@cache.cached(timeout=10000, key_prefix='news')
 def get_news():
     return get_stock_news()
 
@@ -60,16 +60,27 @@ def market():
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
-    pe_ratio_filter = request.args.get('pe-ratio', type=float)
+    pe_ratio_filter = request.args.get('open', type=float)
     last_price_filter = request.args.get('last-price', type=float)
+     # new filters added
+    volume_min_filter = request.args.get('volume-min', type=int)
+    stock_name_filter = request.args.get('stock-name')
     filtered_stocks = get_stock()
     
     if pe_ratio_filter is not None:
-        filtered_stocks = [stock for stock in filtered_stocks if stock['PE'] >= pe_ratio_filter]
+        filtered_stocks = [stock for stock in filtered_stocks if stock['OPEN'] >= pe_ratio_filter]
     if last_price_filter is not None:
-        filtered_stocks = [stock for stock in filtered_stocks if stock['LastPrice'] >= last_price_filter]
+        filtered_stocks = [stock for stock in filtered_stocks if stock['LTP'] >= last_price_filter]
+    if volume_min_filter is not None:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['VOLUME'] >= volume_min_filter]
+        print(volume_min_filter)
+    
+    if stock_name_filter:
+        filtered_stocks = [stock for stock in filtered_stocks if stock['symbol'] == stock_name_filter]
+    
     if 'reset' in request.form:
         filtered_stocks = get_stock()
+
     return render_template('market.html', stocks=filtered_stocks, usr = usr)
 
 @app.route('/market/<symbol>', methods = ['GET', 'POST'])
