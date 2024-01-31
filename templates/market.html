@@ -9,17 +9,14 @@
         <div class="market-table">
           <div class="table-header">
             <div>Name-Symbol</div>
+            <div>Industry</div>
             <div>Opening Price</div>
             <div>Closing Price</div>
             <div>Last Traded Price</div>
-            <div>Previous Closing Price</div>
-            <div>IntraDay High</div>
-            <div>IntraDay Low</div>
             <div>52 Wk. High</div>
             <div>52 Wk. Low</div>
             <div>Volume</div>
-            <div>Value</div>
-            <div>No of Trades</div>
+            <div>Market Cap(in Lakhs)</div>
             <div>%Change</div>
         </div>
         {% for stock in stocks %}
@@ -27,17 +24,14 @@
             <div>
                 <a href="/market/{{ stock['symbol'] }}">{{ stock['symbol'] }}</a>
             </div>
+            <div>{{ stock['Industry'] }}</div>
             <div>{{ stock['OPEN'] }}</div>
             <div>{{ stock['CLOSE'] }}</div>
             <div>{{ stock['LTP'] }}</div>
-            <div>{{ stock['PREV. CLOSE'] }}</div>
-            <div>{{ stock['HIGH'] }}</div>
-            <div>{{ stock['LOW'] }}</div>
             <div>{{ stock['52W H'] }}</div>
             <div>{{ stock['52W L'] }}</div>
             <div>{{ stock['VOLUME'] }}</div>
-            <div>{{ stock['VALUE'] }}</div>
-            <div>{{ stock['NO OF TRADES'] }}</div>
+            <div>{{ stock['MarketCap'] }}</div>
             {% if stock['sign'] == 1 %}
               <div style = "color: green;">+{{ stock['diff'] }}%</div>
             {% else %}

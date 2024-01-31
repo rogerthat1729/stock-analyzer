@@ -1,0 +1,747 @@
+Company Name,Symbol,Sector,Industry,Exchange
+Adani Enterprises Ltd.,ADANIENT,Distribution Services,Wholesale Distributors,NSE
+Adani Ports and Special Economic Zone Ltd.,ADANIPORTS,Transportation,Other Transportation,NSE
+Apollo Hospitals Enterprise Ltd.,APOLLOHOSP,Health Services,Hospital/Nursing Management,NSE
+Asian Paints Ltd.,ASIANPAINT,Process Industries,Industrial Specialties,NSE
+Axis Bank Ltd.,AXISBANK,Finance,Regional Banks,NSE
+Bajaj Auto Ltd.,BAJAJ-AUTO,,,
+Bajaj Finance Ltd.,BAJFINANCE,Finance,Finance/Rental/Leasing,NSE
+Bajaj Finserv Ltd.,BAJAJFINSV,Finance,Life/Health Insurance,NSE
+Bharat Petroleum Corporation Ltd.,BPCL,Energy Minerals,Oil Refining/Marketing,NSE
+Bharti Airtel Ltd.,BHARTIARTL,Communications,Wireless Telecommunications,NSE
+Britannia Industries Ltd.,BRITANNIA,Consumer Non-Durables,Food: Specialty/Candy,NSE
+Cipla Ltd.,CIPLA,Health Technology,Pharmaceuticals: Other,NSE
+Coal India Ltd.,COALINDIA,Energy Minerals,Coal,NSE
+Divi's Laboratories Ltd.,DIVISLAB,Health Technology,Pharmaceuticals: Major,NSE
+Dr. Reddy's Laboratories Ltd.,DRREDDY,Health Technology,Pharmaceuticals: Major,NSE
+Eicher Motors Ltd.,EICHERMOT,Consumer Durables,Motor Vehicles,NSE
+Grasim Industries Ltd.,GRASIM,Non-Energy Minerals,Construction Materials,NSE
+HCL Technologies Ltd.,HCLTECH,Technology Services,Information Technology Services,NSE
+HDFC Bank Ltd.,HDFCBANK,Finance,Regional Banks,NSE
+HDFC Life Insurance Company Ltd.,HDFCLIFE,Finance,Multi-Line Insurance,NSE
+Hero MotoCorp Ltd.,HEROMOTOCO,Consumer Durables,Motor Vehicles,NSE
+Hindalco Industries Ltd.,HINDALCO,Non-Energy Minerals,Other Metals/Minerals,NSE
+Hindustan Unilever Ltd.,HINDUNILVR,Consumer Non-Durables,Household/Personal Care,NSE
+ICICI Bank Ltd.,ICICIBANK,Finance,Regional Banks,NSE
+ITC Ltd.,ITC,Consumer Non-Durables,Tobacco,NSE
+IndusInd Bank Ltd.,INDUSINDBK,Finance,Major Banks,NSE
+Infosys Ltd.,INFY,Technology Services,Information Technology Services,NSE
+JSW Steel Ltd.,JSWSTEEL,Non-Energy Minerals,Steel,NSE
+Kotak Mahindra Bank Ltd.,KOTAKBANK,Finance,Major Banks,NSE
+LTIMindtree Ltd.,LTIM,Commercial Services,Miscellaneous Commercial Services,NSE
+Larsen & Toubro Ltd.,LT,Industrial Services,Engineering & Construction,NSE
+Maruti Suzuki India Ltd.,MARUTI,Consumer Durables,Motor Vehicles,NSE
+NTPC Ltd.,NTPC,Utilities,Electric Utilities,NSE
+Nestle India Ltd.,NESTLEIND,Consumer Non-Durables,Food: Major Diversified,NSE
+Oil & Natural Gas Corporation Ltd.,ONGC,Energy Minerals,Oil Refining/Marketing,NSE
+Power Grid Corporation of India Ltd.,POWERGRID,Utilities,Alternative Power Generation,NSE
+Reliance Industries Ltd.,RELIANCE,Energy Minerals,Oil Refining/Marketing,NSE
+SBI Life Insurance Company Ltd.,SBILIFE,Finance,Life/Health Insurance,NSE
+State Bank of India,SBIN,Finance,Regional Banks,NSE
+Sun Pharmaceutical Industries Ltd.,SUNPHARMA,Health Technology,Pharmaceuticals: Major,NSE
+Tata Consultancy Services Ltd.,TCS,Technology Services,Information Technology Services,NSE
+Tata Consumer Products Ltd.,TATACONSUM,Consumer Non-Durables,Food: Specialty/Candy,NSE
+Tata Motors Ltd.,TATAMOTORS,Consumer Durables,Motor Vehicles,NSE
+Tata Steel Ltd.,TATASTEEL,Non-Energy Minerals,Steel,NSE
+Tech Mahindra Ltd.,TECHM,Technology Services,Information Technology Services,NSE
+Titan Company Ltd.,TITAN,Consumer Durables,Other Consumer Specialties,NSE
+UPL Ltd.,UPL,Process Industries,Chemicals: Agricultural,NSE
+UltraTech Cement Ltd.,ULTRACEMCO,Non-Energy Minerals,Construction Materials,NSE
+Wipro Ltd.,WIPRO,Technology Services,Information Technology Services,NSE
+,LICI,Finance,Life/Health Insurance,NSE
+,PNB,Finance,Major Banks,NSE
+,SRF,Process Industries,Industrial Specialties,NSE
+,ZOMATO,Technology Services,Packaged Software,NSE
+,NAUKRI,Technology Services,Internet Software/Services,NSE
+,TATAPOWER,Utilities,Electric Utilities,NSE
+,AMBUJACEM,Non-Energy Minerals,Construction Materials,NSE
+,JINDALSTEL,Non-Energy Minerals,Steel,NSE
+,SIEMENS,Producer Manufacturing,Electrical Products,NSE
+,TORNTPHARM,Health Technology,Pharmaceuticals: Major,NSE
+,PIIND,Process Industries,Chemicals: Specialty,NSE
+,SHREECEM,Non-Energy Minerals,Construction Materials,NSE
+,COLPAL,Consumer Non-Durables,Household/Personal Care,NSE
+,DLF,Finance,Real Estate Development,NSE
+,ICICIPRULI,Finance,Life/Health Insurance,NSE
+,ZYDUSLIFE,Health Technology,Pharmaceuticals: Major,NSE
+,IRCTC,Consumer Services,Other Consumer Services,NSE
+,TRENT,Retail Trade,Apparel/Footwear Retail,NSE
+,MARICO,Consumer Non-Durables,Household/Personal Care,NSE
+,VEDL,Non-Energy Minerals,Aluminum,NSE
+,BANKBARODA,Finance,Major Banks,NSE
+,CANBK,Finance,Regional Banks,NSE
+,BERGEPAINT,Process Industries,Industrial Specialties,NSE
+,IOC,Energy Minerals,Integrated Oil,NSE
+,ADANIENSOL,,,
+,ADANIGREEN,Utilities,Electric Utilities,NSE
+,TVSMOTOR,Consumer Durables,Motor Vehicles,NSE
+,INDIGO,Transportation,Airlines,NSE
+,BOSCHLTD,Producer Manufacturing,Auto Parts: OEM,NSE
+,ATGL,Utilities,Gas Distributors,NSE
+,MOTHERSON,Producer Manufacturing,Auto Parts: OEM,NSE
+,AWL,Process Industries,Agricultural Commodities/Milling,NSE
+,BAJAJHLDNG,Finance,Financial Conglomerates,NSE
+,ICICIGI,Finance,Specialty Insurance,NSE
+,PGHH,Consumer Non-Durables,Household/Personal Care,NSE
+,DABUR,Consumer Non-Durables,Household/Personal Care,NSE
+,HAVELLS,Producer Manufacturing,Electrical Products,NSE
+,MUTHOOTFIN,Finance,Finance/Rental/Leasing,NSE
+,MCDOWELL-N,,,
+,DMART,Retail Trade,Specialty Stores,NSE
+,GAIL,Utilities,Gas Distributors,NSE
+,PIDILITIND,Process Industries,Industrial Specialties,NSE
+,SBICARD,Finance,Finance/Rental/Leasing,NSE
+,HAL,Electronic Technology,Aerospace & Defense,NSE
+,BEL,Electronic Technology,Aerospace & Defense,NSE
+,VBL,Consumer Non-Durables,Beverages: Non-Alcoholic,NSE
+,GODREJCP,Consumer Non-Durables,Household/Personal Care,NSE
+,SHRIRAMFIN,Finance,Finance/Rental/Leasing,NSE
+,ABB,Producer Manufacturing,Electrical Products,NSE
+,CHOLAFIN,Finance,Finance/Rental/Leasing,NSE
+,BCG,Technology Services,Packaged Software,NSE
+,GODFRYPHLP,Consumer Non-Durables,Tobacco,NSE
+,POLICYBZR,Technology Services,Internet Software/Services,NSE
+,IFCI,Finance,Regional Banks,NSE
+,PTCIL,Producer Manufacturing,Metal Fabrication,BSE
+,IMFA,Non-Energy Minerals,Other Metals/Minerals,NSE
+,SHILPAMED,Health Technology,Pharmaceuticals: Major,NSE
+,UCOBANK,Finance,Regional Banks,NSE
+,MOL,Process Industries,Chemicals: Specialty,NSE
+,ASTRAZEN,Health Technology,Pharmaceuticals: Major,NSE
+,RATNAMANI,Non-Energy Minerals,Steel,NSE
+,KPITTECH,Technology Services,Packaged Software,NSE
+,VTL,Process Industries,Textiles,NSE
+,USHAMART,Producer Manufacturing,Metal Fabrication,NSE
+,KSCL,Process Industries,Agricultural Commodities/Milling,NSE
+,CLEAN,Process Industries,Chemicals: Specialty,NSE
+,APLLTD,Health Technology,Pharmaceuticals: Major,NSE
+,FUSION,Finance,Finance/Rental/Leasing,NSE
+,VOLTAS,Producer Manufacturing,Industrial Machinery,NSE
+,AVANTIFEED,Process Industries,Agricultural Commodities/Milling,NSE
+,AETHER,Process Industries,Chemicals: Major Diversified,NSE
+,AIAENG,Producer Manufacturing,Industrial Machinery,NSE
+,PRSMJOHNSN,Non-Energy Minerals,Construction Materials,NSE
+,HEMIPROP,Finance,Real Estate Development,NSE
+,ZENTEC,Technology Services,Information Technology Services,NSE
+,KEC,Industrial Services,Engineering & Construction,NSE
+,GRAVITA,Non-Energy Minerals,Other Metals/Minerals,NSE
+,UTIAMC,Finance,Investment Managers,NSE
+,GANESHHOUC,Finance,Real Estate Development,NSE
+,ACE,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,BAYERCROP,Process Industries,Chemicals: Agricultural,NSE
+,ALKYLAMINE,Process Industries,Chemicals: Specialty,NSE
+,ISEC,Finance,Investment Banks/Brokers,NSE
+,PAISALO,Finance,Finance/Rental/Leasing,NSE
+,CAMS,Finance,Regional Banks,NSE
+,NSLNISP,Non-Energy Minerals,Steel,NSE
+,BORORENEW,Process Industries,Industrial Specialties,NSE
+,DEVYANI,Consumer Services,Restaurants,NSE
+,RUPA,Consumer Non-Durables,Apparel/Footwear,NSE
+,WOCKPHARMA,Health Technology,Pharmaceuticals: Major,NSE
+,DELHIVERY,Transportation,Air Freight/Couriers,NSE
+,TRIVENI,Process Industries,Agricultural Commodities/Milling,NSE
+,SYNGENE,Commercial Services,Miscellaneous Commercial Services,NSE
+,POWERINDIA,Electronic Technology,Electronic Equipment/Instruments,NSE
+,SBCL,Non-Energy Minerals,Other Metals/Minerals,NSE
+,TORNTPOWER,Utilities,Electric Utilities,NSE
+,AARTIPHARM,Process Industries,Chemicals: Major Diversified,NSE
+,KIRLOSENG,Producer Manufacturing,Electrical Products,NSE
+,TIDEWATER,Energy Minerals,Oil Refining/Marketing,NSE
+,ADVENZYMES,Consumer Non-Durables,Food: Specialty/Candy,NSE
+,GATEWAY,Non-Energy Minerals,Precious Metals,NSE
+,THERMAX,Producer Manufacturing,Industrial Machinery,NSE
+,BALAMINES,Process Industries,Chemicals: Specialty,NSE
+,SCI,Transportation,Air Freight/Couriers,NSE
+,APARINDS,Electronic Technology,Electronic Equipment/Instruments,NSE
+,CHALET,Consumer Services,Hotels/Resorts/Cruise lines,NSE
+,ARE&M,,,
+,AJANTPHARM,Health Technology,Pharmaceuticals: Major,NSE
+,GUJGASLTD,Utilities,Gas Distributors,NSE
+,COCHINSHIP,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,AVALON,,,
+,M&MFIN,,,
+,ANGELONE,Finance,Investment Banks/Brokers,NSE
+,PNBHOUSING,Finance,Finance/Rental/Leasing,NSE
+,ARVINDFASN,Retail Trade,Apparel/Footwear Retail,NSE
+,ENDURANCE,Producer Manufacturing,Metal Fabrication,NSE
+,SAFARI,Consumer Durables,Other Consumer Specialties,NSE
+,INFIBEAM,Commercial Services,Miscellaneous Commercial Services,NSE
+,CHEMPLASTS,Process Industries,Chemicals: Major Diversified,NSE
+,GSPL,Utilities,Gas Distributors,NSE
+,DODLA,Consumer Non-Durables,Food: Meat/Fish/Dairy,NSE
+,APTUS,Finance,Finance/Rental/Leasing,NSE
+,KPIL,,,
+,ATUL,Process Industries,Chemicals: Agricultural,NSE
+,MEDANTA,Health Services,Hospital/Nursing Management,NSE
+,PPLPHARMA,Health Technology,Pharmaceuticals: Major,NSE
+,MAYURUNIQ,Process Industries,Textiles,NSE
+,NAVNETEDUL,Producer Manufacturing,Office Equipment/Supplies,NSE
+,PDSL,Consumer Non-Durables,Apparel/Footwear,NSE
+,BOMDYEING,Process Industries,Textiles,NSE
+,FINPIPE,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,L&TFH,,,
+,ASTRAMICRO,Electronic Technology,Telecommunications Equipment,NSE
+,NH,Health Services,Hospital/Nursing Management,NSE
+,TCI,Transportation,Trucking,NSE
+,FINEORG,Process Industries,Chemicals: Major Diversified,NSE
+,DEEPAKNTR,Process Industries,Chemicals: Specialty,NSE
+,SUZLON,Producer Manufacturing,Electrical Products,NSE
+,ANURAS,Health Technology,Pharmaceuticals: Major,NSE
+,ESABINDIA,Producer Manufacturing,Electrical Products,NSE
+,STARHEALTH,Finance,Life/Health Insurance,NSE
+,IRFC,Finance,Finance/Rental/Leasing,NSE
+,TDPOWERSYS,Producer Manufacturing,Electrical Products,NSE
+,KPRMILL,Consumer Non-Durables,Apparel/Footwear,NSE
+,INGERRAND,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,JKLAKSHMI,Non-Energy Minerals,Construction Materials,NSE
+,TVSHLTD,,,
+,KIMS,Health Services,Hospital/Nursing Management,NSE
+,CREDITACC,Finance,Finance/Rental/Leasing,NSE
+,TEAMLEASE,Commercial Services,Personnel Services,NSE
+,NEOGEN,Process Industries,Chemicals: Specialty,NSE
+,AGI,Process Industries,Containers/Packaging,NSE
+,RAMCOCEM,Non-Energy Minerals,Construction Materials,NSE
+,WONDERLA,Consumer Services,Movies/Entertainment,NSE
+,TI,Consumer Non-Durables,Beverages: Alcoholic,NSE
+,TCIEXP,Transportation,Air Freight/Couriers,NSE
+,SAPPHIRE,Consumer Services,Restaurants,NSE
+,GOCOLORS,Consumer Non-Durables,Apparel/Footwear,NSE
+,RAMKY,Industrial Services,Engineering & Construction,NSE
+,NAM-INDIA,,,
+,TIMETECHNO,Process Industries,Containers/Packaging,NSE
+,MANINFRA,Finance,Real Estate Development,NSE
+,LLOYDSENGG,,,
+,SARDAEN,Non-Energy Minerals,Steel,NSE
+,FINOPB,Finance,Regional Banks,NSE
+,SONATSOFTW,Technology Services,Information Technology Services,NSE
+,IBULHSGFIN,Finance,Finance/Rental/Leasing,NSE
+,EPL,Process Industries,Containers/Packaging,NSE
+,SUMICHEM,Process Industries,Chemicals: Agricultural,NSE
+,GRINFRA,Industrial Services,Engineering & Construction,NSE
+,BRIGADE,Finance,Real Estate Development,NSE
+,METROPOLIS,Health Services,Medical/Nursing Services,NSE
+,GLAXO,Health Technology,Pharmaceuticals: Major,NSE
+,HCC,Industrial Services,Engineering & Construction,NSE
+,SFL,Process Industries,Industrial Specialties,NSE
+,CENTRALBK,Finance,Major Banks,NSE
+,KARURVYSYA,Finance,Regional Banks,NSE
+,GPIL,Non-Energy Minerals,Steel,NSE
+,IFBIND,Consumer Durables,Electronics/Appliances,NSE
+,ALLCARGO,Transportation,Marine Shipping,NSE
+,TRITURBINE,Producer Manufacturing,Industrial Machinery,NSE
+,CARBORUNIV,Process Industries,Industrial Specialties,NSE
+,BEML,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,PARADEEP,Process Industries,Chemicals: Agricultural,NSE
+,GREENLAM,Non-Energy Minerals,Forest Products,NSE
+,LAXMIMACH,Producer Manufacturing,Industrial Machinery,NSE
+,KSB,Producer Manufacturing,Industrial Machinery,NSE
+,RATEGAIN,Technology Services,Packaged Software,NSE
+,KAJARIACER,Producer Manufacturing,Building Products,NSE
+,POLYPLEX,Process Industries,Chemicals: Specialty,NSE
+,JISLJALEQS,,,
+,JMFINANCIL,Finance,Investment Banks/Brokers,NSE
+,HAPPSTMNDS,Technology Services,Data Processing Services,NSE
+,DCAL,Health Technology,Pharmaceuticals: Major,NSE
+,KEI,Producer Manufacturing,Electrical Products,NSE
+,RELIGARE,Finance,Multi-Line Insurance,NSE
+,BAJAJCON,Consumer Non-Durables,Household/Personal Care,NSE
+,VMART,Retail Trade,Specialty Stores,NSE
+,CASTROLIND,Energy Minerals,Oil Refining/Marketing,NSE
+,MASTEK,Technology Services,Information Technology Services,NSE
+,AFFLE,Technology Services,Packaged Software,NSE
+,JSWENERGY,Utilities,Electric Utilities,NSE
+,INTELLECT,Technology Services,Packaged Software,NSE
+,LEMONTREE,Consumer Services,Hotels/Resorts/Cruise lines,NSE
+,KALYANKJIL,Retail Trade,Specialty Stores,NSE
+,OLECTRA,Consumer Durables,Motor Vehicles,NSE
+,WELSPUNLIV,,,
+,VOLTAMP,Producer Manufacturing,Electrical Products,NSE
+,ABBOTINDIA,Health Technology,Pharmaceuticals: Major,NSE
+,SHANTIGEAR,Producer Manufacturing,Auto Parts: OEM,NSE
+,ECLERX,Commercial Services,Miscellaneous Commercial Services,NSE
+,IOB,Finance,Major Banks,NSE
+,BIRLACORPN,Non-Energy Minerals,Construction Materials,NSE
+,J&KBANK,,,
+,RELAXO,Consumer Non-Durables,Apparel/Footwear,NSE
+,NESCO,Producer Manufacturing,Industrial Machinery,NSE
+,AUTOAXLES,Producer Manufacturing,Auto Parts: OEM,NSE
+,EXIDEIND,Producer Manufacturing,Auto Parts: OEM,NSE
+,GPPL,Transportation,Marine Shipping,NSE
+,HINDWAREAP,Producer Manufacturing,Building Products,NSE
+,MAHABANK,Finance,Major Banks,NSE
+,INDOCO,Health Technology,Pharmaceuticals: Major,NSE
+,AARTIIND,Process Industries,Chemicals: Major Diversified,NSE
+,TATACHEM,Process Industries,Chemicals: Agricultural,NSE
+,GLAND,Health Technology,Pharmaceuticals: Major,NSE
+,LAURUSLABS,Health Technology,Pharmaceuticals: Major,NSE
+,GLENMARK,Health Technology,Pharmaceuticals: Major,NSE
+,DBREALTY,Finance,Real Estate Development,NSE
+,IDFCFIRSTB,Finance,Regional Banks,NSE
+,3MINDIA,Producer Manufacturing,Industrial Conglomerates,NSE
+,GREENPLY,Producer Manufacturing,Building Products,NSE
+,RADICO,Consumer Non-Durables,Beverages: Alcoholic,NSE
+,CSBBANK,Finance,Major Banks,NSE
+,CONCOR,Transportation,Railroads,NSE
+,STYRENIX,Process Industries,Chemicals: Specialty,NSE
+,HIKAL,Health Technology,Pharmaceuticals: Major,NSE
+,FDC,Health Technology,Pharmaceuticals: Major,NSE
+,HDFCAMC,Finance,Investment Managers,NSE
+,BHARATFORG,Producer Manufacturing,Metal Fabrication,NSE
+,MGL,Utilities,Gas Distributors,NSE
+,SULA,Process Industries,Agricultural Commodities/Milling,NSE
+,SJVN,Utilities,Electric Utilities,NSE
+,SOMANYCERA,Producer Manufacturing,Building Products,NSE
+,IDFC,Finance,Investment Managers,NSE
+,CAMPUS,Consumer Non-Durables,Apparel/Footwear,NSE
+,FEDERALBNK,Finance,Regional Banks,NSE
+,ICIL,Process Industries,Textiles,NSE
+,SHOPERSTOP,Retail Trade,Department Stores,NSE
+,REDINGTON,Electronic Technology,Computer Peripherals,NSE
+,GREENPANEL,Non-Energy Minerals,Forest Products,NSE
+,CARYSIL,Consumer Durables,Home Furnishings,NSE
+,KANSAINER,Process Industries,Industrial Specialties,NSE
+,TEGA,Distribution Services,Wholesale Distributors,NSE
+,CANFINHOME,Finance,Finance/Rental/Leasing,NSE
+,DREAMFOLKS,Transportation,Other Transportation,NSE
+,WELENT,Finance,Financial Conglomerates,NSE
+,GLS,Health Technology,Pharmaceuticals: Major,NSE
+,MAHLIFE,Finance,Real Estate Development,NSE
+,JBCHEPHARM,Health Technology,Pharmaceuticals: Major,NSE
+,ACC,Non-Energy Minerals,Construction Materials,NSE
+,NATIONALUM,Non-Energy Minerals,Aluminum,NSE
+,FLUOROCHEM,Process Industries,Chemicals: Specialty,NSE
+,WHIRLPOOL,Consumer Durables,Electronics/Appliances,NSE
+,MMTC,Distribution Services,Wholesale Distributors,NSE
+,GABRIEL,Producer Manufacturing,Auto Parts: OEM,NSE
+,EPIGRAL,,,
+,GRSE,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,NFL,Process Industries,Chemicals: Agricultural,NSE
+,SBFC,,,
+,TEJASNET,Electronic Technology,Telecommunications Equipment,NSE
+,BSE,Finance,Investment Banks/Brokers,NSE
+,RVNL,Industrial Services,Engineering & Construction,NSE
+,BIKAJI,Consumer Non-Durables,Food: Specialty/Candy,NSE
+,APOLLOTYRE,Consumer Durables,Automotive Aftermarket,NSE
+,RAJESHEXPO,Consumer Durables,Other Consumer Specialties,NSE
+,FACT,Process Industries,Chemicals: Agricultural,NSE
+,BANDHANBNK,Finance,Major Banks,NSE
+,INDIANB,Finance,Major Banks,NSE
+,PRUDENT,Finance,Investment Managers,NSE
+,ALKEM,Health Technology,Pharmaceuticals: Major,NSE
+,ABFRL,Retail Trade,Apparel/Footwear Retail,NSE
+,MHRIL,Consumer Services,Other Consumer Services,NSE
+,DOLLAR,Consumer Non-Durables,Apparel/Footwear,NSE
+,MARKSANS,Health Technology,Pharmaceuticals: Major,NSE
+,SOUTHBANK,Finance,Major Banks,NSE
+,GMMPFAUDLR,Producer Manufacturing,Industrial Machinery,NSE
+,JWL,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,FORTIS,Health Services,Hospital/Nursing Management,NSE
+,JYOTHYLAB,Consumer Non-Durables,Household/Personal Care,NSE
+,EMIL,Retail Trade,Electronics/Appliance Stores,NSE
+,ROSSARI,Process Industries,Chemicals: Specialty,NSE
+,HIL,Non-Energy Minerals,Forest Products,NSE
+,FCL,Process Industries,Industrial Specialties,NSE
+,NHPC,Utilities,Electric Utilities,NSE
+,STLTECH,Technology Services,Information Technology Services,NSE
+,LTTS,Industrial Services,Engineering & Construction,NSE
+,JPPOWER,Utilities,Electric Utilities,NSE
+,RITES,Commercial Services,Miscellaneous Commercial Services,NSE
+,EIHOTEL,Consumer Services,Hotels/Resorts/Cruise lines,NSE
+,RAILTEL,Communications,Major Telecommunications,NSE
+,GARFIBRES,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,GAEL,Consumer Non-Durables,Food: Specialty/Candy,NSE
+,JUBLPHARMA,Health Technology,Pharmaceuticals: Major,NSE
+,GALAXYSURF,Consumer Non-Durables,Household/Personal Care,NSE
+,M&M,,,
+,RCF,Process Industries,Chemicals: Agricultural,NSE
+,CHAMBLFERT,Process Industries,Chemicals: Specialty,NSE
+,ORIENTCEM,Non-Energy Minerals,Construction Materials,NSE
+,STARCEMENT,Producer Manufacturing,Metal Fabrication,NSE
+,TATVA,Process Industries,Chemicals: Specialty,NSE
+,TANLA,Technology Services,Information Technology Services,NSE
+,SAIL,Non-Energy Minerals,Steel,NSE
+,VIJAYA,Health Services,Medical/Nursing Services,NSE
+,QUESS,Commercial Services,Personnel Services,NSE
+,BIOCON,Health Technology,Pharmaceuticals: Major,NSE
+,ETHOSLTD,Retail Trade,Catalog/Specialty Distribution,NSE
+,SYMPHONY,Producer Manufacturing,Industrial Machinery,NSE
+,NIACL,Finance,Multi-Line Insurance,NSE
+,WESTLIFE,Consumer Services,Restaurants,NSE
+,TCNSBRANDS,Consumer Non-Durables,Apparel/Footwear,NSE
+,PARAS,Electronic Technology,Aerospace & Defense,NSE
+,NAZARA,Technology Services,Packaged Software,NSE
+,SPLPETRO,Process Industries,Industrial Specialties,NSE
+,KIRLPNU,Producer Manufacturing,Industrial Machinery,BSE
+,LODHA,Finance,Real Estate Development,NSE
+,CUB,Finance,Regional Banks,NSE
+,IDBI,Finance,Major Banks,NSE
+,GHCL,Process Industries,Textiles,NSE
+,INOXWIND,Producer Manufacturing,Electrical Products,NSE
+,TTML,Communications,Specialty Telecommunications,NSE
+,LAOPALA,Consumer Durables,Home Furnishings,NSE
+,RKFORGE,Producer Manufacturing,Metal Fabrication,NSE
+,SHAREINDIA,Finance,Investment Banks/Brokers,NSE
+,NEULANDLAB,Health Technology,Pharmaceuticals: Major,NSE
+,SONACOMS,Producer Manufacturing,Auto Parts: OEM,NSE
+,GRAPHITE,Process Industries,Industrial Specialties,NSE
+,ACCELYA,Technology Services,Packaged Software,NSE
+,SKFINDIA,Producer Manufacturing,Metal Fabrication,NSE
+,CRISIL,Technology Services,Internet Software/Services,NSE
+,GILLETTE,Consumer Non-Durables,Household/Personal Care,NSE
+,CIEINDIA,,,
+,HNDFDS,Consumer Non-Durables,Food: Specialty/Candy,NSE
+,MOLDTKPAC,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,ELGIEQUIP,Producer Manufacturing,Industrial Machinery,NSE
+,INDIAGLYCO,Process Industries,Chemicals: Specialty,NSE
+,BAJAJHIND,Process Industries,Agricultural Commodities/Milling,NSE
+,IPCALAB,Health Technology,Pharmaceuticals: Major,NSE
+,SANOFI,Health Technology,Pharmaceuticals: Major,NSE
+,HINDCOPPER,Non-Energy Minerals,Other Metals/Minerals,NSE
+,LUPIN,Health Technology,Pharmaceuticals: Other,NSE
+,CROMPTON,Producer Manufacturing,Industrial Machinery,NSE
+,VARROC,Distribution Services,Wholesale Distributors,NSE
+,IGL,Utilities,Gas Distributors,NSE
+,LICHSGFIN,Finance,Finance/Rental/Leasing,NSE
+,LTFOODS,,,
+,HEG,Electronic Technology,Electronic Components,NSE
+,YESBANK,Finance,Major Banks,NSE
+,RHIM,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,TIMKEN,Producer Manufacturing,Industrial Machinery,NSE
+,NAVINFLUOR,Process Industries,Chemicals: Specialty,NSE
+,DELTACORP,Consumer Services,Movies/Entertainment,NSE
+,SANSERA,Producer Manufacturing,Auto Parts: OEM,NSE
+,KFINTECH,Technology Services,Packaged Software,NSE
+,RBLBANK,Finance,Major Banks,NSE
+,OPTIEMUS,Distribution Services,Electronics Distributors,NSE
+,GNFC,Process Industries,Chemicals: Specialty,NSE
+,PRESTIGE,Finance,Real Estate Development,NSE
+,AARTIDRUGS,Health Technology,Pharmaceuticals: Major,NSE
+,DBCORP,Consumer Services,Publishing: Newspapers,NSE
+,SOLARINDS,Process Industries,Industrial Specialties,NSE
+,RENUKA,Process Industries,Agricultural Commodities/Milling,NSE
+,ACLGATI,,,
+,DALMIASUG,Process Industries,Agricultural Commodities/Milling,NSE
+,TMB,Finance,Regional Banks,NSE
+,ASTERDM,Health Services,Hospital/Nursing Management,NSE
+,GICRE,Finance,Specialty Insurance,NSE
+,BARBEQUE,Consumer Services,Restaurants,NSE
+,ZENSARTECH,Technology Services,Packaged Software,NSE
+,SUNDRMFAST,Producer Manufacturing,Auto Parts: OEM,NSE
+,TATAMTRDVR,,,
+,RALLIS,Process Industries,Chemicals: Agricultural,NSE
+,CONCORDBIO,,,
+,NUVOCO,Non-Energy Minerals,Construction Materials,NSE
+,VINATIORGA,Process Industries,Chemicals: Specialty,NSE
+,MOTILALOFS,Finance,Investment Banks/Brokers,NSE
+,CENTURYPLY,Producer Manufacturing,Building Products,NSE
+,GRANULES,Health Technology,Pharmaceuticals: Other,NSE
+,VSTTILLERS,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,ELECTCAST,Non-Energy Minerals,Steel,NSE
+,JAMNAAUTO,Producer Manufacturing,Auto Parts: OEM,NSE
+,IEX,Finance,Investment Banks/Brokers,NSE
+,SEQUENT,Health Technology,Pharmaceuticals: Major,NSE
+,AUBANK,Finance,Finance/Rental/Leasing,NSE
+,DHANI,Finance,Finance/Rental/Leasing,NSE
+,HFCL,Electronic Technology,Telecommunications Equipment,NSE
+,CHOLAHLDNG,Finance,Finance/Rental/Leasing,NSE
+,MRF,Consumer Durables,Automotive Aftermarket,NSE
+,HOMEFIRST,Finance,Finance/Rental/Leasing,NSE
+,SCHNEIDER,Distribution Services,Wholesale Distributors,NSE
+,NETWORK18,Consumer Services,Broadcasting,NSE
+,COROMANDEL,Process Industries,Chemicals: Specialty,NSE
+,SSWL,Producer Manufacturing,Auto Parts: OEM,NSE
+,VRLLOG,Transportation,Trucking,NSE
+,KRBL,Process Industries,Agricultural Commodities/Milling,NSE
+,SUBEXLTD,Technology Services,Packaged Software,NSE
+,PEL,Finance,Investment Managers,NSE
+,HCG,Health Services,Hospital/Nursing Management,NSE
+,SUNTV,Consumer Services,Broadcasting,NSE
+,HGS,Commercial Services,Miscellaneous Commercial Services,NSE
+,COFORGE,Technology Services,Information Technology Services,NSE
+,ABCAPITAL,Finance,Multi-Line Insurance,NSE
+,ANANDRATHI,Finance,Investment Managers,NSE
+,ZYDUSWELL,Consumer Non-Durables,Food: Major Diversified,NSE
+,NOCIL,Process Industries,Chemicals: Specialty,NSE
+,IOLCP,Process Industries,Chemicals: Specialty,NSE
+,KNRCON,Industrial Services,Engineering & Construction,NSE
+,HGINFRA,Industrial Services,Engineering & Construction,NSE
+,CAMLINFINE,Process Industries,Chemicals: Specialty,NSE
+,RAYMOND,Process Industries,Textiles,NSE
+,IIFL,Finance,Finance/Rental/Leasing,NSE
+,UFLEX,Process Industries,Containers/Packaging,NSE
+,VENKEYS,Process Industries,Agricultural Commodities/Milling,NSE
+,DCMSHRIRAM,Producer Manufacturing,Industrial Conglomerates,NSE
+,CMSINFO,Finance,Investment Managers,NSE
+,PRICOLLTD,Producer Manufacturing,Auto Parts: OEM,NSE
+,JKCEMENT,Non-Energy Minerals,Construction Materials,NSE
+,MINDACORP,Producer Manufacturing,Auto Parts: OEM,NSE
+,EVEREADY,Producer Manufacturing,Electrical Products,NSE
+,UNICHEMLAB,Health Technology,Pharmaceuticals: Major,NSE
+,SUNDARMFIN,Finance,Finance/Rental/Leasing,NSE
+,NLCINDIA,Utilities,Electric Utilities,NSE
+,INDIACEM,Non-Energy Minerals,Construction Materials,NSE
+,ASHOKA,Industrial Services,Engineering & Construction,NSE
+,AEGISCHEM,Distribution Services,Wholesale Distributors,NSE
+,TIIL,Producer Manufacturing,Metal Fabrication,NSE
+,PATANJALI,Process Industries,Agricultural Commodities/Milling,NSE
+,NRBBEARING,Producer Manufacturing,Auto Parts: OEM,NSE
+,ACI,Process Industries,Chemicals: Major Diversified,NSE
+,UNOMINDA,Producer Manufacturing,Auto Parts: OEM,NSE
+,BBTC,Consumer Non-Durables,Food: Major Diversified,NSE
+,HBLPOWER,Producer Manufacturing,Electrical Products,NSE
+,DALBHARAT,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,JBMA,Producer Manufacturing,Auto Parts: OEM,NSE
+,SWANENERGY,Utilities,Electric Utilities,NSE
+,RAJRATAN,Producer Manufacturing,Metal Fabrication,NSE
+,AHLUCONT,Industrial Services,Engineering & Construction,NSE
+,NCC,Consumer Durables,Homebuilding,NSE
+,360ONE,Finance,Investment Managers,NSE
+,JKTYRE,Consumer Durables,Automotive Aftermarket,NSE
+,TATAMETALI,Non-Energy Minerals,Steel,NSE
+,JKIL,Industrial Services,Engineering & Construction,NSE
+,RBA,Consumer Services,Restaurants,NSE
+,LALPATHLAB,Health Services,Medical/Nursing Services,NSE
+,SIYSIL,Process Industries,Textiles,NSE
+,HUDCO,Finance,Finance/Rental/Leasing,NSE
+,JSL,Non-Energy Minerals,Steel,NSE
+,HEIDELBERG,Non-Energy Minerals,Construction Materials,NSE
+,CENTURYTEX,Process Industries,Textiles,NSE
+,HATHWAY,Consumer Services,Cable/Satellite TV,NSE
+,HARSHA,Producer Manufacturing,Metal Fabrication,NSE
+,GMDCLTD,Distribution Services,Wholesale Distributors,NSE
+,OBEROIRLTY,Finance,Real Estate Development,NSE
+,ITI,Communications,Major Telecommunications,NSE
+,BECTORFOOD,Consumer Non-Durables,Food: Specialty/Candy,NSE
+,DCBBANK,Finance,Regional Banks,NSE
+,SHARDACROP,Distribution Services,Wholesale Distributors,NSE
+,GODREJAGRO,Process Industries,Agricultural Commodities/Milling,NSE
+,FIVESTAR,Finance,Financial Conglomerates,NSE
+,CARTRADE,Technology Services,Internet Software/Services,NSE
+,GRINDWELL,Process Industries,Industrial Specialties,NSE
+,SUDARSCHEM,Process Industries,Chemicals: Specialty,NSE
+,TATACOMM,Communications,Major Telecommunications,NSE
+,AMIORG,Health Technology,Pharmaceuticals: Major,NSE
+,FINCABLES,Producer Manufacturing,Electrical Products,NSE
+,NATCOPHARM,Health Technology,Pharmaceuticals: Major,NSE
+,TECHNOE,Industrial Services,Engineering & Construction,NSE
+,UBL,Consumer Non-Durables,Beverages: Alcoholic,NSE
+,DATAMATICS,Technology Services,Packaged Software,NSE
+,PRIVISCL,Process Industries,Chemicals: Major Diversified,NSE
+,KIRLOSBROS,Producer Manufacturing,Industrial Machinery,NSE
+,MTARTECH,Electronic Technology,Aerospace & Defense,NSE
+,CEATLTD,Consumer Durables,Automotive Aftermarket,NSE
+,JUBLINGREA,Process Industries,Chemicals: Major Diversified,NSE
+,CERA,Consumer Durables,Home Furnishings,NSE
+,JTLIND,Non-Energy Minerals,Steel,NSE
+,KTKBANK,Finance,Regional Banks,NSE
+,MSUMI,Producer Manufacturing,Auto Parts: OEM,NSE
+,DWARKESH,Process Industries,Agricultural Commodities/Milling,NSE
+,GUJALKALI,Process Industries,Chemicals: Specialty,NSE
+,BLUESTARCO,Producer Manufacturing,Industrial Machinery,NSE
+,APCOTEXIND,Process Industries,Chemicals: Specialty,NSE
+,BATAINDIA,Consumer Non-Durables,Apparel/Footwear,NSE
+,ZFCVINDIA,Producer Manufacturing,Auto Parts: OEM,NSE
+,BSOFT,Technology Services,Packaged Software,NSE
+,ROUTE,Communications,Major Telecommunications,NSE
+,ISGEC,Industrial Services,Engineering & Construction,NSE
+,TATAELXSI,Technology Services,Information Technology Services,NSE
+,CIGNITITEC,Technology Services,Information Technology Services,NSE
+,JUSTDIAL,Technology Services,Internet Software/Services,NSE
+,UNIPARTS,Distribution Services,Wholesale Distributors,NSE
+,EMAMILTD,Consumer Non-Durables,Household/Personal Care,NSE
+,VGUARD,Producer Manufacturing,Electrical Products,NSE
+,PAYTM,Technology Services,Packaged Software,NSE
+,MAPMYINDIA,Commercial Services,Miscellaneous Commercial Services,NSE
+,ASAHIINDIA,Consumer Durables,Home Furnishings,NSE
+,JUBLFOOD,Consumer Services,Restaurants,NSE
+,COSMOFIRST,Process Industries,Containers/Packaging,NSE
+,DBL,Industrial Services,Engineering & Construction,NSE
+,HLEGLAS,Producer Manufacturing,Industrial Machinery,NSE
+,ASHOKLEY,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,SUPRAJIT,Producer Manufacturing,Auto Parts: OEM,NSE
+,TTKPRESTIG,Consumer Durables,Home Furnishings,NSE
+,LINDEINDIA,Process Industries,Chemicals: Specialty,NSE
+,MEDPLUS,Retail Trade,Drugstore Chains,NSE
+,IONEXCHANG,Producer Manufacturing,Industrial Machinery,NSE
+,AMBER,Producer Manufacturing,Industrial Machinery,NSE
+,MOIL,Non-Energy Minerals,Other Metals/Minerals,NSE
+,OFSS,Technology Services,Packaged Software,NSE
+,NAVA,Utilities,Electric Utilities,NSE
+,MCX,Finance,Investment Banks/Brokers,NSE
+,MIDHANI,Non-Energy Minerals,Other Metals/Minerals,NSE
+,BALMLAWRIE,Producer Manufacturing,Industrial Conglomerates,NSE
+,PGHL,Health Technology,Pharmaceuticals: Major,NSE
+,PRINCEPIPE,Producer Manufacturing,Industrial Machinery,NSE
+,MAZDOCK,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,JINDWORLD,Process Industries,Textiles,NSE
+,BALRAMCHIN,Process Industries,Agricultural Commodities/Milling,NSE
+,LXCHEM,Process Industries,Chemicals: Specialty,NSE
+,FSL,Commercial Services,Miscellaneous Commercial Services,NSE
+,PFIZER,Health Technology,Pharmaceuticals: Major,NSE
+,POONAWALLA,Finance,Finance/Rental/Leasing,NSE
+,CGCL,Finance,Finance/Rental/Leasing,NSE
+,KRSNAA,Health Services,Medical/Nursing Services,NSE
+,GODREJPROP,Finance,Real Estate Development,NSE
+,VESUVIUS,Non-Energy Minerals,Construction Materials,NSE
+,BDL,Electronic Technology,Aerospace & Defense,NSE
+,CAPLIPOINT,Health Technology,Pharmaceuticals: Major,NSE
+,ROLEXRINGS,Producer Manufacturing,Metal Fabrication,NSE
+,POLYMED,Health Technology,Medical Specialties,NSE
+,GREAVESCOT,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,JTEKTINDIA,Consumer Durables,Automotive Aftermarket,NSE
+,SCHAEFFLER,Producer Manufacturing,Metal Fabrication,NSE
+,GLOBUSSPR,Consumer Non-Durables,Beverages: Alcoholic,NSE
+,DEEPAKFERT,Process Industries,Chemicals: Agricultural,NSE
+,POLYCAB,Producer Manufacturing,Electrical Products,NSE
+,RECLTD,Finance,Finance/Rental/Leasing,NSE
+,LUXIND,Consumer Non-Durables,Apparel/Footwear,NSE
+,ITDCEM,Industrial Services,Engineering & Construction,NSE
+,SYRMA,Electronic Technology,Electronic Production Equipment,NSE
+,BLUEDART,Transportation,Air Freight/Couriers,NSE
+,PAGEIND,Consumer Non-Durables,Apparel/Footwear,NSE
+,NMDC,Non-Energy Minerals,Other Metals/Minerals,NSE
+,MAHSEAMLES,Non-Energy Minerals,Steel,NSE
+,ORIENTELEC,Consumer Durables,Electronics/Appliances,NSE
+,RELINFRA,Utilities,Electric Utilities,NSE
+,EMUDHRA,Technology Services,Packaged Software,NSE
+,RAINBOW,Health Services,Hospital/Nursing Management,NSE
+,UJJIVANSFB,Finance,Regional Banks,NSE
+,AUROPHARMA,Health Technology,Pharmaceuticals: Other,NSE
+,JCHAC,Consumer Durables,Electronics/Appliances,NSE
+,EASEMYTRIP,Consumer Services,Other Consumer Services,NSE
+,JAICORPLTD,Process Industries,Containers/Packaging,NSE
+,BANKINDIA,Finance,Major Banks,NSE
+,APOLLOPIPE,Finance,Finance/Rental/Leasing,NSE
+,SUNFLAG,Non-Energy Minerals,Steel,NSE
+,GODREJIND,Process Industries,Agricultural Commodities/Milling,NSE
+,CCL,Consumer Non-Durables,Food: Specialty/Candy,NSE
+,CESC,Utilities,Electric Utilities,NSE
+,KIRIINDUS,Process Industries,Chemicals: Specialty,NSE
+,TVSSCS,,,
+,CDSL,Finance,Investment Banks/Brokers,NSE
+,IKIO,,,
+,LANDMARK,Retail Trade,Specialty Stores,NSE
+,POWERMECH,Industrial Services,Engineering & Construction,NSE
+,DIXON,Electronic Technology,Electronic Production Equipment,NSE
+,HERITGFOOD,Consumer Non-Durables,Food: Meat/Fish/Dairy,NSE
+,CHOICEIN,Commercial Services,Miscellaneous Commercial Services,NSE
+,MAITHANALL,Non-Energy Minerals,Other Metals/Minerals,NSE
+,ERIS,Health Technology,Pharmaceuticals: Major,NSE
+,HINDZINC,Non-Energy Minerals,Other Metals/Minerals,NSE
+,KKCL,Consumer Non-Durables,Apparel/Footwear,NSE
+,PVRINOX,,,
+,JKPAPER,Process Industries,Pulp & Paper,NSE
+,CONFIPET,Retail Trade,Specialty Stores,NSE
+,TIRUMALCHM,Process Industries,Chemicals: Specialty,NSE
+,ESCORTS,Producer Manufacturing,Auto Parts: OEM,NSE
+,MAHLOG,Transportation,Air Freight/Couriers,NSE
+,PTC,Utilities,Electric Utilities,NSE
+,HONAUT,Electronic Technology,Electronic Equipment/Instruments,NSE
+,FIEMIND,Producer Manufacturing,Auto Parts: OEM,NSE
+,SUPRIYA,Health Technology,Pharmaceuticals: Major,NSE
+,EQUITASBNK,Finance,Regional Banks,NSE
+,GUFICBIO,Health Technology,Pharmaceuticals: Major,NSE
+,LGBBROSLTD,Producer Manufacturing,Electrical Products,NSE
+,EIDPARRY,Process Industries,Chemicals: Agricultural,NSE
+,INDIAMART,Retail Trade,Internet Retail,NSE
+,PERSISTENT,Technology Services,Information Technology Services,NSE
+,BEPL,Process Industries,Industrial Specialties,NSE
+,MASFIN,Finance,Finance/Rental/Leasing,NSE
+,IRCON,Industrial Services,Engineering & Construction,NSE
+,KOLTEPATIL,Finance,Real Estate Development,NSE
+,DCXINDIA,Producer Manufacturing,Electrical Products,NSE
+,IBREALEST,Finance,Real Estate Development,NSE
+,SUNTECK,Finance,Real Estate Development,NSE
+,GESHIP,Transportation,Marine Shipping,NSE
+,JINDALPOLY,Process Industries,Containers/Packaging,NSE
+,TITAGARH,,,
+,MAXHEALTH,Health Services,Hospital/Nursing Management,NSE
+,SOBHA,Finance,Real Estate Development,NSE
+,NYKAA,Retail Trade,Internet Retail,NSE
+,SPARC,Health Technology,Pharmaceuticals: Major,NSE
+,INDIGOPNTS,Process Industries,Industrial Specialties,NSE
+,MANAPPURAM,Finance,Finance/Rental/Leasing,NSE
+,ENGINERSIN,Industrial Services,Engineering & Construction,NSE
+,BALKRISIND,Consumer Durables,Automotive Aftermarket,NSE
+,EDELWEISS,Finance,Investment Banks/Brokers,NSE
+,BLS,Technology Services,Data Processing Services,NSE
+,AAVAS,Finance,Finance/Rental/Leasing,NSE
+,ZEEL,Consumer Services,Broadcasting,NSE
+,ANANTRAJ,Consumer Durables,Homebuilding,NSE
+,DIVGIITTS,Producer Manufacturing,Auto Parts: OEM,NSE
+,IDEA,Communications,Wireless Telecommunications,NSE
+,MPHASIS,Technology Services,Packaged Software,NSE
+,STAR,Health Technology,Pharmaceuticals: Major,NSE
+,PRAJIND,Industrial Services,Engineering & Construction,NSE
+,UNIONBANK,Finance,Major Banks,NSE
+,SURYAROSNI,Non-Energy Minerals,Steel,NSE
+,NBCC,Commercial Services,Miscellaneous Commercial Services,NSE
+,RTNINDIA,Commercial Services,Miscellaneous Commercial Services,NSE
+,JINDALSAW,Non-Energy Minerals,Steel,NSE
+,DEN,Consumer Services,Cable/Satellite TV,NSE
+,CGPOWER,Producer Manufacturing,Electrical Products,NSE
+,HINDOILEXP,Energy Minerals,Integrated Oil,NSE
+,INDHOTEL,Consumer Services,Hotels/Resorts/Cruise lines,NSE
+,MANKIND,,,
+,WSTCSTPAPR,Producer Manufacturing,Office Equipment/Supplies,NSE
+,TIPSINDLTD,Consumer Services,Movies/Entertainment,NSE
+,ASTEC,Process Industries,Chemicals: Agricultural,NSE
+,BHEL,Producer Manufacturing,Electrical Products,NSE
+,MFSL,Finance,Life/Health Insurance,NSE
+,CUMMINSIND,Producer Manufacturing,Auto Parts: OEM,NSE
+,SAREGAMA,Consumer Services,Movies/Entertainment,NSE
+,KAYNES,Electronic Technology,Electronic Production Equipment,NSE
+,WELCORP,Producer Manufacturing,Industrial Machinery,NSE
+,GOKEX,Consumer Non-Durables,Apparel/Footwear,NSE
+,LATENTVIEW,Commercial Services,Miscellaneous Commercial Services,NSE
+,PETRONET,Utilities,Gas Distributors,NSE
+,PSPPROJECT,Industrial Services,Engineering & Construction,NSE
+,SPANDANA,Finance,Finance/Rental/Leasing,NSE
+,CHENNPETRO,Energy Minerals,Oil Refining/Marketing,NSE
+,PFC,Finance,Finance/Rental/Leasing,NSE
+,RESPONIND,Non-Energy Minerals,Forest Products,NSE
+,STYLAMIND,Non-Energy Minerals,Forest Products,NSE
+,GSFC,Process Industries,Chemicals: Agricultural,NSE
+,DISHTV,Communications,Specialty Telecommunications,NSE
+,ALOKINDS,Process Industries,Textiles,NSE
+,PGEL,Electronic Technology,Electronic Production Equipment,NSE
+,THYROCARE,Health Services,Medical/Nursing Services,NSE
+,RPOWER,Utilities,Electric Utilities,NSE
+,RTNPOWER,Utilities,Electric Utilities,NSE
+,ARVIND,Process Industries,Textiles,NSE
+,WABAG,Industrial Services,Engineering & Construction,NSE
+,UJJIVAN,Finance,Finance/Rental/Leasing,NSE
+,SUVENPHAR,Producer Manufacturing,Industrial Conglomerates,NSE
+,OIL,Energy Minerals,Oil Refining/Marketing,NSE
+,CARERATING,Commercial Services,Financial Publishing/Services,NSE
+,GMRINFRA,Transportation,Other Transportation,NSE
+,APLAPOLLO,Non-Energy Minerals,Steel,NSE
+,MRPL,Energy Minerals,Oil Refining/Marketing,NSE
+,TIINDIA,Non-Energy Minerals,Steel,NSE
+,TRIDENT,Process Industries,Textiles,NSE
+,ELECON,Producer Manufacturing,Electrical Products,NSE
+,PNCINFRA,Industrial Services,Engineering & Construction,NSE
+,HINDPETRO,Energy Minerals,Oil Refining/Marketing,NSE
+,RAIN,Process Industries,Industrial Specialties,NSE
+,SUPREMEIND,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,TV18BRDCST,Consumer Services,Broadcasting,NSE
+,TARSONS,Process Industries,Containers/Packaging,NSE
+,PHOENIXLTD,Finance,Real Estate Development,NSE
+,PCBL,Process Industries,Industrial Specialties,NSE
+,SHYAMMETL,Producer Manufacturing,Metal Fabrication,NSE
+,INDUSTOWER,Finance,Finance/Rental/Leasing,NSE
+,SWSOLAR,Industrial Services,Engineering & Construction,NSE
+,CRAFTSMAN,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE
+,MSTCLTD,Retail Trade,Internet Retail,NSE
+,ASTRAL,Producer Manufacturing,Miscellaneous Manufacturing,NSE
+,METROBRAND,Retail Trade,Apparel/Footwear Retail,NSE
+,SIS,Commercial Services,Miscellaneous Commercial Services,NSE
+,CYIENT,Commercial Services,Miscellaneous Commercial Services,NSE
+,IRB,Industrial Services,Engineering & Construction,NSE
+,DATAPATTNS,Electronic Technology,Electronic Production Equipment,NSE
+,TATAINVEST,Finance,Investment Banks/Brokers,NSE
+,VIPIND,Consumer Durables,Other Consumer Specialties,NSE
+,VAIBHAVGBL,Consumer Durables,Other Consumer Specialties,NSE
+,MANYAVAR,Retail Trade,Internet Retail,NSE
+,JPASSOCIAT,Producer Manufacturing,Industrial Conglomerates,NSE
+,THOMASCOOK,Finance,Regional Banks,NSE

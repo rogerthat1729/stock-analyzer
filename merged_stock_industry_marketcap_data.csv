@@ -1,0 +1,747 @@
+Company Name,Symbol,Sector,Industry,Exchange,MarketCap
+Adani Enterprises Ltd.,ADANIENT,Distribution Services,Wholesale Distributors,NSE,32478061.936729506
+Adani Ports and Special Economic Zone Ltd.,ADANIPORTS,Transportation,Other Transportation,NSE,22127383.2831075
+Apollo Hospitals Enterprise Ltd.,APOLLOHOSP,Health Services,Hospital/Nursing Management,NSE,8201620.619937
+Asian Paints Ltd.,ASIANPAINT,Process Industries,Industrial Specialties,NSE,32635745.60696
+Axis Bank Ltd.,AXISBANK,Finance,Regional Banks,NSE,33991569.444873
+Bajaj Auto Ltd.,BAJAJ-AUTO,,,,19233319.016655
+Bajaj Finance Ltd.,BAJFINANCE,Finance,Finance/Rental/Leasing,NSE,45287186.0248675
+Bajaj Finserv Ltd.,BAJAJFINSV,Finance,Life/Health Insurance,NSE,26896750.409554
+Bharat Petroleum Corporation Ltd.,BPCL,Energy Minerals,Oil Refining/Marketing,NSE,9775737.490836
+Bharti Airtel Ltd.,BHARTIARTL,Communications,Wireless Telecommunications,NSE,58028012.499392
+Britannia Industries Ltd.,BRITANNIA,Consumer Non-Durables,Food: Specialty/Candy,NSE,12858633.547812
+Cipla Ltd.,CIPLA,Health Technology,Pharmaceuticals: Other,NSE,10062008.010274
+Coal India Ltd.,COALINDIA,Energy Minerals,Coal,NSE,23171858.50952
+Divi's Laboratories Ltd.,DIVISLAB,Health Technology,Pharmaceuticals: Major,NSE,10363627.89462
+Dr. Reddy's Laboratories Ltd.,DRREDDY,Health Technology,Pharmaceuticals: Major,NSE,9671442.028663
+Eicher Motors Ltd.,EICHERMOT,Consumer Durables,Motor Vehicles,NSE,11343887.8425
+Grasim Industries Ltd.,GRASIM,Non-Energy Minerals,Construction Materials,NSE,14056564.790268
+HCL Technologies Ltd.,HCLTECH,Technology Services,Information Technology Services,NSE,39785043.972456
+HDFC Bank Ltd.,HDFCBANK,Finance,Regional Banks,NSE,129740453.999887
+HDFC Life Insurance Company Ltd.,HDFCLIFE,Finance,Multi-Line Insurance,NSE,13908315.736672
+Hero MotoCorp Ltd.,HEROMOTOCO,Consumer Durables,Motor Vehicles,NSE,8274428.6420115
+Hindalco Industries Ltd.,HINDALCO,Non-Energy Minerals,Other Metals/Minerals,NSE,13817010.7916655
+Hindustan Unilever Ltd.,HINDUNILVR,Consumer Non-Durables,Household/Personal Care,NSE,62591936.424049005
+ICICI Bank Ltd.,ICICIBANK,Finance,Regional Banks,NSE,69902440.891932
+ITC Ltd.,ITC,Consumer Non-Durables,Tobacco,NSE,57649787.673312
+IndusInd Bank Ltd.,INDUSINDBK,Finance,Major Banks,NSE,12435548.724089
+Infosys Ltd.,INFY,Technology Services,Information Technology Services,NSE,64037070.702681
+JSW Steel Ltd.,JSWSTEEL,Non-Energy Minerals,Steel,NSE,21526108.535715
+Kotak Mahindra Bank Ltd.,KOTAKBANK,Finance,Major Banks,NSE,37924093.150021
+LTIMindtree Ltd.,LTIM,Commercial Services,Miscellaneous Commercial Services,NSE,18627749.3229685
+Larsen & Toubro Ltd.,LT,Industrial Services,Engineering & Construction,NSE,48466573.5869
+Maruti Suzuki India Ltd.,MARUTI,Consumer Durables,Motor Vehicles,NSE,32390853.582489
+NTPC Ltd.,NTPC,Utilities,Electric Utilities,NSE,30171176.675941
+Nestle India Ltd.,NESTLEIND,Consumer Non-Durables,Food: Major Diversified,NSE,25627586.559948
+Oil & Natural Gas Corporation Ltd.,ONGC,Energy Minerals,Oil Refining/Marketing,NSE,25795862.511903
+Power Grid Corporation of India Ltd.,POWERGRID,Utilities,Alternative Power Generation,NSE,22061032.258668
+Reliance Industries Ltd.,RELIANCE,Energy Minerals,Oil Refining/Marketing,NSE,174889554.787729
+SBI Life Insurance Company Ltd.,SBILIFE,Finance,Life/Health Insurance,NSE,14343767.148178
+State Bank of India,SBIN,Finance,Regional Banks,NSE,57300470.922247
+Sun Pharmaceutical Industries Ltd.,SUNPHARMA,Health Technology,Pharmaceuticals: Major,NSE,30218424.279665
+Tata Consultancy Services Ltd.,TCS,Technology Services,Information Technology Services,NSE,137248531.907812
+Tata Consumer Products Ltd.,TATACONSUM,Consumer Non-Durables,Food: Specialty/Candy,NSE,10096498.6122
+Tata Motors Ltd.,TATAMOTORS,Consumer Durables,Motor Vehicles,NSE,25916546.0734425
+Tata Steel Ltd.,TATASTEEL,Non-Energy Minerals,Steel,NSE,17167076.782844
+Tech Mahindra Ltd.,TECHM,Technology Services,Information Technology Services,NSE,12421247.9870105
+Titan Company Ltd.,TITAN,Consumer Durables,Other Consumer Specialties,NSE,32630136.41772
+UPL Ltd.,UPL,Process Industries,Chemicals: Agricultural,NSE,4407943.3717725
+UltraTech Cement Ltd.,ULTRACEMCO,Non-Energy Minerals,Construction Materials,NSE,30320905.713557
+Wipro Ltd.,WIPRO,Technology Services,Information Technology Services,NSE,24621822.533616003
+,LICI,Finance,Life/Health Insurance,NSE,52655605.860825
+,PNB,Finance,Major Banks,NSE,10543047.396785
+,SRF,Process Industries,Industrial Specialties,NSE,7349112.4738125
+,ZOMATO,Technology Services,Packaged Software,NSE,10775402.675131
+,NAUKRI,Technology Services,Internet Software/Services,NSE,6650537.84418
+,TATAPOWER,Utilities,Electric Utilities,NSE,10613320.3053605
+,AMBUJACEM,Non-Energy Minerals,Construction Materials,NSE,10343225.997861
+,JINDALSTEL,Non-Energy Minerals,Steel,NSE,7631279.053657
+,SIEMENS,Producer Manufacturing,Electrical Products,NSE,14332771.902985
+,TORNTPHARM,Health Technology,Pharmaceuticals: Major,NSE,7803028.84192
+,PIIND,Process Industries,Chemicals: Specialty,NSE,5334257.310762
+,SHREECEM,Non-Energy Minerals,Construction Materials,NSE,10338324.966684
+,COLPAL,Consumer Non-Durables,Household/Personal Care,NSE,6880420.5832980005
+,DLF,Finance,Real Estate Development,NSE,17980688.421504
+,ICICIPRULI,Finance,Life/Health Insurance,NSE,7702120.5341735
+,ZYDUSLIFE,Health Technology,Pharmaceuticals: Major,NSE,6976110.925988001
+,IRCTC,Consumer Services,Other Consumer Services,NSE,7100000.0
+,TRENT,Retail Trade,Apparel/Footwear Retail,NSE,10859964.1898195
+,MARICO,Consumer Non-Durables,Household/Personal Care,NSE,7096677.33988
+,VEDL,Non-Energy Minerals,Aluminum,NSE,9610836.7309345
+,BANKBARODA,Finance,Major Banks,NSE,11951017.995669
+,CANBK,Finance,Regional Banks,NSE,7936819.8525
+,BERGEPAINT,Process Industries,Industrial Specialties,NSE,7048447.266663001
+,IOC,Energy Minerals,Integrated Oil,NSE,18336428.0403255
+,ADANIENSOL,,,,11665264.7324725
+,ADANIGREEN,Utilities,Electric Utilities,NSE,25296998.67366
+,TVSMOTOR,Consumer Durables,Motor Vehicles,NSE,9624314.755412
+,INDIGO,Transportation,Airlines,NSE,11451378.189598
+,BOSCHLTD,Producer Manufacturing,Auto Parts: OEM,NSE,6548708.83832
+,ATGL,Utilities,Gas Distributors,NSE,10865573.7149985
+,MOTHERSON,Producer Manufacturing,Auto Parts: OEM,NSE,6908561.582637
+,AWL,Process Industries,Agricultural Commodities/Milling,NSE,4612559.369145
+,BAJAJHLDNG,Finance,Financial Conglomerates,NSE,8541331.71846
+,ICICIGI,Finance,Specialty Insurance,NSE,6989615.652393
+,PGHH,Consumer Non-Durables,Household/Personal Care,NSE,5637147.644128
+,DABUR,Consumer Non-Durables,Household/Personal Care,NSE,9873789.66252
+,HAVELLS,Producer Manufacturing,Electrical Products,NSE,8572710.508885
+,MUTHOOTFIN,Finance,Finance/Rental/Leasing,NSE,5926725.059283
+,MCDOWELL-N,,,,8129964.1594075
+,DMART,Retail Trade,Specialty Stores,NSE,26567153.600702003
+,GAIL,Utilities,Gas Distributors,NSE,10658236.522924
+,PIDILITIND,Process Industries,Industrial Specialties,NSE,13809215.53649
+,SBICARD,Finance,Finance/Rental/Leasing,NSE,7221762.1405585
+,HAL,Electronic Technology,Aerospace & Defense,NSE,18752451.0
+,BEL,Electronic Technology,Aerospace & Defense,NSE,13464612.603018
+,VBL,Consumer Non-Durables,Beverages: Non-Alcoholic,NSE,16069990.038144
+,GODREJCP,Consumer Non-Durables,Household/Personal Care,NSE,11570143.561648
+,SHRIRAMFIN,Finance,Finance/Rental/Leasing,NSE,7710994.502419
+,ABB,Producer Manufacturing,Electrical Products,NSE,9906398.6686875
+,CHOLAFIN,Finance,Finance/Rental/Leasing,NSE,10577709.88788
+,BCG,Technology Services,Packaged Software,NSE,390467.8824255
+,GODFRYPHLP,Consumer Non-Durables,Tobacco,NSE,1096473.78192
+,POLICYBZR,Technology Services,Internet Software/Services,NSE,3580969.867311
+,IFCI,Finance,Regional Banks,NSE,725722.4410645
+,PTCIL,Producer Manufacturing,Metal Fabrication,BSE,813755.7633855001
+,IMFA,Non-Energy Minerals,Other Metals/Minerals,NSE,269419.828311
+,SHILPAMED,Health Technology,Pharmaceuticals: Major,NSE,286706.669094
+,UCOBANK,Finance,Regional Banks,NSE,4752493.37496
+,MOL,Process Industries,Chemicals: Specialty,NSE,197856.456158
+,ASTRAZEN,Health Technology,Pharmaceuticals: Major,NSE,1381650.0
+,RATNAMANI,Non-Energy Minerals,Steel,NSE,2357369.19
+,KPITTECH,Technology Services,Packaged Software,NSE,4150126.037408
+,VTL,Process Industries,Textiles,NSE,1116648.4902
+,USHAMART,Producer Manufacturing,Metal Fabrication,NSE,903407.00681
+,KSCL,Process Industries,Agricultural Commodities/Milling,NSE,342577.12445400003
+,CLEAN,Process Industries,Chemicals: Specialty,NSE,1645879.170495
+,APLLTD,Health Technology,Pharmaceuticals: Major,NSE,1492700.363656
+,FUSION,Finance,Finance/Rental/Leasing,NSE,582301.67314
+,VOLTAS,Producer Manufacturing,Industrial Machinery,NSE,3237210.85379
+,AVANTIFEED,Process Industries,Agricultural Commodities/Milling,NSE,572299.768815
+,AETHER,Process Industries,Chemicals: Major Diversified,NSE,1176118.572329
+,AIAENG,Producer Manufacturing,Industrial Machinery,NSE,3479950.05115
+,PRSMJOHNSN,Non-Energy Minerals,Construction Materials,NSE,924917.71575
+,HEMIPROP,Finance,Real Estate Development,NSE,436620.0
+,ZENTEC,Technology Services,Information Technology Services,NSE,667815.68996
+,KEC,Industrial Services,Engineering & Construction,NSE,1514764.67604
+,GRAVITA,Non-Energy Minerals,Other Metals/Minerals,NSE,756759.0943110001
+,UTIAMC,Finance,Investment Managers,NSE,1102147.25292
+,GANESHHOUC,Finance,Real Estate Development,NSE,347348.923395
+,ACE,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,987378.319634
+,BAYERCROP,Process Industries,Chemicals: Agricultural,NSE,
+,ALKYLAMINE,Process Industries,Chemicals: Specialty,NSE,1296284.173695
+,ISEC,Finance,Investment Banks/Brokers,NSE,2320496.5892
+,PAISALO,Finance,Finance/Rental/Leasing,NSE,414447.29677
+,CAMS,Finance,Regional Banks,NSE,1302432.90444
+,NSLNISP,Non-Energy Minerals,Steel,NSE,1506331.4069
+,BORORENEW,Process Industries,Industrial Specialties,NSE,574213.765205
+,DEVYANI,Consumer Services,Restaurants,NSE,2336351.576125
+,RUPA,Consumer Non-Durables,Apparel/Footwear,NSE,213483.68132
+,WOCKPHARMA,Health Technology,Pharmaceuticals: Major,NSE,611494.6006755
+,DELHIVERY,Transportation,Air Freight/Couriers,NSE,2861153.1842625
+,TRIVENI,Process Industries,Agricultural Commodities/Milling,NSE,754541.2956960001
+,SYNGENE,Commercial Services,Miscellaneous Commercial Services,NSE,2819934.2175
+,POWERINDIA,Electronic Technology,Electronic Equipment/Instruments,NSE,2231119.7078625
+,SBCL,Non-Energy Minerals,Other Metals/Minerals,NSE,317139.9231
+,TORNTPOWER,Utilities,Electric Utilities,NSE,4488239.837384
+,AARTIPHARM,Process Industries,Chemicals: Major Diversified,NSE,457162.897356
+,KIRLOSENG,Producer Manufacturing,Electrical Products,NSE,949669.798663
+,TIDEWATER,Energy Minerals,Oil Refining/Marketing,NSE,246401.496
+,ADVENZYMES,Consumer Non-Durables,Food: Specialty/Candy,NSE,419731.6655125
+,GATEWAY,Non-Energy Minerals,Precious Metals,NSE,518630.301768
+,THERMAX,Producer Manufacturing,Industrial Machinery,NSE,3671801.3845
+,BALAMINES,Process Industries,Chemicals: Specialty,NSE,864620.685
+,SCI,Transportation,Air Freight/Couriers,NSE,758786.58729
+,APARINDS,Electronic Technology,Electronic Equipment/Instruments,NSE,2431548.78021
+,CHALET,Consumer Services,Hotels/Resorts/Cruise lines,NSE,1430471.4160079998
+,ARE&M,,,,1393830.0
+,AJANTPHARM,Health Technology,Pharmaceuticals: Major,NSE,2669679.7921575
+,GUJGASLTD,Utilities,Gas Distributors,NSE,3176920.426875
+,COCHINSHIP,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,1780991.110405
+,AVALON,,,,361719.411834
+,M&MFIN,,,,3418711.28864
+,ANGELONE,Finance,Investment Banks/Brokers,NSE,2927791.8564
+,PNBHOUSING,Finance,Finance/Rental/Leasing,NSE,2027460.797235
+,ARVINDFASN,Retail Trade,Apparel/Footwear Retail,NSE,545213.0635444999
+,ENDURANCE,Producer Manufacturing,Metal Fabrication,NSE,2719294.177536
+,SAFARI,Consumer Durables,Other Consumer Specialties,NSE,928202.830389
+,INFIBEAM,Commercial Services,Miscellaneous Commercial Services,NSE,597350.60049
+,CHEMPLASTS,Process Industries,Chemicals: Major Diversified,NSE,790468.815213
+,GSPL,Utilities,Gas Distributors,NSE,1726486.81056
+,DODLA,Consumer Non-Durables,Food: Meat/Fish/Dairy,NSE,522465.19877
+,APTUS,Finance,Finance/Rental/Leasing,NSE,1595309.4931975
+,KPIL,,,,1152068.109984
+,ATUL,Process Industries,Chemicals: Agricultural,NSE,2111103.056755
+,MEDANTA,Health Services,Hospital/Nursing Management,NSE,2574621.234453
+,PPLPHARMA,Health Technology,Pharmaceuticals: Major,NSE,1836913.478505
+,MAYURUNIQ,Process Industries,Textiles,NSE,247694.8773
+,NAVNETEDUL,Producer Manufacturing,Office Equipment/Supplies,NSE,341808.116491
+,PDSL,Consumer Non-Durables,Apparel/Footwear,NSE,726346.770968
+,BOMDYEING,Process Industries,Textiles,NSE,318063.746
+,FINPIPE,Producer Manufacturing,Miscellaneous Manufacturing,NSE,1309206.26955
+,L&TFH,,,,4105747.749779
+,ASTRAMICRO,Electronic Technology,Telecommunications Equipment,NSE,572613.343248
+,NH,Health Services,Hospital/Nursing Management,NSE,2456314.683678
+,TCI,Transportation,Trucking,NSE,639076.3709
+,FINEORG,Process Industries,Chemicals: Major Diversified,NSE,1526330.25522
+,DEEPAKNTR,Process Industries,Chemicals: Specialty,NSE,3384184.1332920003
+,SUZLON,Producer Manufacturing,Electrical Products,NSE,5186296.929224
+,ANURAS,Health Technology,Pharmaceuticals: Major,NSE,1132118.243104
+,ESABINDIA,Producer Manufacturing,Electrical Products,NSE,905378.95385
+,STARHEALTH,Finance,Life/Health Insurance,NSE,3124399.4557425
+,IRFC,Finance,Finance/Rental/Leasing,NSE,12983560.711
+,TDPOWERSYS,Producer Manufacturing,Electrical Products,NSE,406120.3476505
+,KPRMILL,Consumer Non-Durables,Apparel/Footwear,NSE,2819281.872
+,INGERRAND,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,983106.44
+,JKLAKSHMI,Non-Energy Minerals,Construction Materials,NSE,1058324.573604
+,TVSHLTD,,,,1561989.241164
+,KIMS,Health Services,Hospital/Nursing Management,NSE,1583909.960304
+,CREDITACC,Finance,Finance/Rental/Leasing,NSE,2541324.5397585
+,TEAMLEASE,Commercial Services,Personnel Services,NSE,536277.80645
+,NEOGEN,Process Industries,Chemicals: Specialty,NSE,390461.966037
+,AGI,Process Industries,Containers/Packaging,NSE,534465.064441
+,RAMCOCEM,Non-Energy Minerals,Construction Materials,NSE,2411009.29933
+,WONDERLA,Consumer Services,Movies/Entertainment,NSE,476941.3658295
+,TI,Consumer Non-Durables,Beverages: Alcoholic,NSE,463537.446269
+,TCIEXP,Transportation,Air Freight/Couriers,NSE,526882.90584
+,SAPPHIRE,Consumer Services,Restaurants,NSE,905096.188341
+,GOCOLORS,Consumer Non-Durables,Apparel/Footwear,NSE,676030.452728
+,RAMKY,Industrial Services,Engineering & Construction,NSE,547908.109138
+,NAM-INDIA,,,,2806484.780749
+,TIMETECHNO,Process Industries,Containers/Packaging,NSE,400983.659622
+,MANINFRA,Finance,Real Estate Development,NSE,804499.627635
+,LLOYDSENGG,,,,472773.98196
+,SARDAEN,Non-Energy Minerals,Steel,NSE,892405.566275
+,FINOPB,Finance,Regional Banks,NSE,217147.721069
+,SONATSOFTW,Technology Services,Information Technology Services,NSE,2082855.32084
+,IBULHSGFIN,Finance,Finance/Rental/Leasing,NSE,1059353.0036475
+,EPL,Process Industries,Containers/Packaging,NSE,642903.303381
+,SUMICHEM,Process Industries,Chemicals: Agricultural,NSE,2016798.346308
+,GRINFRA,Industrial Services,Engineering & Construction,NSE,1106315.65242
+,BRIGADE,Finance,Real Estate Development,NSE,2070891.300865
+,METROPOLIS,Health Services,Medical/Nursing Services,NSE,859608.742711
+,GLAXO,Health Technology,Pharmaceuticals: Major,NSE,3215580.634371
+,HCC,Industrial Services,Engineering & Construction,NSE,432726.077784
+,SFL,Process Industries,Industrial Specialties,NSE,1348281.817764
+,CENTRALBK,Finance,Major Banks,NSE,4349150.655432
+,KARURVYSYA,Finance,Regional Banks,NSE,1355569.67946
+,GPIL,Non-Energy Minerals,Steel,NSE,1066742.141678
+,IFBIND,Consumer Durables,Electronics/Appliances,NSE,380653.829022
+,ALLCARGO,Transportation,Marine Shipping,NSE,790402.500708
+,TRITURBINE,Producer Manufacturing,Industrial Machinery,NSE,1348274.9264895
+,CARBORUNIV,Process Industries,Industrial Specialties,NSE,2115887.590136
+,BEML,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,1178206.194
+,PARADEEP,Process Industries,Chemicals: Agricultural,NSE,552800.7188605
+,GREENLAM,Non-Energy Minerals,Forest Products,NSE,680734.068936
+,LAXMIMACH,Producer Manufacturing,Industrial Machinery,NSE,1467710.6625
+,KSB,Producer Manufacturing,Industrial Machinery,NSE,1206700.93187
+,RATEGAIN,Technology Services,Packaged Software,NSE,857186.9230139999
+,KAJARIACER,Producer Manufacturing,Building Products,NSE,2073065.2911
+,POLYPLEX,Process Industries,Chemicals: Specialty,NSE,330044.64923700003
+,JISLJALEQS,,,,423508.1674545
+,JMFINANCIL,Finance,Investment Banks/Brokers,NSE,938913.755424
+,HAPPSTMNDS,Technology Services,Data Processing Services,NSE,1364458.4439655
+,DCAL,Health Technology,Pharmaceuticals: Major,NSE,268020.7009025
+,KEI,Producer Manufacturing,Electrical Products,NSE,2932350.407091
+,RELIGARE,Finance,Multi-Line Insurance,NSE,702629.2425975
+,BAJAJCON,Consumer Non-Durables,Household/Personal Care,NSE,313241.948388
+,VMART,Retail Trade,Specialty Stores,NSE,396462.001375
+,CASTROLIND,Energy Minerals,Oil Refining/Marketing,NSE,1777947.48524
+,MASTEK,Technology Services,Information Technology Services,NSE,863585.778144
+,AFFLE,Technology Services,Packaged Software,NSE,1830774.21466
+,JSWENERGY,Utilities,Electric Utilities,NSE,6727545.819954
+,INTELLECT,Technology Services,Packaged Software,NSE,1142934.509064
+,LEMONTREE,Consumer Services,Hotels/Resorts/Cruise lines,NSE,949507.387104
+,KALYANKJIL,Retail Trade,Specialty Stores,NSE,3647417.874837
+,OLECTRA,Consumer Durables,Motor Vehicles,NSE,1105463.365916
+,WELSPUNLIV,,,,1403777.355138
+,VOLTAMP,Producer Manufacturing,Electrical Products,NSE,659696.92672
+,ABBOTINDIA,Health Technology,Pharmaceuticals: Major,NSE,
+,SHANTIGEAR,Producer Manufacturing,Auto Parts: OEM,NSE,460678.697265
+,ECLERX,Commercial Services,Miscellaneous Commercial Services,NSE,1270541.22976
+,IOB,Finance,Major Banks,NSE,8184744.506848001
+,BIRLACORPN,Non-Energy Minerals,Construction Materials,NSE,1109608.5475965
+,J&KBANK,,,,1354454.42949
+,RELAXO,Consumer Non-Durables,Apparel/Footwear,NSE,2249160.12451
+,NESCO,Producer Manufacturing,Industrial Machinery,NSE,621950.06692
+,AUTOAXLES,Producer Manufacturing,Auto Parts: OEM,NSE,324227.423625
+,EXIDEIND,Producer Manufacturing,Auto Parts: OEM,NSE,2701725.0
+,GPPL,Transportation,Marine Shipping,NSE,739904.782255
+,HINDWAREAP,Producer Manufacturing,Building Products,NSE,367916.354155
+,MAHABANK,Finance,Major Banks,NSE,3197240.1980085
+,INDOCO,Health Technology,Pharmaceuticals: Major,NSE,364178.20296
+,AARTIIND,Process Industries,Chemicals: Major Diversified,NSE,2354826.21136
+,TATACHEM,Process Industries,Chemicals: Agricultural,NSE,2812764.065398
+,GLAND,Health Technology,Pharmaceuticals: Major,NSE,3169688.508135
+,LAURUSLABS,Health Technology,Pharmaceuticals: Major,NSE,2317276.27935
+,GLENMARK,Health Technology,Pharmaceuticals: Major,NSE,2409574.968162
+,DBREALTY,Finance,Real Estate Development,NSE,730678.9553919999
+,IDFCFIRSTB,Finance,Regional Banks,NSE,6277712.785799
+,3MINDIA,Producer Manufacturing,Industrial Conglomerates,NSE,4202901.863905
+,GREENPLY,Producer Manufacturing,Building Products,NSE,295001.592075
+,RADICO,Consumer Non-Durables,Beverages: Alcoholic,NSE,2217206.3267475
+,CSBBANK,Finance,Major Banks,NSE,726298.4147355
+,CONCOR,Transportation,Railroads,NSE,5237798.862582
+,STYRENIX,Process Industries,Chemicals: Specialty,NSE,253874.8753125
+,HIKAL,Health Technology,Pharmaceuticals: Major,NSE,374772.629625
+,FDC,Health Technology,Pharmaceuticals: Major,NSE,645460.578018
+,HDFCAMC,Finance,Investment Managers,NSE,6842162.2
+,BHARATFORG,Producer Manufacturing,Metal Fabrication,NSE,5765616.824371999
+,MGL,Utilities,Gas Distributors,NSE,1185827.22489
+,SULA,Process Industries,Agricultural Commodities/Milling,NSE,420732.150565
+,SJVN,Utilities,Electric Utilities,NSE,3574148.7116625
+,SOMANYCERA,Producer Manufacturing,Building Products,NSE,304625.019776
+,IDFC,Finance,Investment Managers,NSE,2026380.288194
+,CAMPUS,Consumer Non-Durables,Apparel/Footwear,NSE,854563.5309145
+,FEDERALBNK,Finance,Regional Banks,NSE,3801009.227454
+,ICIL,Process Industries,Textiles,NSE,609710.28569
+,SHOPERSTOP,Retail Trade,Department Stores,NSE,759645.16307
+,REDINGTON,Electronic Technology,Computer Peripherals,NSE,1382072.33216
+,GREENPANEL,Non-Energy Minerals,Forest Products,NSE,525090.50539
+,CARYSIL,Consumer Durables,Home Furnishings,NSE,220453.76053
+,KANSAINER,Process Industries,Industrial Specialties,NSE,2693924.95035
+,TEGA,Distribution Services,Wholesale Distributors,NSE,765529.65504
+,CANFINHOME,Finance,Finance/Rental/Leasing,NSE,1035473.0530625
+,DREAMFOLKS,Transportation,Other Transportation,NSE,286605.05436
+,WELENT,Finance,Financial Conglomerates,NSE,451575.055125
+,GLS,Health Technology,Pharmaceuticals: Major,NSE,805064.783626
+,MAHLIFE,Finance,Real Estate Development,NSE,842169.4929525
+,JBCHEPHARM,Health Technology,Pharmaceuticals: Major,NSE,2518924.94544
+,ACC,Non-Energy Minerals,Construction Materials,NSE,4152445.8530875
+,NATIONALUM,Non-Energy Minerals,Aluminum,NSE,2423435.6429465
+,FLUOROCHEM,Process Industries,Chemicals: Specialty,NSE,4063626.125
+,WHIRLPOOL,Consumer Durables,Electronics/Appliances,NSE,1734147.608355
+,MMTC,Distribution Services,Wholesale Distributors,NSE,897000.0
+,GABRIEL,Producer Manufacturing,Auto Parts: OEM,NSE,564664.32814
+,EPIGRAL,,,,405965.818739
+,GRSE,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,1000325.34
+,NFL,Process Industries,Chemicals: Agricultural,NSE,448879.236
+,SBFC,,,,955656.812688
+,TEJASNET,Electronic Technology,Telecommunications Equipment,NSE,1478312.050683
+,BSE,Finance,Investment Banks/Brokers,NSE,3006979.686108
+,RVNL,Industrial Services,Engineering & Construction,NSE,3785353.99155
+,BIKAJI,Consumer Non-Durables,Food: Specialty/Candy,NSE,1365905.32
+,APOLLOTYRE,Consumer Durables,Automotive Aftermarket,NSE,2883675.845313
+,RAJESHEXPO,Consumer Durables,Other Consumer Specialties,NSE,1082275.3797145
+,FACT,Process Industries,Chemicals: Agricultural,NSE,5214105.966492
+,BANDHANBNK,Finance,Major Banks,NSE,3888730.398422
+,INDIANB,Finance,Major Banks,NSE,5669371.396029
+,PRUDENT,Finance,Investment Managers,NSE,498080.95372
+,ALKEM,Health Technology,Pharmaceuticals: Major,NSE,6220488.69
+,ABFRL,Retail Trade,Apparel/Footwear Retail,NSE,2123241.769653
+,MHRIL,Consumer Services,Other Consumer Services,NSE,765343.12121
+,DOLLAR,Consumer Non-Durables,Apparel/Footwear,NSE,262141.90664
+,MARKSANS,Health Technology,Pharmaceuticals: Major,NSE,730247.673618
+,SOUTHBANK,Finance,Major Banks,NSE,558761.851806
+,GMMPFAUDLR,Producer Manufacturing,Industrial Machinery,NSE,724665.493656
+,JWL,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,1315010.5169375
+,FORTIS,Health Services,Hospital/Nursing Management,NSE,3164784.556416
+,JYOTHYLAB,Consumer Non-Durables,Household/Personal Care,NSE,1758562.196116
+,EMIL,Retail Trade,Electronics/Appliance Stores,NSE,786426.469528
+,ROSSARI,Process Industries,Chemicals: Specialty,NSE,441423.416764
+,HIL,Non-Energy Minerals,Forest Products,NSE,212170.73426400003
+,FCL,Process Industries,Industrial Specialties,NSE,400134.04146
+,NHPC,Utilities,Electric Utilities,NSE,6489092.48403
+,STLTECH,Technology Services,Information Technology Services,NSE,569844.917964
+,LTTS,Industrial Services,Engineering & Construction,NSE,5555848.016604001
+,JPPOWER,Utilities,Electric Utilities,NSE,956057.5063665
+,RITES,Commercial Services,Miscellaneous Commercial Services,NSE,1207276.680288
+,EIHOTEL,Consumer Services,Hotels/Resorts/Cruise lines,NSE,1560283.63409
+,RAILTEL,Communications,Major Telecommunications,NSE,1084771.81566
+,GARFIBRES,Producer Manufacturing,Miscellaneous Manufacturing,NSE,685929.16854
+,GAEL,Consumer Non-Durables,Food: Specialty/Candy,NSE,841775.328765
+,JUBLPHARMA,Health Technology,Pharmaceuticals: Major,NSE,868798.9726755001
+,GALAXYSURF,Consumer Non-Durables,Household/Personal Care,NSE,984135.27864
+,M&M,,,,21505587.603314
+,RCF,Process Industries,Chemicals: Agricultural,NSE,879942.5195
+,CHAMBLFERT,Process Industries,Chemicals: Specialty,NSE,1554120.119368
+,ORIENTCEM,Non-Energy Minerals,Construction Materials,NSE,514425.45636
+,STARCEMENT,Producer Manufacturing,Metal Fabrication,NSE,727524.750708
+,TATVA,Process Industries,Chemicals: Specialty,NSE,374693.93699
+,TANLA,Technology Services,Information Technology Services,NSE,1471864.85749
+,SAIL,Non-Energy Minerals,Steel,NSE,5107394.519848499
+,VIJAYA,Health Services,Medical/Nursing Services,NSE,691299.473723
+,QUESS,Commercial Services,Personnel Services,NSE,776467.37444
+,BIOCON,Health Technology,Pharmaceuticals: Major,NSE,2997297.9
+,ETHOSLTD,Retail Trade,Catalog/Specialty Distribution,NSE,511335.2531625
+,SYMPHONY,Producer Manufacturing,Industrial Machinery,NSE,612823.32
+,NIACL,Finance,Multi-Line Insurance,NSE,3466568.0
+,WESTLIFE,Consumer Services,Restaurants,NSE,1273764.5638025
+,TCNSBRANDS,Consumer Non-Durables,Apparel/Footwear,NSE,237356.99709
+,PARAS,Electronic Technology,Aerospace & Defense,NSE,280371.43852900004
+,NAZARA,Technology Services,Packaged Software,NSE,566880.359118
+,SPLPETRO,Process Industries,Industrial Specialties,NSE,1052279.349832
+,KIRLPNU,Producer Manufacturing,Industrial Machinery,BSE,390087.07176
+,LODHA,Finance,Real Estate Development,NSE,9871487.5541755
+,CUB,Finance,Regional Banks,NSE,1103552.97271
+,IDBI,Finance,Major Banks,NSE,7247119.06595
+,GHCL,Process Industries,Textiles,NSE,555353.41666
+,INOXWIND,Producer Manufacturing,Electrical Products,NSE,1628927.60876
+,TTML,Communications,Specialty Telecommunications,NSE,1791691.2617954998
+,LAOPALA,Consumer Durables,Home Furnishings,NSE,412476.0
+,RKFORGE,Producer Manufacturing,Metal Fabrication,NSE,1311892.731003
+,SHAREINDIA,Finance,Investment Banks/Brokers,NSE,609200.06628
+,NEULANDLAB,Health Technology,Pharmaceuticals: Major,NSE,678880.746546
+,SONACOMS,Producer Manufacturing,Auto Parts: OEM,NSE,3779617.46545
+,GRAPHITE,Process Industries,Industrial Specialties,NSE,1074956.518188
+,ACCELYA,Technology Services,Packaged Software,NSE,211303.61384650003
+,SKFINDIA,Producer Manufacturing,Metal Fabrication,NSE,2274195.735963
+,CRISIL,Technology Services,Internet Software/Services,NSE,3170754.2648375
+,GILLETTE,Consumer Non-Durables,Household/Personal Care,NSE,2112418.1550675
+,CIEINDIA,,,,1785658.708539
+,HNDFDS,Consumer Non-Durables,Food: Specialty/Candy,NSE,631810.03476
+,MOLDTKPAC,Producer Manufacturing,Miscellaneous Manufacturing,NSE,303914.983464
+,ELGIEQUIP,Producer Manufacturing,Industrial Machinery,NSE,1725728.046628
+,INDIAGLYCO,Process Industries,Chemicals: Specialty,NSE,237768.83925
+,BAJAJHIND,Process Industries,Agricultural Commodities/Milling,NSE,355106.063876
+,IPCALAB,Health Technology,Pharmaceuticals: Major,NSE,2824108.502667
+,SANOFI,Health Technology,Pharmaceuticals: Major,NSE,1858006.945161
+,HINDCOPPER,Non-Energy Minerals,Other Metals/Minerals,NSE,2646261.23073
+,LUPIN,Health Technology,Pharmaceuticals: Other,NSE,6023238.655111
+,CROMPTON,Producer Manufacturing,Industrial Machinery,NSE,1990365.773105
+,VARROC,Distribution Services,Wholesale Distributors,NSE,846742.2288
+,IGL,Utilities,Gas Distributors,NSE,2928453.3468
+,LICHSGFIN,Finance,Finance/Rental/Leasing,NSE,2948887.743
+,LTFOODS,,,,705617.982208
+,HEG,Electronic Technology,Electronic Components,NSE,736537.338751
+,YESBANK,Finance,Major Banks,NSE,6168929.93574
+,RHIM,Producer Manufacturing,Miscellaneous Manufacturing,NSE,1662852.732865
+,TIMKEN,Producer Manufacturing,Industrial Machinery,NSE,2446075.620313
+,NAVINFLUOR,Process Industries,Chemicals: Specialty,NSE,1909454.80128
+,DELTACORP,Consumer Services,Movies/Entertainment,NSE,390811.9160715
+,SANSERA,Producer Manufacturing,Auto Parts: OEM,NSE,546012.5091
+,KFINTECH,Technology Services,Packaged Software,NSE,822489.718947
+,RBLBANK,Finance,Major Banks,NSE,1683123.977766
+,OPTIEMUS,Distribution Services,Electronics Distributors,NSE,266500.72086400003
+,GNFC,Process Industries,Chemicals: Specialty,NSE,1169914.8890325
+,PRESTIGE,Finance,Real Estate Development,NSE,4725758.039005999
+,AARTIDRUGS,Health Technology,Pharmaceuticals: Major,NSE,449746.02
+,DBCORP,Consumer Services,Publishing: Newspapers,NSE,475996.835259
+,SOLARINDS,Process Industries,Industrial Specialties,NSE,6087718.450125
+,RENUKA,Process Industries,Agricultural Commodities/Milling,NSE,1003582.9279695
+,ACLGATI,,,,161689.65388549998
+,DALMIASUG,Process Industries,Agricultural Commodities/Milling,NSE,333996.0338295
+,TMB,Finance,Regional Banks,NSE,798803.909703
+,ASTERDM,Health Services,Hospital/Nursing Management,NSE,2047004.51988
+,GICRE,Finance,Specialty Insurance,NSE,5404429.2
+,BARBEQUE,Consumer Services,Restaurants,NSE,261050.0489145
+,ZENSARTECH,Technology Services,Packaged Software,NSE,1383254.1015479998
+,SUNDRMFAST,Producer Manufacturing,Auto Parts: OEM,NSE,2624293.21293
+,TATAMTRDVR,,,,
+,RALLIS,Process Industries,Chemicals: Agricultural,NSE,485880.521665
+,CONCORDBIO,,,,1539741.290472
+,NUVOCO,Non-Energy Minerals,Construction Materials,NSE,1366122.285225
+,VINATIORGA,Process Industries,Chemicals: Specialty,NSE,1791953.650725
+,MOTILALOFS,Finance,Investment Banks/Brokers,NSE,1843042.148636
+,CENTURYPLY,Producer Manufacturing,Building Products,NSE,1715064.396305
+,GRANULES,Health Technology,Pharmaceuticals: Other,NSE,982683.959022
+,VSTTILLERS,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,326427.286424
+,ELECTCAST,Non-Energy Minerals,Steel,NSE,658228.008429
+,JAMNAAUTO,Producer Manufacturing,Auto Parts: OEM,NSE,445495.215545
+,IEX,Finance,Investment Banks/Brokers,NSE,1498043.7948
+,SEQUENT,Health Technology,Pharmaceuticals: Major,NSE,283730.6005625
+,AUBANK,Finance,Finance/Rental/Leasing,NSE,5264624.100652
+,DHANI,Finance,Finance/Rental/Leasing,NSE,234054.535532
+,HFCL,Electronic Technology,Telecommunications Equipment,NSE,1202312.321298
+,CHOLAHLDNG,Finance,Finance/Rental/Leasing,NSE,1952979.493531
+,MRF,Consumer Durables,Automotive Aftermarket,NSE,5495641.2908275
+,HOMEFIRST,Finance,Finance/Rental/Leasing,NSE,821762.268234
+,SCHNEIDER,Distribution Services,Wholesale Distributors,NSE,978413.71122
+,NETWORK18,Consumer Services,Broadcasting,NSE,914509.5313465
+,COROMANDEL,Process Industries,Chemicals: Specialty,NSE,3684776.6057285
+,SSWL,Producer Manufacturing,Auto Parts: OEM,NSE,406760.8104
+,VRLLOG,Transportation,Trucking,NSE,680642.4572275
+,KRBL,Process Industries,Agricultural Commodities/Milling,NSE,858565.984892
+,SUBEXLTD,Technology Services,Packaged Software,NSE,190799.9964325
+,PEL,Finance,Investment Managers,NSE,2092517.7018
+,HCG,Health Services,Hospital/Nursing Management,NSE,509065.793985
+,SUNTV,Consumer Services,Broadcasting,NSE,2806670.66364
+,HGS,Commercial Services,Miscellaneous Commercial Services,NSE,460364.74036
+,COFORGE,Technology Services,Information Technology Services,NSE,3869387.155128
+,ABCAPITAL,Finance,Multi-Line Insurance,NSE,4325673.687295999
+,ANANDRATHI,Finance,Investment Managers,NSE,1082617.305179
+,ZYDUSWELL,Consumer Non-Durables,Food: Major Diversified,NSE,1069719.972784
+,NOCIL,Process Industries,Chemicals: Specialty,NSE,455859.3260275
+,IOLCP,Process Industries,Chemicals: Specialty,NSE,271982.590766
+,KNRCON,Industrial Services,Engineering & Construction,NSE,721226.1317
+,HGINFRA,Industrial Services,Engineering & Construction,NSE,552357.7512805001
+,CAMLINFINE,Process Industries,Chemicals: Specialty,NSE,227403.627906
+,RAYMOND,Process Industries,Textiles,NSE,1147165.2457265
+,IIFL,Finance,Finance/Rental/Leasing,NSE,2280873.4456725
+,UFLEX,Process Industries,Containers/Packaging,NSE,348709.265894
+,VENKEYS,Process Industries,Agricultural Commodities/Milling,NSE,274900.25519
+,DCMSHRIRAM,Producer Manufacturing,Industrial Conglomerates,NSE,1603710.572064
+,CMSINFO,Finance,Investment Managers,NSE,598810.795224
+,PRICOLLTD,Producer Manufacturing,Auto Parts: OEM,NSE,462966.87015300005
+,JKCEMENT,Non-Energy Minerals,Construction Materials,NSE,2927114.5185075
+,MINDACORP,Producer Manufacturing,Auto Parts: OEM,NSE,923444.29065
+,EVEREADY,Producer Manufacturing,Electrical Products,NSE,251606.95049
+,UNICHEMLAB,Health Technology,Pharmaceuticals: Major,NSE,285776.93925
+,SUNDARMFIN,Finance,Finance/Rental/Leasing,NSE,3897856.72038
+,NLCINDIA,Utilities,Electric Utilities,NSE,3514430.4855105
+,INDIACEM,Non-Energy Minerals,Construction Materials,NSE,802323.8533889999
+,ASHOKA,Industrial Services,Engineering & Construction,NSE,390907.0796725
+,AEGISCHEM,Distribution Services,Wholesale Distributors,NSE,1235169.0
+,TIIL,Producer Manufacturing,Metal Fabrication,NSE,582515.037503
+,PATANJALI,Process Industries,Agricultural Commodities/Milling,NSE,5701418.93475
+,NRBBEARING,Producer Manufacturing,Auto Parts: OEM,NSE,325514.5521
+,ACI,Process Industries,Chemicals: Major Diversified,NSE,801710.107593
+,UNOMINDA,Producer Manufacturing,Auto Parts: OEM,NSE,3941110.799901
+,BBTC,Consumer Non-Durables,Food: Major Diversified,NSE,1098419.0217
+,HBLPOWER,Producer Manufacturing,Electrical Products,NSE,1209678.744344
+,DALBHARAT,Producer Manufacturing,Miscellaneous Manufacturing,NSE,4267083.655008
+,JBMA,Producer Manufacturing,Auto Parts: OEM,NSE,1731374.521386
+,SWANENERGY,Utilities,Electric Utilities,NSE,1348615.87
+,RAJRATAN,Producer Manufacturing,Metal Fabrication,NSE,396216.884
+,AHLUCONT,Industrial Services,Engineering & Construction,NSE,519488.5278
+,NCC,Consumer Durables,Homebuilding,NSE,1046934.18549
+,360ONE,Finance,Investment Managers,NSE,2543842.935628
+,JKTYRE,Consumer Durables,Automotive Aftermarket,NSE,980737.59504
+,TATAMETALI,Non-Energy Minerals,Steel,NSE,339173.9275
+,JKIL,Industrial Services,Engineering & Construction,NSE,436816.966138
+,RBA,Consumer Services,Restaurants,NSE,554802.342666
+,LALPATHLAB,Health Services,Medical/Nursing Services,NSE,2151808.591004
+,SIYSIL,Process Industries,Textiles,NSE,242525.805404
+,HUDCO,Finance,Finance/Rental/Leasing,NSE,2521393.05
+,JSL,Non-Energy Minerals,Steel,NSE,4710869.277948
+,HEIDELBERG,Non-Energy Minerals,Construction Materials,NSE,527328.720932
+,CENTURYTEX,Process Industries,Textiles,NSE,1365535.53584
+,HATHWAY,Consumer Services,Cable/Satellite TV,NSE,375262.154
+,HARSHA,Producer Manufacturing,Metal Fabrication,NSE,357894.376755
+,GMDCLTD,Distribution Services,Wholesale Distributors,NSE,1294260.0
+,OBEROIRLTY,Finance,Real Estate Development,NSE,5248052.8877395
+,ITI,Communications,Major Telecommunications,NSE,2926381.169679
+,BECTORFOOD,Consumer Non-Durables,Food: Specialty/Candy,NSE,657579.35932
+,DCBBANK,Finance,Regional Banks,NSE,414644.2979115
+,SHARDACROP,Distribution Services,Wholesale Distributors,NSE,408518.40136
+,GODREJAGRO,Process Industries,Agricultural Commodities/Milling,NSE,1071479.450219
+,FIVESTAR,Finance,Financial Conglomerates,NSE,2147564.427855
+,CARTRADE,Technology Services,Internet Software/Services,NSE,334374.280929
+,GRINDWELL,Process Industries,Industrial Specialties,NSE,2578779.52
+,SUDARSCHEM,Process Industries,Chemicals: Specialty,NSE,380057.6025
+,TATACOMM,Communications,Major Telecommunications,NSE,5045355.0
+,AMIORG,Health Technology,Pharmaceuticals: Major,NSE,413799.90564
+,FINCABLES,Producer Manufacturing,Electrical Products,NSE,1635151.0070675
+,NATCOPHARM,Health Technology,Pharmaceuticals: Major,NSE,1474211.477511
+,TECHNOE,Industrial Services,Engineering & Construction,NSE,860790.7234715
+,UBL,Consumer Non-Durables,Beverages: Alcoholic,NSE,4720028.517373499
+,DATAMATICS,Technology Services,Packaged Software,NSE,427336.687275
+,PRIVISCL,Process Industries,Chemicals: Major Diversified,NSE,459475.079325
+,KIRLOSBROS,Producer Manufacturing,Industrial Machinery,NSE,705190.967343
+,MTARTECH,Electronic Technology,Aerospace & Defense,NSE,679264.048053
+,CEATLTD,Consumer Durables,Automotive Aftermarket,NSE,981723.73284
+,JUBLINGREA,Process Industries,Chemicals: Major Diversified,NSE,810103.8729539999
+,CERA,Consumer Durables,Home Furnishings,NSE,1020609.950402
+,JTLIND,Non-Energy Minerals,Steel,NSE,406021.50904
+,KTKBANK,Finance,Regional Banks,NSE,811563.5137814999
+,MSUMI,Producer Manufacturing,Auto Parts: OEM,NSE,2730034.14801
+,DWARKESH,Process Industries,Agricultural Commodities/Milling,NSE,163633.97743
+,GUJALKALI,Process Industries,Chemicals: Specialty,NSE,570485.917235
+,BLUESTARCO,Producer Manufacturing,Industrial Machinery,NSE,1947172.04236
+,APCOTEXIND,Process Industries,Chemicals: Specialty,NSE,264253.76112
+,BATAINDIA,Consumer Non-Durables,Apparel/Footwear,NSE,2122503.79556
+,ZFCVINDIA,Producer Manufacturing,Auto Parts: OEM,NSE,3036122.203296
+,BSOFT,Technology Services,Packaged Software,NSE,1988287.775133
+,ROUTE,Communications,Major Telecommunications,NSE,1001028.507036
+,ISGEC,Industrial Services,Engineering & Construction,NSE,721618.61114
+,TATAELXSI,Technology Services,Information Technology Services,NSE,5451337.03718
+,CIGNITITEC,Technology Services,Information Technology Services,NSE,291291.89628
+,JUSTDIAL,Technology Services,Internet Software/Services,NSE,682097.880954
+,UNIPARTS,Distribution Services,Wholesale Distributors,NSE,260850.554361
+,EMAMILTD,Consumer Non-Durables,Household/Personal Care,NSE,2460768.75
+,VGUARD,Producer Manufacturing,Electrical Products,NSE,1267855.779501
+,PAYTM,Technology Services,Packaged Software,NSE,4033980.9551765
+,MAPMYINDIA,Commercial Services,Miscellaneous Commercial Services,NSE,1051346.928588
+,ASAHIINDIA,Consumer Durables,Home Furnishings,NSE,1401656.542146
+,JUBLFOOD,Consumer Services,Restaurants,NSE,3728455.3026
+,COSMOFIRST,Process Industries,Containers/Packaging,NSE,160097.084973
+,DBL,Industrial Services,Engineering & Construction,NSE,562488.993437
+,HLEGLAS,Producer Manufacturing,Industrial Machinery,NSE,368565.32652
+,ASHOKLEY,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,5330539.069577999
+,SUPRAJIT,Producer Manufacturing,Auto Parts: OEM,NSE,562803.8538775
+,TTKPRESTIG,Consumer Durables,Home Furnishings,NSE,1027545.73026
+,LINDEINDIA,Process Industries,Chemicals: Specialty,NSE,4810200.745646
+,MEDPLUS,Retail Trade,Drugstore Chains,NSE,896036.296155
+,IONEXCHANG,Producer Manufacturing,Industrial Machinery,NSE,824559.56898
+,AMBER,Producer Manufacturing,Industrial Machinery,NSE,1056433.241774
+,MOIL,Non-Energy Minerals,Other Metals/Minerals,NSE,628769.30199
+,OFSS,Technology Services,Packaged Software,NSE,3649032.445616
+,NAVA,Utilities,Electric Utilities,NSE,635903.546035
+,MCX,Finance,Investment Banks/Brokers,NSE,
+,MIDHANI,Non-Energy Minerals,Other Metals/Minerals,NSE,783362.21
+,BALMLAWRIE,Producer Manufacturing,Industrial Conglomerates,NSE,374241.916971
+,PGHL,Health Technology,Pharmaceuticals: Major,NSE,821295.922905
+,PRINCEPIPE,Producer Manufacturing,Industrial Machinery,NSE,821192.4142725
+,MAZDOCK,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,4600347.21
+,JINDWORLD,Process Industries,Textiles,NSE,608378.8936
+,BALRAMCHIN,Process Industries,Agricultural Commodities/Milling,NSE,828079.7761025
+,LXCHEM,Process Industries,Chemicals: Specialty,NSE,799298.326549
+,FSL,Commercial Services,Miscellaneous Commercial Services,NSE,1288387.541861
+,PFIZER,Health Technology,Pharmaceuticals: Major,NSE,1952947.805214
+,POONAWALLA,Finance,Finance/Rental/Leasing,NSE,3348032.6443795003
+,CGCL,Finance,Finance/Rental/Leasing,NSE,1587287.6236245
+,KRSNAA,Health Services,Medical/Nursing Services,NSE,227965.72678
+,GODREJPROP,Finance,Real Estate Development,NSE,5597911.051673001
+,VESUVIUS,Non-Energy Minerals,Construction Materials,NSE,728913.41712
+,BDL,Electronic Technology,Aerospace & Defense,NSE,3138416.484375
+,CAPLIPOINT,Health Technology,Pharmaceuticals: Major,NSE,1029870.426879
+,ROLEXRINGS,Producer Manufacturing,Metal Fabrication,NSE,686333.9290240001
+,POLYMED,Health Technology,Medical Specialties,NSE,1429474.751458
+,GREAVESCOT,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,352523.95289550006
+,JTEKTINDIA,Consumer Durables,Automotive Aftermarket,NSE,388112.7445375
+,SCHAEFFLER,Producer Manufacturing,Metal Fabrication,NSE,5006406.5501
+,GLOBUSSPR,Consumer Non-Durables,Beverages: Alcoholic,NSE,251563.209766
+,DEEPAKFERT,Process Industries,Chemicals: Agricultural,NSE,857659.78305
+,POLYCAB,Producer Manufacturing,Electrical Products,NSE,8236220.5161075
+,RECLTD,Finance,Finance/Rental/Leasing,NSE,10871265.284
+,LUXIND,Consumer Non-Durables,Apparel/Footwear,NSE,390931.853
+,ITDCEM,Industrial Services,Engineering & Construction,NSE,490711.233696
+,SYRMA,Electronic Technology,Electronic Production Equipment,NSE,1191595.89351
+,BLUEDART,Transportation,Air Freight/Couriers,NSE,1746957.276783
+,PAGEIND,Consumer Non-Durables,Apparel/Footwear,NSE,4295663.608935
+,NMDC,Non-Energy Minerals,Other Metals/Minerals,NSE,6144015.164525
+,MAHSEAMLES,Non-Energy Minerals,Steel,NSE,1239962.078382
+,ORIENTELEC,Consumer Durables,Electronics/Appliances,NSE,484233.9077805
+,RELINFRA,Utilities,Electric Utilities,NSE,831083.245012
+,EMUDHRA,Technology Services,Packaged Software,NSE,352496.755065
+,RAINBOW,Health Services,Hospital/Nursing Management,NSE,1210965.8767535
+,UJJIVANSFB,Finance,Regional Banks,NSE,1113272.883926
+,AUROPHARMA,Health Technology,Pharmaceuticals: Other,NSE,6351574.52156
+,JCHAC,Consumer Durables,Electronics/Appliances,NSE,303504.647208
+,EASEMYTRIP,Consumer Services,Other Consumer Services,NSE,715018.389363
+,JAICORPLTD,Process Industries,Containers/Packaging,NSE,693186.733145
+,BANKINDIA,Finance,Major Banks,NSE,5126304.017116
+,APOLLOPIPE,Finance,Finance/Rental/Leasing,NSE,269417.875203
+,SUNFLAG,Non-Energy Minerals,Steel,NSE,377289.414388
+,GODREJIND,Process Industries,Agricultural Commodities/Milling,NSE,2506488.913446
+,CCL,Consumer Non-Durables,Food: Specialty/Candy,NSE,856367.235
+,CESC,Utilities,Electric Utilities,NSE,1756380.81975
+,KIRIINDUS,Process Industries,Chemicals: Specialty,NSE,206403.828202
+,TVSSCS,,,,870856.1070719999
+,CDSL,Finance,Investment Banks/Brokers,NSE,1906498.0
+,IKIO,,,,246023.1116335
+,LANDMARK,Retail Trade,Specialty Stores,NSE,342989.289918
+,POWERMECH,Industrial Services,Engineering & Construction,NSE,677466.000903
+,DIXON,Electronic Technology,Electronic Production Equipment,NSE,3927782.9826625
+,HERITGFOOD,Consumer Non-Durables,Food: Meat/Fish/Dairy,NSE,281450.268
+,CHOICEIN,Commercial Services,Miscellaneous Commercial Services,NSE,458003.98
+,MAITHANALL,Non-Energy Minerals,Other Metals/Minerals,NSE,346631.22585
+,ERIS,Health Technology,Pharmaceuticals: Major,NSE,1237811.5568
+,HINDZINC,Non-Energy Minerals,Other Metals/Minerals,NSE,13438627.0795
+,KKCL,Consumer Non-Durables,Apparel/Footwear,NSE,472048.9171
+,PVRINOX,,,,1628074.640613
+,JKPAPER,Process Industries,Pulp & Paper,NSE,689128.735392
+,CONFIPET,Retail Trade,Specialty Stores,NSE,255263.163008
+,TIRUMALCHM,Process Industries,Chemicals: Specialty,NSE,224793.11746
+,ESCORTS,Producer Manufacturing,Auto Parts: OEM,NSE,3296273.623891
+,MAHLOG,Transportation,Air Freight/Couriers,NSE,279392.2116535
+,PTC,Utilities,Electric Utilities,NSE,562563.8140605
+,HONAUT,Electronic Technology,Electronic Equipment/Instruments,NSE,3257835.97981
+,FIEMIND,Producer Manufacturing,Auto Parts: OEM,NSE,276060.333825
+,SUPRIYA,Health Technology,Pharmaceuticals: Major,NSE,253319.613
+,EQUITASBNK,Finance,Regional Banks,NSE,1190616.18614
+,GUFICBIO,Health Technology,Pharmaceuticals: Major,NSE,317328.167737
+,LGBBROSLTD,Producer Manufacturing,Electrical Products,NSE,394995.07432
+,EIDPARRY,Process Industries,Chemicals: Agricultural,NSE,988595.464279
+,INDIAMART,Retail Trade,Internet Retail,NSE,1632572.429412
+,PERSISTENT,Technology Services,Information Technology Services,NSE,5684295.95
+,BEPL,Process Industries,Industrial Specialties,NSE,250849.32768
+,MASFIN,Finance,Finance/Rental/Leasing,NSE,475423.1189925
+,IRCON,Industrial Services,Engineering & Construction,NSE,1612043.97836
+,KOLTEPATIL,Finance,Real Estate Development,NSE,371357.542374
+,DCXINDIA,Producer Manufacturing,Electrical Products,NSE,330117.889123
+,IBREALEST,Finance,Real Estate Development,NSE,472070.0509665
+,SUNTECK,Finance,Real Estate Development,NSE,652664.4387935
+,GESHIP,Transportation,Marine Shipping,NSE,1394549.6286479998
+,JINDALPOLY,Process Industries,Containers/Packaging,NSE,277671.5380395
+,TITAGARH,,,,1405320.76908
+,MAXHEALTH,Health Services,Hospital/Nursing Management,NSE,6669156.1651875
+,SOBHA,Finance,Real Estate Development,NSE,934895.573021
+,NYKAA,Retail Trade,Internet Retail,NSE,4964808.9803725
+,SPARC,Health Technology,Pharmaceuticals: Major,NSE,930664.732344
+,INDIGOPNTS,Process Industries,Industrial Specialties,NSE,709597.56791
+,MANAPPURAM,Finance,Finance/Rental/Leasing,NSE,1455867.73388
+,ENGINERSIN,Industrial Services,Engineering & Construction,NSE,963621.6485085
+,BALKRISIND,Consumer Durables,Automotive Aftermarket,NSE,4965448.683745
+,EDELWEISS,Finance,Investment Banks/Brokers,NSE,734697.5231160001
+,BLS,Technology Services,Data Processing Services,NSE,1315100.460152
+,AAVAS,Finance,Finance/Rental/Leasing,NSE,1212567.4123875
+,ZEEL,Consumer Services,Broadcasting,NSE,2638546.84674
+,ANANTRAJ,Consumer Durables,Homebuilding,NSE,956408.284585
+,DIVGIITTS,Producer Manufacturing,Auto Parts: OEM,NSE,299942.0565525
+,IDEA,Communications,Wireless Telecommunications,NSE,7788750.2728
+,MPHASIS,Technology Services,Packaged Software,NSE,5171663.0872725
+,STAR,Health Technology,Pharmaceuticals: Major,NSE,596533.26327
+,PRAJIND,Industrial Services,Engineering & Construction,NSE,1021444.76928
+,UNIONBANK,Finance,Major Banks,NSE,8828225.826446999
+,SURYAROSNI,Non-Energy Minerals,Steel,NSE,845569.864934
+,NBCC,Commercial Services,Miscellaneous Commercial Services,NSE,1467900.0
+,RTNINDIA,Commercial Services,Miscellaneous Commercial Services,NSE,1053980.5639
+,JINDALSAW,Non-Energy Minerals,Steel,NSE,1317546.8390985
+,DEN,Consumer Services,Cable/Satellite TV,NSE,272494.815495
+,CGPOWER,Producer Manufacturing,Electrical Products,NSE,6939976.651136
+,HINDOILEXP,Energy Minerals,Integrated Oil,NSE,240974.06745
+,INDHOTEL,Consumer Services,Hotels/Resorts/Cruise lines,NSE,6226324.899157
+,MANKIND,,,,7941665.823
+,WSTCSTPAPR,Producer Manufacturing,Office Equipment/Supplies,NSE,481760.734952
+,TIPSINDLTD,Consumer Services,Movies/Entertainment,NSE,439090.51121
+,ASTEC,Process Industries,Chemicals: Agricultural,NSE,214769.828715
+,BHEL,Producer Manufacturing,Electrical Products,NSE,6739533.6236025
+,MFSL,Finance,Life/Health Insurance,NSE,3293430.259653
+,CUMMINSIND,Producer Manufacturing,Auto Parts: OEM,NSE,5444069.4
+,SAREGAMA,Consumer Services,Movies/Entertainment,NSE,714744.77943
+,KAYNES,Electronic Technology,Electronic Production Equipment,NSE,1668613.2547014998
+,WELCORP,Producer Manufacturing,Industrial Machinery,NSE,1434327.0849425
+,GOKEX,Consumer Non-Durables,Apparel/Footwear,NSE,500920.688946
+,LATENTVIEW,Commercial Services,Miscellaneous Commercial Services,NSE,936965.9290255
+,PETRONET,Utilities,Gas Distributors,NSE,3339750.195932
+,PSPPROJECT,Industrial Services,Engineering & Construction,NSE,275940.0
+,SPANDANA,Finance,Finance/Rental/Leasing,NSE,803136.519143
+,CHENNPETRO,Energy Minerals,Oil Refining/Marketing,NSE,1036423.344
+,PFC,Finance,Finance/Rental/Leasing,NSE,12626189.33376
+,RESPONIND,Non-Energy Minerals,Forest Products,NSE,818220.88185
+,STYLAMIND,Non-Energy Minerals,Forest Products,NSE,291811.69708
+,GSFC,Process Industries,Chemicals: Agricultural,NSE,961924.75742
+,DISHTV,Communications,Specialty Telecommunications,NSE,336949.857882
+,ALOKINDS,Process Industries,Textiles,NSE,1060078.8256135
+,PGEL,Electronic Technology,Electronic Production Equipment,NSE,617720.97372
+,THYROCARE,Health Services,Medical/Nursing Services,NSE,340776.946398
+,RPOWER,Utilities,Electric Utilities,NSE,888005.6310780001
+,RTNPOWER,Utilities,Electric Utilities,NSE,483309.5274
+,ARVIND,Process Industries,Textiles,NSE,683967.511773
+,WABAG,Industrial Services,Engineering & Construction,NSE,390431.506984
+,UJJIVAN,Finance,Finance/Rental/Leasing,NSE,687948.82704
+,SUVENPHAR,Producer Manufacturing,Industrial Conglomerates,NSE,1839995.501968
+,OIL,Energy Minerals,Oil Refining/Marketing,NSE,4035613.929471
+,CARERATING,Commercial Services,Financial Publishing/Services,NSE,283319.34462
+,GMRINFRA,Transportation,Other Transportation,NSE,4861953.9190125
+,APLAPOLLO,Non-Energy Minerals,Steel,NSE,4264805.399552
+,MRPL,Energy Minerals,Oil Refining/Marketing,NSE,2333585.2715755
+,TIINDIA,Non-Energy Minerals,Steel,NSE,6848575.5525075
+,TRIDENT,Process Industries,Textiles,NSE,1849831.90821
+,ELECON,Producer Manufacturing,Electrical Products,NSE,1040037.5755675
+,PNCINFRA,Industrial Services,Engineering & Construction,NSE,901606.8953925
+,HINDPETRO,Energy Minerals,Oil Refining/Marketing,NSE,5658589.348205
+,RAIN,Process Industries,Industrial Specialties,NSE,518981.382697
+,SUPREMEIND,Producer Manufacturing,Miscellaneous Manufacturing,NSE,5770767.190665
+,TV18BRDCST,Consumer Services,Broadcasting,NSE,865751.881305
+,TARSONS,Process Industries,Containers/Packaging,NSE,280556.719713
+,PHOENIXLTD,Finance,Real Estate Development,NSE,4010390.1627955
+,PCBL,Process Industries,Industrial Specialties,NSE,949507.180362
+,SHYAMMETL,Producer Manufacturing,Metal Fabrication,NSE,1601396.559264
+,INDUSTOWER,Finance,Finance/Rental/Leasing,NSE,5364271.998975
+,SWSOLAR,Industrial Services,Engineering & Construction,NSE,1007275.3547695
+,CRAFTSMAN,Producer Manufacturing,Trucks/Construction/Farm Machinery,NSE,1142249.3134375
+,MSTCLTD,Retail Trade,Internet Retail,NSE,471116.8
+,ASTRAL,Producer Manufacturing,Miscellaneous Manufacturing,NSE,5124194.5101795
+,METROBRAND,Retail Trade,Apparel/Footwear Retail,NSE,3458671.860518
+,SIS,Commercial Services,Miscellaneous Commercial Services,NSE,662082.068879
+,CYIENT,Commercial Services,Miscellaneous Commercial Services,NSE,2539983.7716715
+,IRB,Industrial Services,Engineering & Construction,NSE,2509204.5
+,DATAPATTNS,Electronic Technology,Electronic Production Equipment,NSE,1041973.631028
+,TATAINVEST,Finance,Investment Banks/Brokers,NSE,2166515.872368
+,VIPIND,Consumer Durables,Other Consumer Specialties,NSE,848277.27669
+,VAIBHAVGBL,Consumer Durables,Other Consumer Specialties,NSE,656754.382914
+,MANYAVAR,Retail Trade,Internet Retail,NSE,3078732.65739
+,JPASSOCIAT,Producer Manufacturing,Industrial Conglomerates,NSE,486009.93672
+,THOMASCOOK,Finance,Regional Banks,NSE,639011.9934769999

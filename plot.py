@@ -7,6 +7,12 @@ from jugaad_data.nse import stock_df, index_df
 entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Market Cap', 'NO OF TRADES':'No of Trades'}
 type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
 
+csv_data = pd.read_csv('merged_stock_industry_marketcap_data.csv')
+csv_data = csv_data[['Symbol', 'Industry', 'MarketCap']]
+csv_data = csv_data.set_index('Symbol')
+
+syms = pd.read_csv('updated_combined_nifty50_next50_total_market.csv')
+
 def give_dates(duration):
     enddate = datetime.now().date()
     enddate -= timedelta(days=enddate.weekday())
@@ -23,6 +29,13 @@ def give_dates(duration):
         startdate -= relativedelta(years=5)
     return (startdate, enddate)
 
+def include_csv_data(data):
+    global csv_data
+    for df in data:
+        df['Industry'] = csv_data.loc[df['symbol']]['Industry']
+        df['MarketCap'] = csv_data.loc[df['symbol']]['MarketCap']
+    return data
+
 def give_data(symbols):
     dataframes = {}
     dates = give_dates('fiveyear')
@@ -30,11 +43,7 @@ def give_data(symbols):
         df = stock_df(symbol=sym, from_date=dates[0], 
                     to_date=dates[1], series="EQ")
         dataframes[sym] = df
-    cols = ["DATE", "OPEN", "CLOSE", "HIGH", "LOW", "LTP", "VOLUME", "VALUE", "NO OF TRADES"]
-    data = {}
-    for sym in dataframes:
-        data[sym] = dataframes[sym][cols]
-    return data
+    return dataframes
 
 def create_plot(data, entity, type, plottype):
     fig = go.Figure()
@@ -64,7 +73,6 @@ def create_plot(data, entity, type, plottype):
                         showticklabels=True,
                         linecolor='rgb(204, 204, 204)',
                         linewidth=2,
-                        ticks='outside',
                         tickfont=dict(
                             family='Arial',
                             size=12,
@@ -81,7 +89,7 @@ def create_plot(data, entity, type, plottype):
                     plot_bgcolor='white')
     
     fig.update_xaxes(
-        rangeslider_visible=True,
+        rangeslider_visible=False,
         rangeselector=dict(
             buttons=list([
                 dict(count=7, label="1w", step="day", stepmode="backward"),
@@ -95,6 +103,9 @@ def create_plot(data, entity, type, plottype):
         rangeselector_bgcolor = 'rgb(200, 200, 200)',
         rangeselector_font_color = 'rgb(50, 50, 50)'
     )
+    fig.update_yaxes(showgrid=True,
+                      gridwidth=1, 
+                      gridcolor='rgb(200, 200, 200)')
     return fig
 
 def get_index_data():
@@ -103,8 +114,7 @@ def get_index_data():
     return df
 
 def get_current_data():
-    syms = pd.read_csv('updated_combined_nifty50_next50_total_market.csv')
-    
+    global syms
     stock_list = syms['Symbol'].tolist()
     dates = give_dates('day')
     to_sort = []
@@ -133,6 +143,7 @@ def get_current_data():
             data['sign'] = 0
         data['diff'] = "{:.2f}".format(diff)
         all_data.append(data)
+    all_data = include_csv_data(all_data)
     return all_data
 
 def get_performers(data):

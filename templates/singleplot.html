@@ -21,7 +21,6 @@
                 {% endif %}
             </select>
         </div>
-        <br>
         <div class="form-group">
             <label for="plottype">Type of graph:</label>
             <select name="plottype" id="plottype">
@@ -32,7 +31,7 @@
         <br>
         <button type='submit' class="btn">Generate Plot</button>
     </form>
-    <br><br>
+    <br>
     {% if data %}
     {% for sym in data%}
     <div class='stock-info'>
