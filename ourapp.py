@@ -208,8 +208,9 @@ def indices():
     if request.method == 'POST':
         entity = request.form['options']
         typ = request.form['plottype']
+        dataframe = {'NIFTY50': df}
         if entity is not None and typ is not None:
-            figure = create_plot(df, entity, 'index', typ)
+            figure = create_plot(dataframe, entity, 'index', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
     return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv)
 
