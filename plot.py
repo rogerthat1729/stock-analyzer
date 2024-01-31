@@ -119,21 +119,22 @@ def get_current_data():
     dates = give_dates('day')
     to_sort = []
     for sym in stock_list:
-        df = stock_df(symbol=sym, from_date=dates[0], 
-                    to_date=dates[1], series="EQ")
-        diff = df['CLOSE'].iloc[-1] - df['OPEN'].iloc[-1]
-        to_sort.append((diff, sym))
+        try:
+            df = stock_df(symbol=sym, from_date=dates[0], 
+                        to_date=dates[1], series="EQ")
+            diff = df['CLOSE'].iloc[-1] - df['OPEN'].iloc[-1]
+            to_sort.append((diff, sym))
+        except Exception as e:
+            print(f"Data is not available for {sym}")
+            continue
     to_sort.sort()
     all_data = []
     for i in range(len(to_sort)):
         df = stock_df(symbol=to_sort[i][1], from_date=dates[0], 
                     to_date=dates[1], series="EQ")
         data = {}
+        data = df.iloc[0].to_dict()
         data['symbol'] = to_sort[i][1]
-        data['open'] = df['OPEN'].iloc[0]
-        data['low'] = df['LOW'].iloc[0]
-        data['high'] = df['HIGH'].iloc[0]
-        data['close'] = df['CLOSE'].iloc[0]
         all_data.append(data)
     return all_data
 
