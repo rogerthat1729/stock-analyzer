@@ -9,7 +9,7 @@ body {
 }
 
 .footer {
-  background-color: #333;
+  background-color: #000;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -21,7 +21,7 @@ body {
 
 /* Navbar styling */
 .navbar {
-background-color: #333;
+background-color: #000;
 color: white;
 padding: 0 20px 0 0; 
 display: flex; 
@@ -89,7 +89,7 @@ background-color: #555;
   margin-right: 0px;
   border-radius: 2px;
   border: 1px solid #8e8e8e;
-  background-color: #333;
+  background-color: #000;
   color: #ddd;
   margin-left: 0px;
 }
@@ -268,15 +268,13 @@ background-color: #555;
 }
 /* index.html Ends here */
 /* Contact.html Styles */
-
-/* Contact Section Styles */
 .contact {
   padding: 50px;
   text-align: center;
   background-color: #fff;
 }
 .contact h2 {
-  color: #333;
+  color: #000;
   margin-bottom: 20px;
 }
 .contact-form {
@@ -305,7 +303,7 @@ background-color: #555;
 .about-section {
   padding: 50px;
   background-color: #fff;
-  color: #333;
+  color: #000;
   text-align: center;
   width: 70%;
   margin: 2% auto;
@@ -385,7 +383,7 @@ background-color: #555;
 
 .market-data h2,
 .market-filters h3 {
-  color: #333;
+  color: #000;
   margin-bottom: 15px;
 }
 
@@ -496,7 +494,7 @@ select {
 .plot-section {
   padding: 50px;
   background-color: #fff;
-  color: #333;
+  color: #000;
   text-align: center;
   width: 70%;
   margin: 2% auto;
@@ -630,7 +628,6 @@ select {
 
 
 /* news.html styling */
-/* News styling */
 .news-main {
   padding: 20px;
   text-align: center;
@@ -666,7 +663,7 @@ select {
 
 .news-description {
   font-size: 14px;
-  color: #333;
+  color: #000;
   height: 60px; 
   overflow: hidden; 
 }
@@ -699,7 +696,7 @@ select {
 /* Main Dashboard Container */
 .dashboard-main-container {
   max-width: 70%;
-  margin: auto;
+  margin: 2% auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -741,7 +738,7 @@ select {
 }
 
 .dashboard-news h2, .dashboard-watchlist h2 {
-  color: #333;
+  color: #000000;
   margin-bottom: 15px;
 }
 
@@ -785,7 +782,7 @@ select {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
