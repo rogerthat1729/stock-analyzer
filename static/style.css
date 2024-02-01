@@ -54,9 +54,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  /* Use flexbox for the list items as well */
   align-items: center;
-  /* Centers children vertically */
 }
 
 /* distance from the left */
@@ -113,41 +111,49 @@ body {
   background-color: #0056b3;
 }
 
-/* Marquee */
+/* Marquee Styling */
 .marquee-container {
-  background-color: #828282;
-  color: white;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  background-color: #333; 
+  padding: 10px 0;
 }
-
 .marquee {
-  display: flex;
-  align-items: center;
-  overflow-x: hidden;
-  position: relative;
-}
-.marquee a {
-  padding: 5px;
-  text-decoration: none;
-  background-color: #ffffff;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  background: none;
+  border: none;
 }
 
+.marquee a {
+  color: #fff; 
+  padding: 0 5px; 
+  font-size: 16px; 
+  display: inline-block;
+  vertical-align: middle; 
+  transition: color 0.3s ease; 
+  text-decoration: none; 
+}
+
+.marquee a:hover {
+  color: #007bff; 
+}
 #gainers {
-  color: green
+  color: #4CAF50; 
+  font-weight: bold; 
+  padding-right: 5px ;
+ border-right: 1px solid #8e8e8e; 
+
 }
 
 #losers {
-  color: red
+  color: #F44336; 
+  font-weight: bold; 
+  padding-right: 5px;
+  border-right: 1px solid #8e8e8e; 
 }
 
 /* popup modal */
 
-
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -196,13 +202,7 @@ body {
 /* index.html Home Page */
 
 
-/* .homepage-content {
-  padding: 20px;
-  text-align: center;
-} */
 
-
-/* Hero Section Styles */
 @keyframes backgroundSlide {
   0% {
     background-image: url('1.png');
@@ -299,6 +299,8 @@ body {
   padding: 50px;
   text-align: center;
   background-color: #fff;
+  margin: 2% auto;
+  width: 70%;
 }
 
 .contact h2 {
@@ -354,7 +356,6 @@ body {
 
 /* Login.html and register.html Styles */
 
-/* Login Section Styles */
 .login-section,
 .registration-section {
   display: flex;
@@ -561,6 +562,8 @@ select {
 
 /* num_stocks.html */
 
+
+
 .stock-info-container {
   width: 25%;
   background-color: white;
@@ -631,6 +634,42 @@ select {
 
 
 /* singlePlot Page Styles */
+
+.stock-header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+}
+
+.stock-name {
+  margin-left: 5%;
+  font-size: 30px;
+  color: #333;
+}
+
+.stock-gain {
+  font-size: 20px; 
+  color: green; 
+  padding: 10px 20px;
+  background-color: #ecf9ec; 
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 2%;
+}
+.stock-loss {
+  font-size: 20px; 
+  color: red;
+  padding: 10px 20px;
+  background-color: #fdb4b4; 
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 2%;
+}
 
 .plot-page-container {
   display: flex;
@@ -728,7 +767,7 @@ select {
 
 /* Main Dashboard Container */
 .dashboard-main-container {
-  max-width: 70%;
+  width: 70%;
   margin: 2% auto;
   padding: 20px;
   background-color: #fff;
@@ -837,9 +876,30 @@ select {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: calc(40% - 10px);
-}
+  width: calc(45% - 10px);
 
+}
 .watchlist-item h3 {
   margin-top: 0;
+  padding: 5px;
+  margin: auto;
+  
 }
+
+.watchlist-item a:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+.watchlist-item a {
+  border-radius: 5px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #e1e1e1;
+  width: 100%;
+
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+

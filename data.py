@@ -40,12 +40,28 @@ def include_csv_data(data):
     return data
 
 def give_data(symbols):
+    global csv_data
     dataframes = {}
     dates = give_dates('fiveyear')
     for sym in symbols:
         df = stock_df(symbol=sym, from_date=dates[0], 
                     to_date=dates[1], series="EQ")
         dataframes[sym] = df
+        
+        diff = (df['LTP'].iloc[0] - df['OPEN'].iloc[0])/(df['OPEN'].iloc[0])*100
+        if diff >= 0:
+            dataframes[sym]['sign'] = 1
+        else:
+            dataframes[sym]['sign'] = 0
+        dataframes[sym]['diff'] = "{:.2f}".format(diff)
+        
+        ind = csv_data.loc[sym]['Industry']
+        markcap = csv_data.loc[sym]['MarketCap']
+        
+        markcap = "{:,.2f}".format(markcap)
+        dataframes[sym]['Industry'] = ind if ind else 'Not Available'
+        dataframes[sym]['MarketCap'] = markcap if markcap else 'Not Available'
+        
     return dataframes
 
 def create_plot(data, entity, type, plottype):

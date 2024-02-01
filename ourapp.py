@@ -227,7 +227,7 @@ def indices():
         typ = request.form['plottype']
     figure = create_plot(dataframe, entity, 'index', typ)
     pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv, data = dataframe, gl = gl)
+    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', gl = gl,pdv = pdv, data = dataframe, )
 
 @app.route("/performers", methods = ['GET'])
 def gainers_and_losers():
@@ -278,5 +278,5 @@ def update_watchlist():
     return redirect(url_for('dashboard', usr = usr, gl = gl))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
     

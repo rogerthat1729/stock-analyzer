@@ -4,3 +4,5 @@ second.html
 Ignored
 instance/
 __pycache__/
+requirements.txt
+Makefile
