@@ -189,6 +189,16 @@ def logout():
 def contact():
     return render_template("contact.html", usr = usr)
 
+@app.route("/submit_contact", methods = ['GET', 'POST'])
+def submit_contact():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        flash('Thank you for contacting us. We will get back to you soon.')
+        return redirect(url_for('home', usr = usr))
+    return render_template("contact.html", usr = usr)
+
 @app.route("/about")
 def about():
     return render_template("about.html", usr = usr)

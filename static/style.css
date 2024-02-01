@@ -9,7 +9,7 @@ body {
 }
 
 .footer {
-  background-color: #333;
+  background-color: #000;
   color: white;
   text-align: center;
   padding: 20px 0;
@@ -21,68 +21,11 @@ body {
 
 /* Navbar styling */
 .navbar {
-background-color: #333;
+background-color: #000;
 color: white;
 padding: 0 20px 0 0; 
 display: flex; 
 justify-content: space-between; 
-}
-
-.nav-list,
-.login-list {
-list-style-type: none;
-margin: 0;
-padding: 0;
-display: flex; /* Use flexbox for the list items as well */
-align-items: center; /* Centers children vertically */
-}
-
-.nav-list li,
-.login-list li {
-padding: 10px; 
-}
-
-.nav-list li a,
-.login-list li a {
-display: block;
-color: white;
-text-align: center;
-padding: 10px 16px; 
-text-decoration: none;
-transition: background-color 0.3s;
-}
-
-.nav-list li a:hover,
-.login-list li a:hover {
-background-color: #555;
-}
-
-.navbar-search-form {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-search-form input {
-  padding: 10px;
-  margin-right: 0px;
-  border-radius: 2px;
-  border: 1px solid #8e8e8e;
-  background-color: #333;
-  color: #ddd;
-  margin-left: 0px;
-}
-
-.navbar-search-form button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.navbar-search-form button:hover {
-  background-color: #0056b3;
 }
 
 /* Logo */
@@ -103,18 +46,66 @@ background-color: #555;
   font-size: 24px;
 }
 
+/* Center of the navbar + user */
+.nav-list,
+.login-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex; /* Use flexbox for the list items as well */
+align-items: center; /* Centers children vertically */
+}
+
+/* distance from the left */
 .nav-list {
   padding-left: 100px; 
 }
-
-.homepage-content {
-  padding: 20px;
-  text-align: center;
+.nav-list li,
+.login-list li {
+padding: 10px; 
 }
 
+.nav-list li a,
+.login-list li a {
+display: block;
+color: white;
+text-align: center;
+padding: 10px 16px; 
+text-decoration: none;
+transition: background-color 0.3s;
+}
 
+.nav-list li a:hover,
+.login-list li a:hover {
+background-color: #555;
+}
+/* Search bar */
+.navbar-search-form {
+  display: flex;
+  align-items: center;
+}
+.navbar-search-form input {
+  padding: 10px;
+  margin-right: 0px;
+  border-radius: 2px;
+  border: 1px solid #8e8e8e;
+  background-color: #000;
+  color: #ddd;
+  margin-left: 0px;
+}
+.navbar-search-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.navbar-search-form button:hover {
+  background-color: #0056b3;
+}
 
-/* Marquee Styles */
+/* Marquee */
 .marquee-container {
   background-color: #828282;
   color: white;
@@ -132,46 +123,101 @@ background-color: #555;
   position: relative;
 }
 
+/* popup modal */
+
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  }
+  
+  .modal-content {
+    width: 500px;
+    margin: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  }
+  
+  .modal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+  }
+  .modal-close {
+   margin-top: 2%;
+  font-size: 1.5rem;
+  cursor: pointer ;
+  height: 75%;
+  
+  }
+  .modal-body {
+  max-height: 300px;
+  }
+
+/* Base.html Ends here */
+
+/* index.html Home Page */
+
+
+/* .homepage-content {
+  padding: 20px;
+  text-align: center;
+} */
+
 
 /* Hero Section Styles */
-/* Hero Section Styles */
-
-/* Keyframes for background slide */
 @keyframes backgroundSlide {
-  0% {
-      background-image: url('1.png');
+  0%, 20% { /* Hold first image */
+    background-image: url('1.png');
   }
-  25% {
-      background-image: url('2.png');
+  25%, 45% { /* Transition to and hold second image */
+    background-image: url('2.png');
   }
-  50% {
-      background-image: url('3.png');
+  50%, 70% { /* Transition to and hold third image */
+    background-image: url('3.png');
   }
-  75% {
-      background-image: url('4.png');
+  75%, 95% { /* Transition to and hold fourth image */
+    background-image: url('4.png');
   }
   100% {
-      background-image: url('1.png');
+    background-image: url('1.png'); /* Transition back to first image at the end */
   }
 }
 
-.hero {
+.home {
   background-image: url('trading-background.jpg');
+  opacity: 0.9;
   background-size: cover;
   background-position: center;
   text-align: center;
   padding: 100px 0;
-  animation: backgroundSlide 8s infinite;
+  animation: backgroundSlide 16s infinite; /* Adjust total time as needed */
+  transition: background-image 0.5s ease-in-out ; /* Smooth transition for 0.5s */
 }
 
-.hero-content h1 {
+
+.home-content h1 {
   color: white;
   font-size: 40px;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
-.hero-content p {
+.home-content p {
   color: white;
   font-size: 20px;
   margin-bottom: 30px;
@@ -220,20 +266,17 @@ background-color: #555;
 .feature p {
   font-size: 16px;
 }
-
-
-/* Contact Section Styles */
+/* index.html Ends here */
+/* Contact.html Styles */
 .contact {
   padding: 50px;
   text-align: center;
   background-color: #fff;
 }
-
 .contact h2 {
-  color: #333;
+  color: #000;
   margin-bottom: 20px;
 }
-
 .contact-form {
   max-width: 500px;
   margin: auto;
@@ -253,8 +296,38 @@ background-color: #555;
   resize: vertical;
 }
 
+/* Contact.html Ends here */
+/* about.html Styles */
+
+
+.about-section {
+  padding: 50px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  width: 70%;
+  margin: 2% auto;
+  
+}
+
+.about-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* about.html Ends here */
+
+/* Login.html and register.html Styles */
+
 /* Login Section Styles */
-.login-section {
+.login-section,
+.registration-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,75 +368,7 @@ background-color: #555;
 .form-text a:hover {
   text-decoration: underline;
 }
-
-/* Registration Section Styles */
-.registration-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-}
-
-
-/* About Section Styles */
-.about-section {
-  padding: 50px;
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-}
-
-.about-section h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.about-section p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-
-/* Plot Section Styles */
-#plot-container {
-  margin-top: 20px;
-}
-
-.plot-section {
-  padding: 50px;
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-}
-
-.plot-section h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.plot-form {
-  max-width: 500px;
-  margin: auto;
-}
-
-.form-group {
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.form-group input[type="number"],
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-
+/* Login.html and register.html Ends here */
 
 /* Market.html styling */
 .market-main {
@@ -373,12 +378,12 @@ background-color: #555;
 }
 
 .market-data {
-  width: 75%;
+  width: 77%;
 }
 
 .market-data h2,
 .market-filters h3 {
-  color: #333;
+  color: #000;
   margin-bottom: 15px;
 }
 
@@ -393,41 +398,28 @@ background-color: #555;
   background-color: #007bff;
   color: white;
   padding: 10px;
+  border-bottom: 1px solid #e1e1e1;
 }
-
-.table-header div {
-  flex: 1;
-  text-align: left;
-  padding: 0 10px;
-}
-
-.market-table div {
+.table-row {
+  background-color: #fff;
+  border-bottom: 1px solid #e1e1e1;
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
 }
 
-.market-table div div {
+
+.table-header div,
+.table-row div{
   flex: 1;
   text-align: left;
-  padding: 0 10px;
-}
-
-.market-table .table-row {
-  display: flex;
-  background-color: #fff;
-  border-bottom: 1px solid #e1e1e1;
+  padding: 5px 10px;
 }
 
 .market-table .table-row:nth-child(odd) {
   background-color: #f8f9fa;
 }
 
-.market-table .table-row div {
-  flex: 1;
-  padding: 10px;
-  text-align: left;
-}
 
 .market-table .table-row div a {
   text-decoration: none;
@@ -482,7 +474,7 @@ background-color: #555;
 }
 
 input[type="range"] {
-  width: 100%;
+  width: 95%;
   margin: 10px 0;
 }
 
@@ -494,56 +486,148 @@ select {
   border: 1px solid #ddd;
 }
 
+/* Market.html Ends here */
 
-/* Modal Styles */
-.modal-overlay {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: rgba(0, 0, 0, 0.5);
-display: flex;
-align-items: center;
-justify-content: center;
-z-index: 1000;
+/* Plot.html Styles */
+
+
+.plot-section {
+  padding: 50px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  width: 70%;
+  margin: 2% auto;
 }
 
-.modal-dialog-centered {
-width: 100%;
-max-width: 500px; 
-margin: auto;
+.plot-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-.modal-content {
-background-color: #fff;
-padding: 20px;
-border-radius: 5px;
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+.plot-form {
+  max-width: 500px;
+  margin: auto;
 }
 
-.modal-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid #e1e1e1;
-padding-bottom: 10px;
-margin-bottom: 20px;
+.form-group {
+  margin-bottom: 16px;
 }
 
-.modal-close {
-background: none;
-border: none;
-font-size: 1.5rem;
-cursor: pointer;
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
 }
 
-.modal-body {
-max-height: 300px;
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Plot.html Ends here */
+
+/* num_stocks.html */
+
+.stock-info-container {
+  width: 25%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.stock-info {
+  margin-bottom: 15px;
 }
 
 
-/* News styling */
+.stock-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-input {
+  margin-bottom: 10px;
+}
+
+.stock-input input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.multiplot { 
+  width: 35%;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.reset-btn {
+  background-color: #dc3545;
+}
+
+.reset-btn:hover {
+  background-color: #b02a37;
+}
+
+.stock-input-container {
+  width: 25%; 
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-left: 2%; 
+}
+
+/* num_stocks.html Ends here */
+
+
+/* singlePlot Page Styles */
+
+.plot-page-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.plot-display-container {
+  width: 68%;
+  background-color: #f8f9fa;
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+
+.plot-form {
+  max-width: 500px;
+  margin: auto;
+}
+.stock-info {
+  margin-bottom: 15px;
+}
+
+/* singlePlot Page Ends here */
+
+
+/* news.html styling */
 .news-main {
   padding: 20px;
   text-align: center;
@@ -579,7 +663,7 @@ max-height: 300px;
 
 .news-description {
   font-size: 14px;
-  color: #333;
+  color: #000;
   height: 60px; 
   overflow: hidden; 
 }
@@ -605,88 +689,14 @@ max-height: 300px;
 
 
 
-/* Plot Page Styles */
-.plot-page-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
 
-.plot-display-container {
-  width: 68%;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.stock-input-container {
-  width: 25%; 
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-left: 2%; 
-}
-
-.stock-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.stock-input {
-  margin-bottom: 10px;
-}
-
-.stock-input input {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.btn {
-  padding: 10px 20px;
-  margin-top: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.reset-btn {
-  background-color: #dc3545;
-}
-
-.reset-btn:hover {
-  background-color: #b02a37;
-}
-
-.stock-info-container {
-  width: 25%;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-left: 2%;
-  display: flex;
-  flex-direction: column;
-}
-
-.stock-info {
-  margin-bottom: 15px;
-}
 
 
 
 /* Main Dashboard Container */
 .dashboard-main-container {
   max-width: 70%;
-  margin: auto;
+  margin: 2% auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -728,7 +738,7 @@ max-height: 300px;
 }
 
 .dashboard-news h2, .dashboard-watchlist h2 {
-  color: #333;
+  color: #000000;
   margin-bottom: 15px;
 }
 
@@ -772,7 +782,7 @@ max-height: 300px;
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
 }
