@@ -1,4 +1,3 @@
-
 /* Base.html styles */
 body {
   font-family: Arial, sans-serif;
@@ -16,16 +15,16 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 5%; 
+  height: 5%;
 }
 
 /* Navbar styling */
 .navbar {
-background-color: #000;
-color: white;
-padding: 0 20px 0 0; 
-display: flex; 
-justify-content: space-between; 
+  background-color: #000;
+  color: white;
+  padding: 0 20px 0 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Logo */
@@ -34,11 +33,13 @@ justify-content: space-between;
   align-items: center;
   float: left;
   padding: 0px 0px;
-  
+
 }
+
 .logo {
-  height: 55px; 
+  height: 55px;
 }
+
 .logo-name {
   margin-left: 10px;
   color: white;
@@ -49,41 +50,46 @@ justify-content: space-between;
 /* Center of the navbar + user */
 .nav-list,
 .login-list {
-list-style-type: none;
-margin: 0;
-padding: 0;
-display: flex; /* Use flexbox for the list items as well */
-align-items: center; /* Centers children vertically */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Use flexbox for the list items as well */
+  align-items: center;
+  /* Centers children vertically */
 }
 
 /* distance from the left */
 .nav-list {
-  padding-left: 100px; 
+  padding-left: 100px;
 }
+
 .nav-list li,
 .login-list li {
-padding: 10px; 
+  padding: 10px;
 }
 
 .nav-list li a,
 .login-list li a {
-display: block;
-color: white;
-text-align: center;
-padding: 10px 16px; 
-text-decoration: none;
-transition: background-color 0.3s;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
 .nav-list li a:hover,
 .login-list li a:hover {
-background-color: #555;
+  background-color: #555;
 }
+
 /* Search bar */
 .navbar-search-form {
   display: flex;
   align-items: center;
 }
+
 .navbar-search-form input {
   padding: 10px;
   margin-right: 0px;
@@ -93,6 +99,7 @@ background-color: #555;
   color: #ddd;
   margin-left: 0px;
 }
+
 .navbar-search-form button {
   padding: 5px 10px;
   background-color: #007bff;
@@ -101,6 +108,7 @@ background-color: #555;
   border-radius: 4px;
   cursor: pointer;
 }
+
 .navbar-search-form button:hover {
   background-color: #0056b3;
 }
@@ -113,7 +121,7 @@ background-color: #555;
   position: relative;
   white-space: nowrap;
   padding-top: 5px;
-  padding-bottom:5px;
+  padding-bottom: 5px;
 }
 
 .marquee {
@@ -121,6 +129,19 @@ background-color: #555;
   align-items: center;
   overflow-x: hidden;
   position: relative;
+}
+.marquee a {
+  padding: 5px;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+#gainers {
+  color: green
+}
+
+#losers {
+  color: red
 }
 
 /* popup modal */
@@ -138,35 +159,37 @@ background-color: #555;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  }
-  
-  .modal-content {
-    width: 500px;
-    margin: auto;
+}
+
+.modal-content {
+  width: 500px;
+  margin: auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   align-items: center;
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
   padding-bottom: 0px;
   margin-bottom: 20px;
-  }
-  .modal-close {
-   margin-top: 2%;
+}
+
+.modal-close {
+  margin-top: 2%;
   font-size: 1.5rem;
-  cursor: pointer ;
+  cursor: pointer;
   height: 75%;
-  
-  }
-  .modal-body {
+
+}
+
+.modal-body {
   max-height: 300px;
-  }
+}
 
 /* Base.html Ends here */
 
@@ -181,20 +204,24 @@ background-color: #555;
 
 /* Hero Section Styles */
 @keyframes backgroundSlide {
-  0%, 20% { /* Hold first image */
+  0% {
     background-image: url('1.png');
   }
-  25%, 45% { /* Transition to and hold second image */
+
+  25% {
     background-image: url('2.png');
   }
-  50%, 70% { /* Transition to and hold third image */
+
+  50% {
     background-image: url('3.png');
   }
-  75%, 95% { /* Transition to and hold fourth image */
+
+  75% {
     background-image: url('4.png');
   }
+
   100% {
-    background-image: url('1.png'); /* Transition back to first image at the end */
+    background-image: url('1.png');
   }
 }
 
@@ -205,8 +232,7 @@ background-color: #555;
   background-position: center;
   text-align: center;
   padding: 100px 0;
-  animation: backgroundSlide 16s infinite; /* Adjust total time as needed */
-  transition: background-image 0.5s ease-in-out ; /* Smooth transition for 0.5s */
+  animation: backgroundSlide 10s infinite;
 }
 
 
@@ -266,6 +292,7 @@ background-color: #555;
 .feature p {
   font-size: 16px;
 }
+
 /* index.html Ends here */
 /* Contact.html Styles */
 .contact {
@@ -273,10 +300,12 @@ background-color: #555;
   text-align: center;
   background-color: #fff;
 }
+
 .contact h2 {
   color: #000;
   margin-bottom: 20px;
 }
+
 .contact-form {
   max-width: 500px;
   margin: auto;
@@ -307,7 +336,7 @@ background-color: #555;
   text-align: center;
   width: 70%;
   margin: 2% auto;
-  
+
 }
 
 .about-section h2 {
@@ -341,7 +370,7 @@ background-color: #555;
   border-radius: 10px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center ;
+  text-align: center;
 }
 
 .form-field {
@@ -368,6 +397,7 @@ background-color: #555;
 .form-text a:hover {
   text-decoration: underline;
 }
+
 /* Login.html and register.html Ends here */
 
 /* Market.html styling */
@@ -400,6 +430,7 @@ background-color: #555;
   padding: 10px;
   border-bottom: 1px solid #e1e1e1;
 }
+
 .table-row {
   background-color: #fff;
   border-bottom: 1px solid #e1e1e1;
@@ -410,7 +441,7 @@ background-color: #555;
 
 
 .table-header div,
-.table-row div{
+.table-row div {
   flex: 1;
   text-align: left;
   padding: 5px 10px;
@@ -535,11 +566,12 @@ select {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 2%;
   display: flex;
   flex-direction: column;
 }
+
 .stock-info {
   margin-bottom: 15px;
 }
@@ -570,7 +602,7 @@ select {
   cursor: pointer;
 }
 
-.multiplot { 
+.multiplot {
   width: 35%;
 }
 
@@ -587,12 +619,12 @@ select {
 }
 
 .stock-input-container {
-  width: 25%; 
+  width: 25%;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-left: 2%; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 2%;
 }
 
 /* num_stocks.html Ends here */
@@ -611,7 +643,7 @@ select {
   background-color: #f8f9fa;
   padding: 30px 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
 }
 
@@ -620,6 +652,7 @@ select {
   max-width: 500px;
   margin: auto;
 }
+
 .stock-info {
   margin-bottom: 15px;
 }
@@ -644,7 +677,7 @@ select {
   width: 30%;
   margin-bottom: 20px;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   background-color: #fff;
 }
@@ -655,8 +688,8 @@ select {
 }
 
 .news-title {
-  color:#007bff ;
-  background-color:#ddd;
+  color: #007bff;
+  background-color: #ddd;
   font-size: 18px;
   margin: 10px 0;
 }
@@ -664,8 +697,8 @@ select {
 .news-description {
   font-size: 14px;
   color: #000;
-  height: 60px; 
-  overflow: hidden; 
+  height: 60px;
+  overflow: hidden;
 }
 
 .news-link {
@@ -731,13 +764,15 @@ select {
   gap: 20px;
 }
 
-.dashboard-news, .dashboard-watchlist {
+.dashboard-news,
+.dashboard-watchlist {
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 5px;
 }
 
-.dashboard-news h2, .dashboard-watchlist h2 {
+.dashboard-news h2,
+.dashboard-watchlist h2 {
   color: #000000;
   margin-bottom: 15px;
 }

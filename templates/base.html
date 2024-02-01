@@ -62,7 +62,16 @@
     <div class="marquee-container">
       <div class="marquee" aria-live="polite">
         <marquee>
-          <a href="/performers">📈 Top Gainers 📉 Top Losers</a>
+          <a href="/performers">📈 Top Gainers</a>
+          {% for data in gl[0]%}
+          <a href="/performers">{{data['symbol']}}</a>
+          <a href="/performers" id = "gainers">+{{data['diff']}}</a>
+          {% endfor %}
+          <a href="/performers">📉 Top Losers</a>
+          {% for data in gl[1]%}
+          <a href="/performers">{{data['symbol']}}</a>
+          <a href="/performers" id = "losers">{{data['diff']}}</a>
+          {% endfor %}
         </marquee>
       </div>
     </div>

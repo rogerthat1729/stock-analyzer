@@ -32,6 +32,7 @@ def get_news():
 
 usr = None
 dataframe = None
+gl = get_performers(get_stock())
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,13 +46,13 @@ with app.app_context():
 
 @app.route("/")
 def home():
-    return render_template("index.html", usr = usr)
+    return render_template("index.html", usr = usr, gl = gl)
 
 @app.route("/market")
 def market():
     if not usr:
         flash('Please login to access this page.')
-        return redirect(url_for('home', usr = usr))
+        return redirect(url_for('home', usr = usr, gl = gl))
     
     #filtering
     min_open_filter = request.args.get('open-min', type=float)
@@ -83,13 +84,13 @@ def market():
     if 'reset' in request.form:
         filtered_stocks = get_stock()
 
-    return render_template('market.html', stocks=filtered_stocks, usr = usr)
+    return render_template('market.html', stocks=filtered_stocks, usr = usr, gl = gl)
 
 @app.route('/market/<symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
     if not usr:
         flash('Please login to access this page.')
-        return redirect(url_for('home', usr = usr))
+        return redirect(url_for('home', usr = usr, gl = gl))
     data = None
     pdv = None
     entity = 'OPEN'
@@ -98,31 +99,31 @@ def market_detail(symbol):
     data = give_data(symbols)
     if request.method == 'POST':
         if 'reset' in request.form:
-            return redirect(url_for('home', usr = usr))
+            return redirect(url_for('home', usr = usr, gl = gl))
         entity = request.form['options']
         typ = request.form['plottype']
     figure = create_plot(data, entity, 'stock', typ)
     pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', symbol = symbol, pdv = pdv, usr = usr, type = 'stock', data = data)
+    return render_template('singleplot.html', symbol = symbol, pdv = pdv, usr = usr, type = 'stock', data = data, gl = gl)
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
     if not usr:
         flash('Please login to access this page.')
-        return redirect(url_for('home', usr = usr))
+        return redirect(url_for('home', usr = usr, gl = gl))
     if request.method == 'POST':
         if 'submit' in request.form:
             num = int(request.form['num_stocks'])
             typ = request.form['plottype']
             entity = request.form['options']
-            return redirect(url_for('add_symbols', num=num, et = entity, usr = usr, typ = typ))
-    return render_template('plot.html', usr = usr)
+            return redirect(url_for('add_symbols', num=num, et = entity, usr = usr, typ = typ, gl = gl))
+    return render_template('plot.html', usr = usr, gl = gl)
 
 @app.route("/plot/stocks/<int:num>/<string:et>/<string:typ>", methods = ['GET', 'POST'])
 def add_symbols(num, et, typ):
     if not usr:
         flash('Please login to access this page.')
-        return redirect(url_for('home', usr = usr))
+        return redirect(url_for('home', usr = usr, gl = gl))
     pdv = None
     data = None
     if request.method == 'POST':
@@ -131,13 +132,13 @@ def add_symbols(num, et, typ):
             for sym in symbols:
                 if sym not in stock_list or sym is None:
                     flash('Please provide correct stock symbols.')
-                    return redirect(url_for('plot', usr = usr))
+                    return redirect(url_for('plot', usr = usr, gl = gl))
             data = give_data(symbols)
             figure = create_plot(data, et, 'stock', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
         if 'reset' in request.form:
-            return redirect(url_for('plot', usr = usr))
-    return render_template('num_stocks.html', num = num, pdv = pdv, usr = usr, data = data)
+            return redirect(url_for('plot', usr = usr, gl = gl))
+    return render_template('num_stocks.html', num = num, pdv = pdv, usr = usr, data = data, gl = gl)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -151,8 +152,8 @@ def register():
         db.session.commit()
 
         flash('Registration successful! Please login.')
-        return redirect(url_for('login', usr = usr))
-    return render_template('register.html', usr = usr)
+        return redirect(url_for('login', usr = usr, gl = gl))
+    return render_template('register.html', usr = usr, gl = gl)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -167,14 +168,14 @@ def login():
             session['username'] = user.username
             session['logged_in'] = True
             usr = user.username
-            return redirect(url_for('dashboard', usr = usr))
+            return redirect(url_for('dashboard', usr = usr, gl = gl))
         else:
             flash('Invalid username or password')
-            return redirect(url_for('login', usr = usr))
+            return redirect(url_for('login', usr = usr, gl = gl))
     else:
         if usr:
-            return redirect(url_for('dashboard', usr = usr))
-    return render_template('login.html', usr = usr)
+            return redirect(url_for('dashboard', usr = usr, gl = gl))
+    return render_template('login.html', usr = usr, gl = gl)
 
 @app.route('/logout')
 def logout():
@@ -183,11 +184,11 @@ def logout():
     session.pop('username', None)
     session.pop('logged_in', None)
     usr = None
-    return redirect(url_for('home', usr = usr))
+    return redirect(url_for('home', usr = usr, gl = gl))
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html", usr = usr)
+    return render_template("contact.html", usr = usr, gl = gl)
 
 @app.route("/submit_contact", methods = ['GET', 'POST'])
 def submit_contact():
@@ -196,23 +197,23 @@ def submit_contact():
         email = request.form['email']
         message = request.form['message']
         flash('Thank you for contacting us. We will get back to you soon.')
-        return redirect(url_for('home', usr = usr))
-    return render_template("contact.html", usr = usr)
+        return redirect(url_for('home', usr = usr, gl = gl))
+    return render_template("contact.html", usr = usr, gl = gl)
 
 @app.route("/about")
 def about():
-    return render_template("about.html", usr = usr)
+    return render_template("about.html", usr = usr, gl = gl)
 
 @app.route("/news")
 def latest_news():
     news_data = get_news() 
-    return render_template('news.html', news_articles=news_data['articles'], usr = usr)
+    return render_template('news.html', news_articles=news_data['articles'], usr = usr, gl = gl)
 
 @app.route('/nifty50', methods = ['GET', 'POST'])
 def indices():
     if not usr:
         flash('Please login to access this page.')
-        return redirect(url_for('home', usr = usr))
+        return redirect(url_for('home', usr = usr, gl = gl))
     dataframe = None
     pdv = None
     entity = 'OPEN'
@@ -221,27 +222,27 @@ def indices():
     dataframe = {'NIFTY50': df}
     if request.method == 'POST':
         if 'reset' in request.form:
-            return redirect(url_for('home', usr = usr))
+            return redirect(url_for('home', usr = usr, gl = gl))
         entity = request.form['options']
         typ = request.form['plottype']
     figure = create_plot(dataframe, entity, 'index', typ)
     pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv, data = dataframe)
+    return render_template('singleplot.html', usr = usr, type = 'index', symbol = 'NIFTY50', pdv = pdv, data = dataframe, gl = gl)
 
 @app.route("/performers", methods = ['GET'])
 def gainers_and_losers():
     data = get_stock()
     gainers, losers = get_performers(data)
-    return render_template("performers.html", usr = usr, both = [gainers, losers])
+    return render_template("performers.html", usr = usr, both = [gainers, losers], gl = gl)
 
 @app.route('/search')
 def search():
     search_symbol = request.args.get('search_symbol').upper()
     if search_symbol in stock_list:
-        return redirect(url_for('market_detail', symbol=search_symbol))
+        return redirect(url_for('market_detail', symbol=search_symbol, gl = gl))
     else:
         flash('Invalid Stock Symbol')
-        return redirect(url_for('home'))
+        return redirect(url_for('home', gl = gl))
 
 @app.route('/dashboard')
 def dashboard():
@@ -250,15 +251,15 @@ def dashboard():
         watchlist_symbols = user.watchlist.split(',') if user.watchlist else []
         live_data = convert_to_dict(get_stock())
         news_data = get_news()
-        return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4],watchlist_symbols=watchlist_symbols, live_data=live_data)
+        return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4],watchlist_symbols=watchlist_symbols, live_data=live_data, gl = gl)
     else:
-        return redirect(url_for('login', usr = usr))
+        return redirect(url_for('login', usr = usr, gl = gl))
     
 @app.route('/update_watchlist', methods=['POST'])
 def update_watchlist():
     if usr is None:
         flash('Please log in to update your watchlist.')
-        return redirect(url_for('login', usr = usr))
+        return redirect(url_for('login', usr = usr, gl = gl))
 
     user = User.query.get(session['user_id'])
     symbol = request.form.get('symbol')
@@ -274,7 +275,7 @@ def update_watchlist():
             symbols.remove(symbol)
             user.watchlist = ','.join(symbols)
     db.session.commit()
-    return redirect(url_for('dashboard', usr = usr))
+    return redirect(url_for('dashboard', usr = usr, gl = gl))
 
 if __name__ == "__main__":
     app.run(debug=True)
