@@ -157,6 +157,8 @@ background-color: #555;
 
 .hero {
   background-image: url('trading-background.jpg');
+  
+  opacity: 0.85;
   background-size: cover;
   background-position: center;
   text-align: center;
