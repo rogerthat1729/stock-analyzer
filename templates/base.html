@@ -11,144 +11,94 @@
     {% endblock %}
   </head>
 
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="{{ url_for('static', filename = 'logo.png') }}" class="logo" />
-      </div>
-      <ul class="nav-list">
-        <li>
-          <a href="http://127.0.0.1:5000">Home</a>
-        </li>
-        <li>
-          <a href="http://127.0.0.1:5000/news">News</a>
-        </li>
-        {% if usr %}
-          <li>
-            <a href="http://127.0.0.1:5000/market">Markets</a>
-          </li>
-          <li>
-            <a href="http://127.0.0.1:5000/plot">Plot</a>
-          </li>
-        {% endif %}
-        <li>
-          <a href="http://127.0.0.1:5000/contact">Contact</a>
-        </li>
-        <li>
-          <a href="http://127.0.0.1:5000/about">About Us</a>
-        </li>
-        <li>
-          <form class="navbar-search-form" action="/search" method="get">
-            <input type="text" name="search_symbol" placeholder="Search Stock Symbol" required />
-            <!-- <button type="submit">Search</button> -->
-          </form>
-        </li>
-      </ul>
-
-      <!-- Dark Mode Toggle -->
-      <div class="theme-switch">
-        <input type="checkbox" id="dark-mode-toggle" name="theme" />
-        <label for="dark-mode-toggle">Dark Mode</label>
-      </div>
-
-      <ul class="login-list">
-        {% if usr %}
-          <li>
-            <a href="http://127.0.0.1:5000/dashboard">{{ usr }}</a>
-          </li>
-        {% else %}
-          <li>
-            <a href="http://127.0.0.1:5000/login">Login</a>
-          </li>
-        {% endif %}
-      </ul>
-    </nav>
-    <div class="marquee-container">
-      <div class="marquee" aria-live="polite">
-        <div class="marquee-content">
-          <!-- Repeat the content to create a continuous effect -->
-          <span class="marquee-item"><a href="/performers">📈 Top Gainers 📉 Top Losers</a></span>
-        </div>
-      </div>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" class="logo" />
     </div>
+    <ul class="nav-list">
+      <li><a href="http://127.0.0.1:5000">Home</a></li>
+      <li><a href="http://127.0.0.1:5000/news">News</a></li>
+      {% if usr %}
+      <li><a href="http://127.0.0.1:5000/market">Markets</a></li>
+      <li><a href="http://127.0.0.1:5000/plot">Plot</a></li>
+      {%endif%}
+      <li><a href="http://127.0.0.1:5000/contact">Contact</a></li>
+      <li><a href="http://127.0.0.1:5000/about">About Us</a></li>
+      <li>
+        <form class="navbar-search-form" action="/search" method="get">
+          <input type="text" name="search_symbol" placeholder="Search Stock Symbol" required>
+        </form>
+      </li>
+    </ul>
+    <!-- Login/User Button -->
+    <ul class="login-list">
+      {% if usr %}
+      <li><a href="http://127.0.0.1:5000/dashboard">{{usr}}</a></li>
+      {%else%}
+      <li><a href="http://127.0.0.1:5000/login">Login</a></li>
+      {%endif%}
+    </ul>
+  </nav>
+
+  <div class="marquee-container">
+    <div class="marquee" aria-live="polite">
+      <marquee><a href="/performers">📈 Top Gainers 📉 Top Losers</a></marquee>
+    </div>
+  </div>
 
     {% block content %}
     {% endblock %}
 
-    <!-- Modal -->
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <div id="flash-modal" class="modal-overlay">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Notification</h5>
-                <button type="button" class="modal-close" onclick="closeModal()">×</button>
-              </div>
-              <div class="modal-body">
-                {% for message in messages %}
-                  <p>{{ message }}</p>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
+  <!-- Modal to display flash messages  -->
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <div id="flash-modal" class="modal-overlay">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Notification</h4>
+          <button type="button" class="modal-close" onclick="closeModal()">x</button>
         </div>
-      {% endif %}
-    {% endwith %}
+        <div class="modal-body">
+          {% for message in messages %}
+          <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endwith %}
 
-    <script>
-      function closeModal() {
-        document.getElementById('flash-modal').style.display = 'none'
-      }
-      document.addEventListener('DOMContentLoaded', function () {
-        const marqueeContent = document.querySelector('.marquee-content')
-      
-        marqueeContent.addEventListener('mouseover', function () {
-          this.style.animationPlayState = 'paused'
-        })
-      
-        marqueeContent.addEventListener('mouseout', function () {
-          this.style.animationPlayState = 'running'
-        })
-      })
-      
-      /* Slider on market webpage */
-      function updateSliderValue() {
-        document.getElementById('open-min-value').textContent = document.getElementById('open-min').value
-        document.getElementById('open-max-value').textContent = document.getElementById('open-max').value
-        document.getElementById('last-min-value').textContent = document.getElementById('last-min').value
-        document.getElementById('last-max-value').textContent = document.getElementById('last-max').value
-        document.getElementById('volume-min-value').textContent = document.getElementById('volume-min').value
-      }
-      document.getElementById('volume-min').addEventListener('input', updateSliderValue)
-      document.getElementById('open-min').addEventListener('input', updateSliderValue)
-      document.getElementById('open-max').addEventListener('input', updateSliderValue)
-      document.getElementById('last-min').addEventListener('input', updateSliderValue)
-      document.getElementById('last-max').addEventListener('input', updateSliderValue)
-      
-      function resetFilters() {
-        document.getElementById('filter-form').reset()
-      }
-    </script>
+  <script>
+    function closeModal() {
+      document.getElementById('flash-modal').style.display = 'none';
+    }
 
-    <script>
-      //dark mode
-      document.addEventListener('DOMContentLoaded', function () {
-        const toggleSwitch = document.getElementById('dark-mode-toggle')
-      
-        toggleSwitch.addEventListener('change', function (e) {
-          if (e.target.checked) {
-            document.body.classList.add('dark-mode')
-          } else {
-            document.body.classList.remove('dark-mode')
-          }
-        })
-      })
-    </script>
+    /* Slider in filters */
+    function updateSliderValue() {
+      document.getElementById('open-min-value').textContent = document.getElementById('open-min').value;
+      document.getElementById('open-max-value').textContent = document.getElementById('open-max').value;
+      document.getElementById('last-min-value').textContent = document.getElementById('last-min').value;
+      document.getElementById('last-max-value').textContent = document.getElementById('last-max').value;
+      document.getElementById('volume-min-value').textContent = document.getElementById('volume-min').value;
+    }
+    document.getElementById('volume-min').addEventListener('input', updateSliderValue);
+    document.getElementById('open-min').addEventListener('input', updateSliderValue);
+    document.getElementById('open-max').addEventListener('input', updateSliderValue);
+    document.getElementById('last-min').addEventListener('input', updateSliderValue);
+    document.getElementById('last-max').addEventListener('input', updateSliderValue);
 
-    <footer class="footer">
-      <p>© 2024 Trading Pro. All rights reserved.</p>
-    </footer>
-  </body>
+    function resetFilters() {
+      document.getElementById('filter-form').reset();
+    }
+  </script>
+
+  <footer class="footer">
+    <p>© 2024 VPTrading. All rights reserved.</p>
+  </footer>
+
+</body>
 </html>

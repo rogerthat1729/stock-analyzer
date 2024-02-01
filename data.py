@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-from jugaad_data.nse import stock_df, index_df,NSELive
+from jugaad_data.nse import stock_df, index_df
 
 entity_strings = {'OPEN': 'Opening Price', 'CLOSE': 'Closing Price', 'LOW': 'Intraday Low', 'HIGH':'Intraday High', 'LTP':'Last Traded Price', 'VOLUME':'Volume', 'VALUE':'Market Cap', 'NO OF TRADES':'No of Trades'}
 type_strings = {'normal': 'Line Plot', 'candle': 'Candlestick Plot'}
@@ -11,7 +11,7 @@ csv_data = pd.read_csv('merged_stock_industry_marketcap_data.csv')
 csv_data = csv_data[['Symbol', 'Industry', 'MarketCap']]
 csv_data = csv_data.set_index('Symbol')
 
-syms = pd.read_csv('updated_combined_nifty50_next50_total_market.csv')
+syms = pd.read_csv('NIFTY_TOTAL_MARKET.csv')
 
 def give_dates(duration):
     enddate = datetime.now().date()

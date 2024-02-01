@@ -1,16 +1,14 @@
 from flask import Flask,redirect, url_for, request, render_template, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
-from plot import give_data, create_plot, get_index_data, get_performers, get_current_data,convert_to_dict
+from data import give_data, create_plot, get_index_data, get_performers, get_current_data, convert_to_dict
 from news import get_stock_news
 import plotly.offline as po
 import pandas as pd
 from flask_caching import Cache
-import csv
 
-syms = pd.read_csv('updated_combined_nifty50_next50_total_market.csv')
-stock_list = syms['Symbol'].tolist()
-dataframe = None
+syms = pd.read_csv('NIFTY_TOTAL_MARKET.csv')
+stock_list = syms['Symbol'].tolist()   # complete list of stocks
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -28,20 +26,18 @@ def get_stock():
     data = get_current_data()
     return list(reversed(data))
 
-@cache.cached(timeout=10000, key_prefix='dict_stocks')
-def get_dict_stock():
-    return convert_to_dict(get_current_data())
-
 @cache.cached(timeout=10000, key_prefix='news')
 def get_news():
     return get_stock_news()
 
 usr = None
+dataframe = None
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)
     password_hash = db.Column(db.String(200), nullable=False)
+    # watchlist added here for storing stocks of user
     watchlist = db.Column(db.String(500), default='')
 
 with app.app_context():
@@ -49,15 +45,15 @@ with app.app_context():
 
 @app.route("/")
 def home():
-    global usr
     return render_template("index.html", usr = usr)
 
 @app.route("/market")
 def market():
-    global usr
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
+    
+    #filtering
     min_open_filter = request.args.get('open-min', type=float)
     max_open_filter = request.args.get('open-max', type=float)
     min_last_price_filter = request.args.get('last-min', type=float)
@@ -83,6 +79,7 @@ def market():
         filtered_stocks = [stock for stock in filtered_stocks if float(stock['diff']) <= max_change_filter]
     if stock_name_filter:
         filtered_stocks = [stock for stock in filtered_stocks if stock['symbol'] == stock_name_filter]
+
     if 'reset' in request.form:
         filtered_stocks = get_stock()
 
@@ -90,11 +87,10 @@ def market():
 
 @app.route('/market/<symbol>', methods = ['GET', 'POST'])
 def market_detail(symbol):
-    global usr
-    data = None
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
+    data = None
     pdv = None
     entity = 'OPEN'
     typ = 'normal'
@@ -111,7 +107,6 @@ def market_detail(symbol):
 
 @app.route("/plot", methods = ['GET', 'POST'])
 def plot():
-    global usr
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
@@ -121,15 +116,15 @@ def plot():
             typ = request.form['plottype']
             entity = request.form['options']
             return redirect(url_for('add_symbols', num=num, et = entity, usr = usr, typ = typ))
-    return render_template('plot.html', error = None, usr = usr)
+    return render_template('plot.html', usr = usr)
 
 @app.route("/plot/stocks/<int:num>/<string:et>/<string:typ>", methods = ['GET', 'POST'])
 def add_symbols(num, et, typ):
-    global usr
-    data = None
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
+    pdv = None
+    data = None
     if request.method == 'POST':
         if 'submit' in request.form:
             symbols = [request.form[f'stock{i}'] for i in range(num)]
@@ -140,18 +135,12 @@ def add_symbols(num, et, typ):
             data = give_data(symbols)
             figure = create_plot(data, et, 'stock', typ)
             pdv = po.plot(figure, output_type='div', include_plotlyjs=True)
-            return render_template('num_stocks.html', num = num, pdv = pdv, usr = usr, data = data)
         if 'reset' in request.form:
             return redirect(url_for('plot', usr = usr))
-    return render_template('num_stocks.html', num = num, pdv = None, usr = usr, data = data)
-    
-@app.template_filter('range')
-def _jinja_range(number):
-    return range(number)
+    return render_template('num_stocks.html', num = num, pdv = pdv, usr = usr, data = data)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    global usr
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -183,7 +172,7 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login', usr = usr))
     else:
-        if usr is not None:
+        if usr:
             return redirect(url_for('dashboard', usr = usr))
     return render_template('login.html', usr = usr)
 
@@ -206,23 +195,23 @@ def about():
 
 @app.route("/news")
 def latest_news():
-    global usr
     news_data = get_news() 
     return render_template('news.html', news_articles=news_data['articles'], usr = usr)
 
 @app.route('/nifty50', methods = ['GET', 'POST'])
 def indices():
-    global usr
-    df = get_index_data()
-    dataframe = None
     if not usr:
         flash('Please login to access this page.')
         return redirect(url_for('home', usr = usr))
+    dataframe = None
     pdv = None
     entity = 'OPEN'
     typ = 'normal'
+    df = get_index_data()
     dataframe = {'NIFTY50': df}
     if request.method == 'POST':
+        if 'reset' in request.form:
+            return redirect(url_for('home', usr = usr))
         entity = request.form['options']
         typ = request.form['plottype']
     figure = create_plot(dataframe, entity, 'index', typ)
@@ -231,7 +220,6 @@ def indices():
 
 @app.route("/performers", methods = ['GET'])
 def gainers_and_losers():
-    global usr
     data = get_stock()
     gainers, losers = get_performers(data)
     return render_template("performers.html", usr = usr, both = [gainers, losers])
@@ -247,19 +235,15 @@ def search():
 
 @app.route('/dashboard')
 def dashboard():
-    global usr
-    if usr is not None:
-        #code to get the data for the symbols in watchlist
+    if usr:
         user = User.query.get(session['user_id'])
         watchlist_symbols = user.watchlist.split(',') if user.watchlist else []
-        #code to get the live data for the symbols in watchlist
         live_data = convert_to_dict(get_stock())
         news_data = get_news()
         return render_template('welcome.html', username=session['username'], usr = usr, news_data = news_data['articles'][:4],watchlist_symbols=watchlist_symbols, live_data=live_data)
     else:
         return redirect(url_for('login', usr = usr))
     
-#trying watchlist
 @app.route('/update_watchlist', methods=['POST'])
 def update_watchlist():
     if usr is None:
@@ -269,7 +253,6 @@ def update_watchlist():
     user = User.query.get(session['user_id'])
     symbol = request.form.get('symbol')
     action = request.form.get('action')
-    
     symbol = symbol.upper()
 
     if action == 'add':
@@ -280,11 +263,8 @@ def update_watchlist():
             symbols = user.watchlist.split(',')
             symbols.remove(symbol)
             user.watchlist = ','.join(symbols)
-
     db.session.commit()
     return redirect(url_for('dashboard', usr = usr))
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
