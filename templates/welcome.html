@@ -32,9 +32,14 @@
         <div class="watchlist-items">
           {% for symbol in watchlist_symbols %}
             <div class="watchlist-item">
-              <h3>{{ live_data[symbol]['symbol'] }}</h3>
+              <h3><a href="/market/{{ live_data[symbol]['symbol'] }}">{{ live_data[symbol]['symbol'] }}</a></h3>
               <p>Open: {{ live_data[symbol]['OPEN'] }}</p>
-              <p>Close: {{ live_data[symbol]['CLOSE'] }}</p>
+
+              {% if live_data[symbol]['sign'] == 1 %}
+                <p style="color: green ;">Gain: +{{ live_data[symbol]['diff'] }}%</p>
+              {% else %}
+                <p style="color: red;">Lose: {{ live_data[symbol]['diff'] }}%</p>
+              {% endif %}
               <form action="{{ url_for('update_watchlist') }}" method="post">
                 <input type="hidden" name="symbol" value="{{ symbol }}" />
                 <button type="submit" name="action" value="remove">Remove</button>

@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
 {% block title%}<title>Trading Pro - Market Plot</title>{% endblock %}
 {%block content%}
+
+<div class="stock-header">
+    <h1 class="stock-name">{{symbol }} </h1> 
+    {% if type == 'stock' and data %}
+    {% for sym in data%}
+    {% if data[symbol].iloc[0]['sign'] == 1 %}
+    <div class="stock-gain">Gain: +{{ data[symbol].iloc[0]['diff'] }}%</div>
+    {% else %}
+    <div class="stock-loss">Loss: {{data[symbol].iloc[0]['diff'] }}%</div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+</div>
+
 <div class="plot-page-container">
     <div class="plot-display-container">
         {% if pdv %}
         {{ pdv | safe }}
         {% endif %}
     </div>
-    
-<!-- Plot Display Section -->
 
 <div class="stock-input-container">
-    <h2>{{symbol}} Data Visualization</h2>
+    
 
     <form class="plot-form" method='post'>
         <div class="form-group">
@@ -42,9 +55,17 @@
         
         {% for sym in data%}
         <div class='stock-info'>
-            <h3>{{ sym }} Information</h3>
+            {% if type == 'stock' %}
+            <h3>Stock Information</h3>
+            <p>Industry: {{ data[sym].iloc[0]['Industry'] }}</p>
+            <p>Market Cap: {{ data[sym].iloc[0]['MarketCap'] }} </p>
+            {% endif %}
             <p>Opening Price: {{ data[sym].iloc[0]['OPEN'] }}</p>
             <p>Closing Price: {{ data[sym].iloc[0]['CLOSE'] }}</p>
+            {% if type == 'stock' %}
+            <p>Volume: {{ data[sym].iloc[0]['VOLUME'] }}</p>
+            {% endif %}
+            
         </div>
         {% endfor %}
         <form method="post" class="reset-form">
@@ -52,6 +73,7 @@
         </form>
        
     {% endif %}
+    
     
 </div>
 </div>

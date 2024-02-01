@@ -58,23 +58,30 @@
         {% endif %}
       </ul>
     </nav>
-
+    {% if usr %}
     <div class="marquee-container">
       <div class="marquee" aria-live="polite">
         <marquee>
+
+          {% for i in range(10)%}
           <a href="/performers">📈 Top Gainers</a>
           {% for data in gl[0]%}
-          <a href="/performers">{{data['symbol']}}</a>
+          <a href="/market/{{data['symbol']}}">{{data['symbol']}}</a>
           <a href="/performers" id = "gainers">+{{data['diff']}}</a>
           {% endfor %}
           <a href="/performers">📉 Top Losers</a>
           {% for data in gl[1]%}
-          <a href="/performers">{{data['symbol']}}</a>
+          <a href="/market/{{data['symbol']}}">{{data['symbol']}}</a>
           <a href="/performers" id = "losers">{{data['diff']}}</a>
           {% endfor %}
+
+          {% endfor %}
+
+          
         </marquee>
       </div>
     </div>
+    {% endif %}
 
     {% block content %}
 
